@@ -1,0 +1,99 @@
+{
+  "version": "1.0.1",
+  "lastSaved": "2026-07-27T16:57:23.002Z",
+  "events": [
+    {
+      "title": "Upper Workout",
+      "location": "Anytime Fitness",
+      "startDate": "2026-07-27",
+      "endDate": "2026-07-27",
+      "categoryIds": [
+        "xms3gxu6gl0zn"
+      ],
+      "allDay": false,
+      "startTime": "16:00",
+      "endTime": "18:00",
+      "recurrence": {
+        "type": "weekly",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-27",
+        "endMode": "byDate",
+        "endDate": "2026-12-28",
+        "count": 10
+      },
+      "color": "#8E54D6",
+      "emoji": "💪",
+      "id": "xms3gzdknkdbd",
+      "exceptions": []
+    }
+  ],
+  "categories": [
+    {
+      "id": "xms3gxu6gsrto",
+      "name": "Admin",
+      "color": "#64748B"
+    },
+    {
+      "id": "xms3gxu6g57al",
+      "name": "Meetings",
+      "color": "#3F5FD6"
+    },
+    {
+      "id": "xms3gxu6gebeu",
+      "name": "Health",
+      "color": "#4FA45B"
+    },
+    {
+      "id": "xms3gxu6gl0zn",
+      "name": "Strength",
+      "color": "#8E54D6"
+    },
+    {
+      "id": "xms3gxu6gv3u6",
+      "name": "Work",
+      "color": "#3E8FE0"
+    },
+    {
+      "id": "xms3gxu6g1cca",
+      "name": "Travel",
+      "color": "#EE7A30"
+    },
+    {
+      "id": "xms3gxu6g1tht",
+      "name": "Family",
+      "color": "#E85C97"
+    },
+    {
+      "id": "xms3gxu6g9j9b",
+      "name": "Finance",
+      "color": "#17A79B"
+    },
+    {
+      "id": "xms3gxu6gnm4j",
+      "name": "Training",
+      "color": "#F2A93B"
+    },
+    {
+      "id": "xms3gxu6gr9xk",
+      "name": "Non-Work",
+      "color": "#9C6B4A"
+    }
+  ],
+  "settings": {
+    "githubToken": "",
+    "githubUsername": "charles-morales-15",
+    "repoName": "buwan",
+    "filePath": "buwan.json"
+  },
+  "aiCache": {}
+}
