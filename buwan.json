@@ -1,6 +1,6 @@
 {
-  "version": "1.0.3",
-  "lastSaved": "2026-07-27T17:15:26.409Z",
+  "version": "1.0.4",
+  "lastSaved": "2026-07-27T17:34:09.129Z",
   "events": [
     {
       "title": "Upper",
@@ -45,8 +45,8 @@
         "xms3gxu6gr9xk"
       ],
       "allDay": false,
-      "startTime": "11:00",
-      "endTime": "12:00",
+      "startTime": "10:00",
+      "endTime": "11:00",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -79,8 +79,8 @@
         "xms3gxu6gv3u6"
       ],
       "allDay": false,
-      "startTime": "12:00",
-      "endTime": "13:00",
+      "startTime": "11:00",
+      "endTime": "12:00",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -113,8 +113,8 @@
         "xms3gxu6gebeu"
       ],
       "allDay": false,
-      "startTime": "13:00",
-      "endTime": "14:00",
+      "startTime": "12:00",
+      "endTime": "12:30",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -136,6 +136,79 @@
       "color": "#4FA45B",
       "emoji": "🥗",
       "id": "xms3h9kdbly81",
+      "exceptions": []
+    },
+    {
+      "title": "Learn Thai",
+      "location": "Online",
+      "startDate": "2026-07-27",
+      "endDate": "2026-07-27",
+      "categoryIds": [
+        "xms3gxu6g1cca"
+      ],
+      "allDay": false,
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "recurrence": {
+        "type": "weekly",
+        "interval": 1,
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-27",
+        "endMode": "byDate",
+        "endDate": "2026-12-28",
+        "count": 10
+      },
+      "color": "#EE7A30",
+      "emoji": "📚",
+      "id": "xms3i1riyr701",
+      "exceptions": []
+    },
+    {
+      "title": "Cardio",
+      "location": "Anytime Fitness",
+      "startDate": "2026-07-28",
+      "endDate": "2026-07-28",
+      "categoryIds": [
+        "xms3gxu6gl0zn"
+      ],
+      "allDay": false,
+      "startTime": "16:00",
+      "endTime": "18:00",
+      "recurrence": {
+        "type": "weekly",
+        "interval": 1,
+        "weekdays": [
+          2,
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 28,
+        "weekOrdinal": 4,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-28",
+        "endMode": "byDate",
+        "endDate": "2026-12-31",
+        "count": 10
+      },
+      "color": "#8E54D6",
+      "emoji": "🏃",
+      "id": "xms3iagdpb95m",
       "exceptions": []
     }
   ],
@@ -167,7 +240,7 @@
     },
     {
       "id": "xms3gxu6g1cca",
-      "name": "Travel",
+      "name": "Learning",
       "color": "#EE7A30"
     },
     {
