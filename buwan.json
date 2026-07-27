@@ -1,9 +1,9 @@
 {
-  "version": "1.0.2",
-  "lastSaved": "2026-07-27T17:05:35.572Z",
+  "version": "1.0.3",
+  "lastSaved": "2026-07-27T17:15:26.409Z",
   "events": [
     {
-      "title": "Upper Workout",
+      "title": "Upper",
       "location": "Anytime Fitness",
       "startDate": "2026-07-27",
       "endDate": "2026-07-27",
@@ -37,7 +37,7 @@
       "exceptions": []
     },
     {
-      "title": "Mobility (Dance + Yoga)",
+      "title": "Mobility",
       "location": "Home",
       "startDate": "2026-07-27",
       "endDate": "2026-07-27",
