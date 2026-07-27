@@ -1,6 +1,6 @@
 {
-  "version": "1.0.1",
-  "lastSaved": "2026-07-27T16:57:23.002Z",
+  "version": "1.0.2",
+  "lastSaved": "2026-07-27T17:05:35.572Z",
   "events": [
     {
       "title": "Upper Workout",
@@ -35,6 +35,108 @@
       "emoji": "💪",
       "id": "xms3gzdknkdbd",
       "exceptions": []
+    },
+    {
+      "title": "Mobility (Dance + Yoga)",
+      "location": "Home",
+      "startDate": "2026-07-27",
+      "endDate": "2026-07-27",
+      "categoryIds": [
+        "xms3gxu6gr9xk"
+      ],
+      "allDay": false,
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-27",
+        "endMode": "byDate",
+        "endDate": "2026-12-31",
+        "count": 10
+      },
+      "color": "#9C6B4A",
+      "emoji": "🤸",
+      "id": "xms3h1n1a1goj",
+      "exceptions": []
+    },
+    {
+      "title": "Bath AM",
+      "location": "Home",
+      "startDate": "2026-07-27",
+      "endDate": "2026-07-27",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "12:00",
+      "endTime": "13:00",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-27",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "🚿",
+      "id": "xms3h5962a105",
+      "exceptions": []
+    },
+    {
+      "title": "Breakfast",
+      "location": "",
+      "startDate": "2026-07-27",
+      "endDate": "2026-07-27",
+      "categoryIds": [
+        "xms3gxu6gebeu"
+      ],
+      "allDay": false,
+      "startTime": "13:00",
+      "endTime": "14:00",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-27",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#4FA45B",
+      "emoji": "🥗",
+      "id": "xms3h9kdbly81",
+      "exceptions": []
     }
   ],
   "categories": [
@@ -50,7 +152,7 @@
     },
     {
       "id": "xms3gxu6gebeu",
-      "name": "Health",
+      "name": "Food",
       "color": "#4FA45B"
     },
     {
@@ -60,7 +162,7 @@
     },
     {
       "id": "xms3gxu6gv3u6",
-      "name": "Work",
+      "name": "Hygiene",
       "color": "#3E8FE0"
     },
     {
@@ -85,7 +187,7 @@
     },
     {
       "id": "xms3gxu6gr9xk",
-      "name": "Non-Work",
+      "name": "Mobility",
       "color": "#9C6B4A"
     }
   ],
