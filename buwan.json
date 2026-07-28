@@ -1,6 +1,6 @@
 {
-  "version": "1.0.4",
-  "lastSaved": "2026-07-27T17:34:09.129Z",
+  "version": "1.0.6",
+  "lastSaved": "2026-07-28T12:51:14.244Z",
   "events": [
     {
       "title": "Upper",
@@ -68,7 +68,9 @@
       "color": "#9C6B4A",
       "emoji": "🤸",
       "id": "xms3h1n1a1goj",
-      "exceptions": []
+      "exceptions": [
+        "2026-07-28"
+      ]
     },
     {
       "title": "Bath AM",
@@ -79,8 +81,8 @@
         "xms3gxu6gv3u6"
       ],
       "allDay": false,
-      "startTime": "11:00",
-      "endTime": "12:00",
+      "startTime": "15:00",
+      "endTime": "15:30",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -113,8 +115,8 @@
         "xms3gxu6gebeu"
       ],
       "allDay": false,
-      "startTime": "12:00",
-      "endTime": "12:30",
+      "startTime": "16:00",
+      "endTime": "16:30",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -147,8 +149,8 @@
         "xms3gxu6g1cca"
       ],
       "allDay": false,
-      "startTime": "14:00",
-      "endTime": "15:00",
+      "startTime": "17:00",
+      "endTime": "19:30",
       "recurrence": {
         "type": "weekly",
         "interval": 1,
@@ -210,6 +212,74 @@
       "emoji": "🏃",
       "id": "xms3iagdpb95m",
       "exceptions": []
+    },
+    {
+      "title": "Laundry +Cleaning",
+      "location": "Home",
+      "startDate": "2026-07-28",
+      "endDate": "2026-07-28",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 28,
+        "weekOrdinal": 4,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-28",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "🧹",
+      "id": "xms4iy8r7bx9s",
+      "exceptions": []
+    },
+    {
+      "title": "UP KPS-CDS Progam",
+      "location": "Messenger",
+      "startDate": "2026-07-28",
+      "endDate": "2026-07-28",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": false,
+      "startTime": "19:30",
+      "endTime": "20:30",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 28,
+        "weekOrdinal": 4,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-28",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "😀",
+      "id": "xms4j0tinkg4j",
+      "exceptions": []
     }
   ],
   "categories": [
@@ -255,7 +325,7 @@
     },
     {
       "id": "xms3gxu6gnm4j",
-      "name": "Training",
+      "name": "Events",
       "color": "#F2A93B"
     },
     {
