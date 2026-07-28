@@ -1,6 +1,6 @@
 {
-  "version": "1.0.6",
-  "lastSaved": "2026-07-28T12:51:14.244Z",
+  "version": "1.0.7",
+  "lastSaved": "2026-07-28T17:11:45.826Z",
   "events": [
     {
       "title": "Upper",
@@ -81,8 +81,8 @@
         "xms3gxu6gv3u6"
       ],
       "allDay": false,
-      "startTime": "15:00",
-      "endTime": "15:30",
+      "startTime": "11:00",
+      "endTime": "12:00",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -108,15 +108,15 @@
     },
     {
       "title": "Breakfast",
-      "location": "",
+      "location": "Home",
       "startDate": "2026-07-27",
       "endDate": "2026-07-27",
       "categoryIds": [
         "xms3gxu6gebeu"
       ],
       "allDay": false,
-      "startTime": "16:00",
-      "endTime": "16:30",
+      "startTime": "12:00",
+      "endTime": "12:30",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -149,8 +149,8 @@
         "xms3gxu6g1cca"
       ],
       "allDay": false,
-      "startTime": "17:00",
-      "endTime": "19:30",
+      "startTime": "13:00",
+      "endTime": "16:00",
       "recurrence": {
         "type": "weekly",
         "interval": 1,
@@ -194,7 +194,8 @@
         "interval": 1,
         "weekdays": [
           2,
-          4
+          4,
+          6
         ],
         "dailyMode": "every",
         "monthlyMode": "dayOfMonth",
@@ -214,7 +215,7 @@
       "exceptions": []
     },
     {
-      "title": "Laundry +Cleaning",
+      "title": "Laundry",
       "location": "Home",
       "startDate": "2026-07-28",
       "endDate": "2026-07-28",
@@ -248,7 +249,7 @@
       "exceptions": []
     },
     {
-      "title": "UP KPS-CDS Progam",
+      "title": "UP KPS Program",
       "location": "Messenger",
       "startDate": "2026-07-28",
       "endDate": "2026-07-28",
@@ -280,17 +281,297 @@
       "emoji": "😀",
       "id": "xms4j0tinkg4j",
       "exceptions": []
+    },
+    {
+      "title": "UP KPS 65th Anniv",
+      "location": "Laguna Hills Club House",
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-01",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": false,
+      "startTime": "13:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 1,
+        "weekOrdinal": 1,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-01",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎊",
+      "id": "xms4w4k90aha7",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Lower",
+      "location": "Anytime Fitness",
+      "startDate": "2026-07-29",
+      "endDate": "2026-07-29",
+      "categoryIds": [
+        "xms3gxu6gl0zn"
+      ],
+      "allDay": false,
+      "startTime": "16:00",
+      "endTime": "18:00",
+      "recurrence": {
+        "type": "weekly",
+        "interval": 1,
+        "weekdays": [
+          3
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 29,
+        "weekOrdinal": 5,
+        "weekday": 3,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-29",
+        "endMode": "byDate",
+        "endDate": "2026-12-31",
+        "count": 10
+      },
+      "color": "#8E54D6",
+      "emoji": "🦵",
+      "id": "xms4w8hmhctps",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Chie's Check-up",
+      "location": "PGH",
+      "startDate": "2026-07-30",
+      "endDate": "2026-07-30",
+      "categoryIds": [
+        "xms4wersa2l3w"
+      ],
+      "allDay": false,
+      "startTime": "09:00",
+      "endTime": "10:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 30,
+        "weekOrdinal": 5,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-30",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E24A4A",
+      "emoji": "🩺",
+      "id": "xms4whyqyj36u",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Push",
+      "location": "Anytime Fitness",
+      "startDate": "2026-07-31",
+      "endDate": "2026-07-31",
+      "categoryIds": [
+        "xms3gxu6gl0zn"
+      ],
+      "allDay": false,
+      "startTime": "16:00",
+      "endTime": "18:00",
+      "recurrence": {
+        "type": "weekly",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 31,
+        "weekOrdinal": 5,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-31",
+        "endMode": "byDate",
+        "endDate": "2027-01-01",
+        "count": 10
+      },
+      "color": "#8E54D6",
+      "emoji": "🤜",
+      "id": "xms4wkjxcrptj",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "RTO",
+      "location": "CG2",
+      "startDate": "2026-07-31",
+      "endDate": "2026-07-31",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "allDay": false,
+      "startTime": "12:30",
+      "endTime": "13:00",
+      "recurrence": {
+        "type": "weekly",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 31,
+        "weekOrdinal": 5,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-31",
+        "endMode": "byDate",
+        "endDate": "2026-09-18",
+        "count": 10
+      },
+      "color": "#3A4250",
+      "emoji": "🧰",
+      "id": "xms4wplxqotvx",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Bath PM",
+      "location": "Home",
+      "startDate": "2026-07-27",
+      "endDate": "2026-07-27",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "18:30",
+      "endTime": "19:00",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-27",
+        "endMode": "byDate",
+        "endDate": "2027-01-02",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "🚿",
+      "id": "xms4wseoydhta",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Lunch",
+      "location": "Home",
+      "startDate": "2026-07-27",
+      "endDate": "2026-07-27",
+      "categoryIds": [
+        "xms3gxu6gebeu"
+      ],
+      "allDay": false,
+      "startTime": "15:00",
+      "endTime": "15:30",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-27",
+        "endMode": "byDate",
+        "endDate": "2027-01-02",
+        "count": 10
+      },
+      "color": "#4FA45B",
+      "emoji": "🍽️",
+      "id": "xms4wuktskf42",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Protein",
+      "location": "Home",
+      "startDate": "2026-07-27",
+      "endDate": "2026-07-27",
+      "categoryIds": [
+        "xms3gxu6gebeu"
+      ],
+      "allDay": false,
+      "startTime": "18:00",
+      "endTime": "18:30",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 6,
+        "rangeStart": "2026-07-27",
+        "endMode": "byDate",
+        "endDate": "2027-01-02",
+        "count": 10
+      },
+      "color": "#4FA45B",
+      "emoji": "🥤",
+      "id": "xms4ww79wreyl",
+      "exceptions": [],
+      "overrides": {}
     }
   ],
   "categories": [
     {
       "id": "xms3gxu6gsrto",
-      "name": "Admin",
+      "name": "Sexual",
       "color": "#64748B"
     },
     {
       "id": "xms3gxu6g57al",
-      "name": "Meetings",
+      "name": "Travel",
       "color": "#3F5FD6"
     },
     {
@@ -315,7 +596,7 @@
     },
     {
       "id": "xms3gxu6g1tht",
-      "name": "Family",
+      "name": "Relaxation",
       "color": "#E85C97"
     },
     {
@@ -332,6 +613,21 @@
       "id": "xms3gxu6gr9xk",
       "name": "Mobility",
       "color": "#9C6B4A"
+    },
+    {
+      "id": "xms4wersa2l3w",
+      "name": "Health",
+      "color": "#E24A4A"
+    },
+    {
+      "id": "xms4wgmnq23bm",
+      "name": "Spiritual",
+      "color": "#45607A"
+    },
+    {
+      "id": "xms4wp6k79qsc",
+      "name": "Office",
+      "color": "#3A4250"
     }
   ],
   "settings": {
