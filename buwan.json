@@ -1,6 +1,6 @@
 {
-  "version": "1.0.9",
-  "lastSaved": "2026-08-06T12:42:31.147Z",
+  "version": "1.0.10",
+  "lastSaved": "2026-08-06T12:42:52.274Z",
   "events": [
     {
       "title": "Upper",
@@ -231,7 +231,9 @@
       "color": "#8E54D6",
       "emoji": "🏃",
       "id": "xms3iagdpb95m",
-      "exceptions": []
+      "exceptions": [
+        "2026-08-06"
+      ]
     },
     {
       "title": "Laundry",
