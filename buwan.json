@@ -1,6 +1,6 @@
 {
-  "version": "1.0.11",
-  "lastSaved": "2026-08-06T13:02:52.917Z",
+  "version": "1.0.12",
+  "lastSaved": "2026-08-06T13:20:22.728Z",
   "events": [
     {
       "title": "Upper",
@@ -194,7 +194,8 @@
       "emoji": "📚",
       "id": "xms3i1riyr701",
       "exceptions": [
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-05"
       ]
     },
     {
@@ -606,7 +607,9 @@
       "color": "#4FA45B",
       "emoji": "🥤",
       "id": "xms4ww79wreyl",
-      "exceptions": [],
+      "exceptions": [
+        "2026-08-06"
+      ],
       "overrides": {}
     },
     {
