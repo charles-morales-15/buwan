@@ -79,7 +79,7 @@
   ::-webkit-scrollbar { width: 10px; height: 10px; }
   ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; }
 
-  .app { max-width: 1180px; margin: 0 auto; }
+  .app { width: 100%; max-width: 1600px; margin: 0 auto; }
 
   /* ---------- Top bar ---------- */
   .topbar {
@@ -91,6 +91,8 @@
   .tools { display: flex; align-items: center; gap: 14px; margin-left: auto; flex-wrap: wrap; justify-content: flex-end; }
   .brand .mark { font-family: var(--font-display); font-size: 26px; font-weight: 600; letter-spacing: -.3px; }
   .brand .mark .moon-ico { display: inline-flex; vertical-align: -4px; margin-right: 2px; }
+  .weather { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--muted); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 13px; box-shadow: var(--shadow); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); white-space: nowrap; }
+  .weather .wx-loading { color: var(--faint); }
   .brand .sub { font-size: 12px; color: var(--faint); letter-spacing: .04em; text-transform: uppercase; }
 
   .toolgroup { display: flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 5px; box-shadow: var(--shadow); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
@@ -122,8 +124,8 @@
   }
   .nav-arrow:hover { color: var(--primary); border-color: var(--primary); }
   .nav-arrow svg { width: 11px; height: 11px; }
-  .monthtitle { font-family: var(--font-display); font-size: 30px; font-weight: 600; letter-spacing: -.3px; text-align: center; min-width: 210px; }
-  .monthtitle .yr { color: var(--faint); font-weight: 400; margin-left: 6px; }
+  .monthtitle { font-family: var(--font-display); font-size: 42px; line-height: 1.05; font-weight: 700; letter-spacing: -.5px; text-align: center; min-width: 280px; }
+  .monthtitle .yr { color: var(--faint); font-weight: 400; margin-left: 8px; }
   .month-quote { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-family: var(--font-body); font-style: italic; font-weight: 500; font-size: 14px; color: var(--muted); max-width: 300px; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
   /* ---------- Grid ---------- */
@@ -169,25 +171,26 @@
   .chip .time { font-size: 10px; opacity: 1; margin-left: 0; flex: none; }
 
   /* 2-line calendar chip: line 1 = emoji/title/time, line 2 = location — all left-justified */
-  .chip.cal { flex-direction: column; align-items: stretch; gap: 1px; padding: 4px 7px; }
+  .chip.cal { flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 1px; padding: 4px 7px; min-height: 36px; }
   .chip.cal .line { display: flex; align-items: center; justify-content: flex-start; gap: 5px; min-width: 0; line-height: 1.25; }
+  .chip.cal .line1 { align-items: flex-start; }
   .chip.cal .chip-main { flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 5px; overflow: hidden; }
   .chip.cal .chip-main .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
-  .chip.cal .time { margin-left: 0; font-variant-numeric: tabular-nums; letter-spacing: -.2px; }
-  .chip.cal .dots { margin-left: 0; }
+  .chip.cal .time { margin-left: auto; flex: none; align-self: flex-start; font-variant-numeric: tabular-nums; letter-spacing: -.2px; }
+  .chip.cal .dots { margin-left: 4px; flex: none; }
   .chip.cal .line2 { font-size: 10px; }
   .chip.cal .line2 .loc { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .more { font-size: 11px; color: var(--faint); font-weight: 500; padding: 1px 7px; cursor: pointer; }
   .more:hover { color: var(--primary); }
 
   /* ---------- Almanac ---------- */
-  .almanac { margin-top: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .almanac { margin: 6px 0 18px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
   .almanac-head { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 18px; cursor: pointer; user-select: none; position: relative; }
   .almanac-head .title { font-family: var(--font-display); font-size: 17px; font-weight: 600; }
   .almanac-head .hint { font-size: 12px; color: var(--faint); }
   .almanac-head .chev { position: absolute; right: 18px; top: 0; bottom: 0; display: flex; align-items: center; color: var(--muted); transition: transform .25s; }
   .almanac.collapsed .chev { transform: rotate(-90deg); }
-  .almanac-body { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border-top: 1px solid var(--border); max-height: 640px; transition: max-height .3s ease, opacity .25s; overflow: hidden; }
+  .almanac-body { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1px; background: var(--border); border-top: 1px solid var(--border); max-height: 720px; transition: max-height .3s ease, opacity .25s; overflow: hidden; }
   .almanac.collapsed .almanac-body { max-height: 0; opacity: 0; border-top: none; }
   .alm-card { background: var(--surface); padding: 18px; border-top: 3px solid var(--card-accent); }
   .alm-card .lbl { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); font-weight: 600; margin-bottom: 9px; display: flex; align-items: center; gap: 6px; }
@@ -197,6 +200,14 @@
   .alm-card .content ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
   .alm-card .content li { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: var(--muted); }
   .alm-card .content li b { color: var(--text); font-weight: 600; }
+  .alm-src { display: inline-flex; align-items: center; gap: 3px; margin-top: 9px; font-size: 11px; font-weight: 600; color: var(--card-accent); text-decoration: none; }
+  .alm-src:hover { text-decoration: underline; }
+  .alm-year { font-family: var(--font-display); font-weight: 700; color: var(--card-accent); margin-right: 4px; }
+  .alm-thumb { width: 100%; height: 82px; object-fit: cover; border-radius: 8px; margin-bottom: 9px; background: var(--surface-2); display: block; }
+  .alm-clamp { display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.45; }
+  .alm-card .content .alm-src { display: inline-flex; margin-top: 8px; }
+  .alm-term { color: var(--card-accent); font-weight: 700; }
+  .quote-footer { margin: 18px auto 4px; max-width: 760px; text-align: center; font-family: var(--font-body); font-style: italic; font-weight: 500; font-size: 15px; color: var(--muted); line-height: 1.5; }
   .loading-shimmer { color: var(--faint); font-size: 13px; font-style: italic; }
   @media (max-width: 820px) { .almanac-body { grid-template-columns: 1fr; } }
 
@@ -537,6 +548,8 @@
       </span> Buwan</span>
     </div>
 
+    <div class="weather" id="weather" title="Today's weather"><span class="wx-loading">🌤️ …</span></div>
+
     <div class="tools">
     <div class="toolgroup">
       <button class="tbtn" id="btnLoad" title="Load latest data from GitHub">
@@ -565,6 +578,34 @@
     </div>
   </div>
 
+  <!-- Gabay panel (above the calendar) -->
+  <div class="almanac" id="almanac">
+    <div class="almanac-head" id="almanacHead">
+      <span class="title">✦ Gabay</span>
+      <span class="chev">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </span>
+    </div>
+    <div class="almanac-body">
+      <div class="alm-card psyche" style="--card-accent:#7C6CF0">
+        <div class="lbl"><span class="glyph">🧠</span> Psyche</div>
+        <div class="content" id="cardPsyche"><span class="loading-shimmer">…</span></div>
+      </div>
+      <div class="alm-card trivia" style="--card-accent:#17A79B">
+        <div class="lbl"><span class="glyph">💡</span> Trivia</div>
+        <div class="content" id="cardTrivia"><span class="loading-shimmer">…</span></div>
+      </div>
+      <div class="alm-card hist" style="--card-accent:#EE7A30">
+        <div class="lbl"><span class="glyph">📜</span> On This Day</div>
+        <div class="content" id="cardHist"><span class="loading-shimmer">…</span></div>
+      </div>
+      <div class="alm-card ins" style="--card-accent:#3CAE8F">
+        <div class="lbl"><span class="glyph">✧</span> This Month's Activity</div>
+        <div class="content" id="cardIns"><span class="loading-shimmer">…</span></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Calendar header -->
   <div class="calbar">
     <button class="nav-arrow" id="prevMonth" title="Previous month">
@@ -581,29 +622,8 @@
   <!-- Grid -->
   <div class="grid" id="grid"></div>
 
-  <!-- Almanac panel -->
-  <div class="almanac" id="almanac">
-    <div class="almanac-head" id="almanacHead">
-      <span class="title">✦ Gabay</span>
-      <span class="chev">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </span>
-    </div>
-    <div class="almanac-body">
-      <div class="alm-card quote" style="--card-accent:#7C6CF0">
-        <div class="lbl"><span class="glyph">❝</span> Words for the Month</div>
-        <div class="content" id="cardQuote"><span class="loading-shimmer">…</span></div>
-      </div>
-      <div class="alm-card horo" style="--card-accent:#4AA8D8">
-        <div class="lbl"><span class="glyph">♓</span> Pisces Horoscope</div>
-        <div class="content" id="cardHoro"><span class="loading-shimmer">…</span></div>
-      </div>
-      <div class="alm-card ins" style="--card-accent:#3CAE8F">
-        <div class="lbl"><span class="glyph">✧</span> The Month Ahead</div>
-        <div class="content" id="cardIns"><span class="loading-shimmer">…</span></div>
-      </div>
-    </div>
-  </div>
+  <!-- Daily quote (relocated from Gabay) -->
+  <div class="quote-footer" id="quoteFooter"></div>
 </div>
 
 <!-- ============ Entry modal ============ -->
@@ -838,14 +858,7 @@
   </div>
 </div>
 
-<!-- Overflow-day modal -->
-<div class="overlay" id="dayOverlay">
-  <div class="modal">
-    <div class="modal-head"><h2 id="dayTitle">Day</h2><button class="x-btn" data-close="dayOverlay">✕</button></div>
-    <div class="modal-body" id="dayList"></div>
-    <div class="modal-foot"><button class="btn primary" id="btnAddFromDay" style="margin-left:auto">Add entry</button></div>
-  </div>
-</div>
+<!-- Overflow-day modal removed (all entries now render inline) -->
 
 <div class="toast-wrap" id="toastWrap"></div>
 
@@ -930,6 +943,9 @@ function eventCats(ev){ return (ev.categoryIds||[]).map(getCat).filter(Boolean);
 function eventColor(ev){ const cs=eventCats(ev); return cs[0] ? cs[0].color : (ev.color || NO_CAT_COLOR); }
 // A single occurrence may carry per-date overrides (edited "just this one")
 function effectiveEvent(ev, occDate){ const ov = (ev.overrides && occDate && ev.overrides[occDate]) || null; return ov ? {...ev, ...ov} : ev; }
+// Chronological key for a given day (all-day first, then by effective start time)
+function dayTimeKey(ev, ds){ const e = effectiveEvent(ev, ds); return e.allDay ? '' : (e.startTime || ''); }
+function sortDayEvents(events, ds){ return events.slice().sort((a,b)=> dayTimeKey(a,ds).localeCompare(dayTimeKey(b,ds))); }
 function nextUnusedColor(){
   const used = new Set((data.categories||[]).map(c=>c.color));
   return CAT_COLORS.find(c=>!used.has(c)) || CAT_COLORS[(data.categories||[]).length % CAT_COLORS.length];
@@ -1002,7 +1018,7 @@ function occurrencesInWindow(ev, winStart, winEnd){
     return (d>=winStart && d<=winEnd && !ex.has(d)) ? [d] : [];
   }
   const start = rec.rangeStart || ev.startDate;
-  const out=[]; let count=0; let iter=0; const MAX=20000; let stop=false;
+  const out=[]; let count=0; let iter=0; const MAX=20000;
   const endBy = (rec.endMode==='byDate' && rec.endDate) ? rec.endDate : null;
   const maxCount = (rec.endMode==='afterCount') ? Math.max(1, rec.count|0) : null;
   // step: register one chronological occurrence; return false to stop generation
@@ -1019,10 +1035,10 @@ function occurrencesInWindow(ev, winStart, winEnd){
   if(rec.type==='daily'){
     if(rec.dailyMode==='weekday'){
       let d=pd(start);
-      while(iter++<MAX){ const wd=d.getDay(); if(wd>=1&&wd<=5){ if(!step(toISO(d))){stop=true;break;} } d=addDaysD(d,1); }
+      while(iter++<MAX){ const wd=d.getDay(); if(wd>=1&&wd<=5){ if(!step(toISO(d))){break;} } d=addDaysD(d,1); }
     } else {
       let d=pd(start);
-      while(iter++<MAX){ if(!step(toISO(d))){stop=true;break;} d=addDaysD(d,iv); }
+      while(iter++<MAX){ if(!step(toISO(d))){break;} d=addDaysD(d,iv); }
     }
   } else if(rec.type==='weekly'){
     const wds=[...rec.weekdays].sort((a,b)=>a-b);
@@ -1140,8 +1156,7 @@ function render(){
     const cell = document.createElement('div');
     cell.className = 'cell'+(outside?' outside':'')+(ds===tISO?' istoday':'');
 
-    const evs = (dayMap[ds]||[])
-      .sort((a,b)=> (a.allDay?'' :a.startTime||'').localeCompare(b.allDay?'':b.startTime||''));
+    const evs = sortDayEvents(dayMap[ds]||[], ds);
 
     const head = document.createElement('div');
     head.className='dayhead';
@@ -1172,14 +1187,33 @@ function makeChip(ev, occDate){
   const timeHtml = hasTime ? `<span class="time">${fmtTime(e.startTime)}</span>` : '';
   const dots = cats.length>1 ? `<span class="dots">${cats.slice(0,4).map(k=>`<i style="background:${k.color}"></i>`).join('')}</span>` : '';
   const mainHtml = `<span class="chip-main"><span class="emo">${e.emoji||''}</span><span class="txt">${esc(e.title)}</span></span>`;
-  // all texts left-justified
-  const line1 = `<span class="line line1">${mainHtml}${timeHtml}${dots}</span>`;
+  // title/emoji left; time pinned to the upper-right
+  const line1 = `<span class="line line1">${mainHtml}${dots}${timeHtml}</span>`;
   const line2 = e.location ? `<span class="line line2"><span class="txt loc">📍 ${esc(e.location)}</span></span>` : '';
   c.innerHTML = line1 + line2;
+  // Outlook-style: entries longer than 1 hour grow taller with duration; <=1hr keep default height
+  const h = chipHeightFor(e);
+  if(h) c.style.minHeight = h+'px';
   // hover tooltip: entry name + location only (no category)
   c.title = [e.title, e.location ? '📍 '+e.location : ''].filter(Boolean).join('\n');
   c.addEventListener('click', ev2=>{ ev2.stopPropagation(); openEntry(ev.id, occDate); });
   return c;
+}
+// Chip height scales with duration beyond 1 hour (default height otherwise)
+const CHIP_BASE_H = 36, CHIP_PER_HOUR = 26, CHIP_MAX_EXTRA = 200;
+function eventDurationMin(e){
+  if(e.allDay || !e.startTime || !e.endTime) return 0;
+  const [sh,sm]=e.startTime.split(':').map(Number);
+  const [eh,em]=e.endTime.split(':').map(Number);
+  let mins=(eh*60+em)-(sh*60+sm);
+  if(mins<0) mins+=1440; // overnight
+  return mins;
+}
+function chipHeightFor(e){
+  const mins = eventDurationMin(e);
+  if(mins<=60) return null; // default height for <=1hr (or all-day/untimed)
+  const extra = Math.min((mins-60)/60*CHIP_PER_HOUR, CHIP_MAX_EXTRA);
+  return Math.round(CHIP_BASE_H + extra);
 }
 
 function fmtTime(t){ if(!t) return ''; let [h,mn]=t.split(':').map(Number); const ap=h<12?'AM':'PM'; let hh=h%12; if(hh===0) hh=12; return `${String(hh).padStart(2,'0')}:${String(mn||0).padStart(2,'0')}${ap}`; }
@@ -1352,6 +1386,7 @@ function commitDelete(scope){
   snapshot();
   if(scope==='occurrence' && editingOccDate){
     ev.exceptions = [...(ev.exceptions||[]), editingOccDate];
+    if(ev.overrides && ev.overrides[editingOccDate]) delete ev.overrides[editingOccDate];
     toast('Occurrence deleted');
   } else {
     data.events = data.events.filter(e=>e.id!==editingId);
@@ -1570,24 +1605,6 @@ function buildCatColorPop(){
   });
 }
 
-/* overflow day list */
-function openDay(ds, evs){
-  const d=new Date(ds+'T00:00');
-  document.getElementById('dayTitle').textContent = `${DOW[d.getDay()]}, ${MONTHS[d.getMonth()]} ${d.getDate()}`;
-  const list=document.getElementById('dayList'); list.innerHTML='';
-  evs.forEach(ev=>{
-    const row=document.createElement('div'); row.className='chip'; row.style.padding='7px 10px';
-    const col=eventColor(ev);
-    row.style.setProperty('--chip-accent',darken(col,.22)); row.style.setProperty('--chip-bg',col); row.style.setProperty('--chip-fg',chipTextColor(col));
-    const time = (!ev.allDay && ev.startTime)? `<span class="time">${fmtTime(ev.startTime)}–${fmtTime(ev.endTime)}</span>`:`<span class="time">All day</span>`;
-    const loc = ev.location ? `<span class="txt">· 📍 ${esc(ev.location)}</span>` : '';
-    row.innerHTML=`<span class="emo">${ev.emoji||''}</span><span class="txt">${esc(ev.title)}</span>${loc}${time}`;
-    row.addEventListener('click',()=>{ hide('dayOverlay'); openEntry(ev.id, ds); });
-    list.appendChild(row);
-  });
-  document.getElementById('btnAddFromDay').onclick=()=>{ hide('dayOverlay'); openEntry(null, ds); };
-  show('dayOverlay');
-}
 
 /* ============================================================
    GitHub API
@@ -1649,24 +1666,26 @@ async function ghSave(){
   const v=validateSettings(); if(v){ toast(v); openSync(); return; }
   toast('Saving to GitHub…');
   try{
-    // version bump
+    // compute the next version/stamp locally; only commit to memory on success
     const parts = (data.version||'1.0.0').split('.').map(Number);
     parts[2]=(parts[2]||0)+1;
-    data.version = parts.join('.');
-    data.lastSaved = new Date().toISOString();
+    const newVersion = parts.join('.');
+    const lastSaved = new Date().toISOString();
     const {_sha, ...rest} = data;
     // NEVER write the token (or any secret) into the committed file — GitHub push protection blocks it.
-    const clean = {...rest, settings: {...(rest.settings||{}), githubToken: ''}};
+    const clean = {...rest, version:newVersion, lastSaved, settings: {...(rest.settings||{}), githubToken: ''}};
     const body = JSON.stringify(clean, null, 2);
     const content = btoa(unescape(encodeURIComponent(body)));
-    const stamp = new Date().toISOString().replace('T',' ').slice(0,19);
-    const payload = { message:`Calendar v${data.version} — ${stamp}`, content };
+    const stamp = lastSaved.replace('T',' ').slice(0,19);
+    const payload = { message:`Calendar v${newVersion} — ${stamp}`, content };
     if(data._sha) payload.sha = data._sha;
     const r = await fetch(ghContentUrl(), {method:'PUT', headers:{...ghHeaders(),'Content-Type':'application/json'}, body:JSON.stringify(payload)});
     if(!r.ok){ const gm=await ghMsg(r); toast(friendlyError(r.status,'save')+(gm?`  [GitHub: ${gm}]`:''), 9000); return; }
     const j = await r.json();
     data._sha = j.content.sha;
-    toast(`Saved as v${data.version} ✓`);
+    data.version = newVersion;
+    data.lastSaved = lastSaved;
+    toast(`Saved as v${newVersion} ✓`);
   }catch(e){ toast('Save failed — check your connection. ('+e.message+')'); }
 }
 
@@ -1741,104 +1760,257 @@ function updateConnDot(){
 }
 
 /* ============================================================
-   AI Almanac  (Anthropic API, cached into data.aiCache)
+   Gabay — daily quote, trivia, on-this-day, month activity
 ============================================================ */
-function renderAlmanac(){
-  const key=monthKey(view.y,view.m);
-  const cached=data.aiCache[key];
-  if(cached){ fillAlmanac(cached); return; }
-  // show fallback immediately, then try to enrich via API
-  const fb = fallbackContent(view.y,view.m);
-  fillAlmanac(fb);
-  if(!aiInFlight[key]){ aiInFlight[key]=true; generateAlmanac(view.y,view.m); }
-}
-function fillAlmanac(c){
-  document.getElementById('cardQuote').innerHTML = `“${esc(c.quote)}”`;
-  document.getElementById('cardHoro').textContent = c.horoscope;
-  const ins=c.insights||{};
-  document.getElementById('cardIns').innerHTML = `<ul>
-    <li>🌱 <span><b>Growth:</b> ${esc(ins.growth||'')}</span></li>
-    <li>🤝 <span><b>Connection:</b> ${esc(ins.social||'')}</span></li>
-    <li>🌿 <span><b>Health:</b> ${esc(ins.health||'')}</span></li></ul>`;
+const dailyCache = {}; // in-memory per-day cache for trivia/history
+
+function renderAlmanac(){ // keep name; render() calls this
+  renderPsyche();
+  renderTrivia();
+  renderHistory();
+  renderMonthActivity();
+  renderQuoteFooter();
 }
 
-async function generateAlmanac(y,m){
-  const key=monthKey(y,m);
-  const prompt = `You are writing a warm monthly almanac. Respond ONLY with strict JSON, no markdown, no preamble.
-Month: ${MONTHS[m]} ${y}.
-Person: born March 15, 1987 at 10:10 AM (Sun sign Pisces). Keep everything POSITIVE, gentle, and personal to a thoughtful, intuitive Piscean.
-Return this exact shape:
-{
- "quote": "one short inspirational/motivational quote, under 16 words, fitting the season/month",
- "horoscope": "2 short sentences, positive Pisces horoscope tailored to this person for this month",
- "insights": {
-   "growth": "max 12 words on personal growth this month",
-   "social": "max 12 words on social connection this month",
-   "health": "max 12 words on health/energy this month"
- }
-}`;
+/* ---- shared helpers ---- */
+function dayOfYear(isoStr){ const d=pd(isoStr); const start=new Date(d.getFullYear(),0,0); return Math.floor((d-start)/86400000); }
+async function callAI(prompt, maxTokens){
   try{
-    const r = await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ model:'claude-sonnet-4-6', max_tokens:1000, messages:[{role:'user',content:prompt}] })
-    });
-    if(!r.ok) throw new Error('api '+r.status);
-    const j = await r.json();
-    let text = (j.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').trim();
-    text = text.replace(/```json|```/g,'').trim();
-    const parsed = JSON.parse(text);
-    data.aiCache[key]=parsed;
-    if(monthKey(view.y,view.m)===key) fillAlmanac(parsed);
-  }catch(e){
-    // keep the fallback that's already displayed
-  }finally{ aiInFlight[key]=false; }
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:maxTokens||400,messages:[{role:'user',content:prompt}]})});
+    if(!r.ok) return null;
+    const jd=await r.json();
+    let text=(jd.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').trim().replace(/```json|```/g,'').trim();
+    return JSON.parse(text);
+  }catch(e){ return null; }
+}
+// reputable, always-valid source links (never fancy/unverified)
+function normSource(source){ const s=(source||'').toLowerCase();
+  if(s.includes('geographic')) return 'National Geographic';
+  if(s.includes('history')) return 'History';
+  return 'Britannica';
+}
+function reputableUrl(source, q){ const t=encodeURIComponent(q||''); const s=normSource(source);
+  if(s==='National Geographic') return 'https://www.nationalgeographic.com/search?q='+t;
+  if(s==='History') return 'https://www.history.com/search?q='+t;
+  return 'https://www.britannica.com/search?query='+t;
+}
+// illustrative photo (freely-licensed Wikimedia image) for a topic; memoized
+const imgMemo={};
+async function topicImage(topic){
+  if(!topic) return null;
+  if(topic in imgMemo) return imgMemo[topic];
+  let out=null;
+  try{
+    const r=await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(topic));
+    if(r.ok){ const j=await r.json(); out=(j.thumbnail&&j.thumbnail.source)||(j.originalimage&&j.originalimage.source)||null; }
+  }catch(e){}
+  imgMemo[topic]=out; return out;
+}
+// paint an On-This-Day-style card: image + 3-line clamp + reputable source on line 4
+function paintFactCard(el, innerHTML, topic, source){
+  const name=normSource(source), link=reputableUrl(source, topic);
+  el.innerHTML = `<div data-img></div><div class="alm-clamp">${innerHTML}</div><a class="alm-src" href="${esc(link)}" target="_blank" rel="noopener">${esc(name)} ↗</a>`;
+  topicImage(topic).then(src=>{ if(!src) return; const h=el.querySelector('[data-img]'); if(h) h.innerHTML=`<img class="alm-thumb" src="${esc(src)}" alt="" loading="lazy" onerror="this.remove()">`; });
 }
 
-/* Deterministic, hand-written Pisces-positive fallback per month */
-function fallbackContent(y,m){
-  const quotes=[
-    "Begin again — every sunrise is a clean, unwritten page.",
-    "Warmth grows from small, steady acts of love.",
-    "Bloom where you are; spring rewards the patient.",
-    "Let curiosity lead and watch new doors open.",
-    "Gentle effort, repeated daily, becomes quiet strength.",
-    "Rest is not idleness; it is the soil of joy.",
-    "The tide always turns for those who keep swimming.",
-    "Ripe seasons come to those who tended the garden.",
-    "Small harvests, gratefully gathered, fill a whole life.",
-    "Slow down enough to notice how far you've come.",
-    "A grateful heart makes ordinary days feel golden.",
-    "End the year kindly — you carried more than you knew."
+/* ---- Psyche (psychology term + definition + example; image; Britannica source) ---- */
+function fallbackPsyche(dayISO){
+  const P=[
+    {term:"Confirmation bias",definition:"the tendency to seek and favor information that supports what we already believe.",example:"Reading only news sources that agree with your opinion.",topic:"Confirmation bias",source:"Britannica"},
+    {term:"Classical conditioning",definition:"learning in which a neutral cue triggers a response after being paired with a meaningful stimulus.",example:"Feeling hungry the moment you hear a lunch bell.",topic:"Classical conditioning",source:"Britannica"},
+    {term:"Cognitive dissonance",definition:"the mental discomfort of holding two conflicting beliefs or acting against your values.",example:"Knowing junk food is unhealthy but eating it, then downplaying the risk.",topic:"Cognitive dissonance",source:"Britannica"},
+    {term:"Bystander effect",definition:"people are less likely to help someone when other people are present.",example:"No one calls for help in a crowd, each assuming another will.",topic:"Bystander effect",source:"Britannica"},
+    {term:"Anchoring",definition:"relying too heavily on the first piece of information when making a decision.",example:"A high original price makes a discount feel like a great deal.",topic:"Anchoring effect",source:"Britannica"},
+    {term:"Operant conditioning",definition:"learning shaped by rewards and consequences that follow a behavior.",example:"A child does chores more often after being praised for it.",topic:"Operant conditioning",source:"Britannica"},
+    {term:"Growth mindset",definition:"the belief that abilities can be developed through effort, strategy, and learning.",example:"Treating a failed test as feedback rather than a verdict on your ability.",topic:"Mindset",source:"Britannica"}
   ];
-  const horos=[
-    "Your intuition is unusually clear now, Pisces — trust the quiet nudge steering you toward the right people and choices.",
-    "A creative current runs strong this month; let your imagination lead and something you make will genuinely move someone.",
-    "Your natural empathy opens a door this month. A heartfelt conversation brings a connection you've been quietly hoping for.",
-    "Dreams feel close to reach now. Take one gentle, practical step and the universe meets you halfway, dear Pisces.",
-    "Your compassion becomes contagious; by lifting others you'll find your own spirits lifted higher than expected.",
-    "A calm confidence settles in. Old worries loosen their grip and you rediscover how capable you truly are.",
-    "Flow is your friend this month. Ease, not force, carries you toward a pleasant and slightly surprising turn.",
-    "Your sensitivity is a strength now — it helps you read a moment perfectly and say exactly the right thing.",
-    "Quiet reflection brings a small revelation about what you truly want. Honor it; it points somewhere hopeful.",
-    "Your kindness returns to you multiplied. Expect a warm gesture from someone who noticed more than you realized.",
-    "Gratitude sharpens your vision. Looking back, you'll see how gently the year has been shaping you all along.",
-    "Peace finds you this month, Pisces. Let yourself receive the rest and affection you've so freely given others."
+  return P[dayOfYear(dayISO) % P.length];
+}
+function renderPsyche(){
+  const el=document.getElementById('cardPsyche'); const day=todayISO();
+  let p = data.aiCache[day] && data.aiCache[day].psyche;
+  if(!p){ p=fallbackPsyche(day); if(!aiInFlight['p'+day]){ aiInFlight['p'+day]=true; generatePsyche(day); } }
+  const html=`<b class="alm-term">${esc(p.term)}</b> — ${esc(p.definition)} <i>e.g.</i> ${esc(p.example)}`;
+  paintFactCard(el, html, p.topic || p.term, 'Britannica');
+}
+async function generatePsyche(day){
+  const prompt=`Provide ONE established psychology concept from any subfield (cognitive, behavioral, social, developmental, clinical, or neuroscience). It must be a real, textbook concept of the kind defined in the APA Dictionary of Psychology or Encyclopaedia Britannica — no invented or fringe terms. Respond ONLY as strict JSON, no markdown:
+{"term":"concept name","definition":"one clear sentence","example":"one concrete everyday example","topic":"an encyclopedia article title to illustrate it (e.g. 'Cognitive dissonance')"}`;
+  const j=await callAI(prompt, 300);
+  aiInFlight['p'+day]=false;
+  if(j && j.term && j.definition){ j.source='Britannica'; data.aiCache[day]={...(data.aiCache[day]||{}), psyche:j}; if(todayISO()===day) renderPsyche(); }
+}
+
+/* ---- Trivia (verified fact from reference-grade knowledge; image; reputable source) ---- */
+function fallbackTrivia(dayISO){
+  const T=[
+    {fact:"The giant Pacific octopus has three hearts and blue, copper-based blood — two hearts pump blood to the gills and one to the rest of the body.",topic:"Giant Pacific octopus",source:"National Geographic"},
+    {fact:"Honey can stay edible for thousands of years. Sealed pots found in ancient Egyptian tombs were still preserved.",topic:"Honey",source:"History"},
+    {fact:"A day on Venus is longer than its year — it rotates once every 243 Earth days but orbits the Sun every 225.",topic:"Venus",source:"Britannica"},
+    {fact:"Lightning heats the surrounding air to roughly 30,000°C — about five times the temperature of the Sun's surface.",topic:"Lightning",source:"National Geographic"},
+    {fact:"The Great Barrier Reef is the largest living structure on Earth, stretching over 2,300 km and visible from space.",topic:"Great Barrier Reef",source:"Britannica"},
+    {fact:"Sharks are older than trees — they have existed for over 400 million years, predating the first forests.",topic:"Shark",source:"Britannica"},
+    {fact:"The Eiffel Tower can grow more than 15 cm taller in summer, as its iron structure expands in the heat.",topic:"Eiffel Tower",source:"History"}
   ];
-  const ins=[
-    {growth:"Set one gentle intention and revisit it weekly.",social:"Reach out first; an old friend welcomes it.",health:"Prioritize sleep; your energy rebuilds quickly."},
-    {growth:"Learn something small just for the joy of it.",social:"A shared meal deepens a quiet friendship.",health:"Move daily, lightly — walks clear the mind."},
-    {growth:"Finish one lingering task; momentum follows.",social:"Say yes to one spontaneous invitation.",health:"Fresh air and water do quiet wonders."},
-    {growth:"Write your ideas down; clarity arrives.",social:"Listen more than usual; trust grows.",health:"Stretch mornings to steady your mood."},
-    {growth:"Take a small risk toward a real goal.",social:"Celebrate someone else's good news warmly.",health:"Sunlight lifts you — step outside often."},
-    {growth:"Reflect on wins, not just what's undone.",social:"A kind message reconnects you with someone.",health:"Guard your calm; protect quiet evenings."},
-    {growth:"Rest strategically; creativity refills.",social:"Host something small and low-pressure.",health:"Hydrate and slow your pace midweek."},
-    {growth:"Revisit an old hobby with fresh eyes.",social:"Deep talks matter more than big crowds.",health:"Gentle routine beats intense bursts now."},
-    {growth:"Declutter one space; the mind follows.",social:"Thank someone who quietly supports you.",health:"Balance screen time with real rest."},
-    {growth:"Plan loosely; leave room for surprises.",social:"Reconnect with family with no agenda.",health:"Warmth and comfort food, in moderation."},
-    {growth:"Name three things you're proud of.",social:"Gratitude notes strengthen your bonds.",health:"Cozy rest is productive this month."},
-    {growth:"Close the year gently; forgive loose ends.",social:"Gather your people; savor the warmth.",health:"Sleep in guilt-free — you earned it."}
+  return T[dayOfYear(dayISO) % T.length];
+}
+function renderTrivia(){
+  const el=document.getElementById('cardTrivia'); const day=todayISO();
+  let t = data.aiCache[day] && data.aiCache[day].trivia;
+  if(!t){ t=fallbackTrivia(day); if(!aiInFlight['t'+day]){ aiInFlight['t'+day]=true; generateTrivia(day); } }
+  paintFactCard(el, esc(t.fact), t.topic || '', t.source);
+}
+async function generateTrivia(day){
+  const prompt=`Give ONE well-established, verifiable trivia fact (science, nature, space, animals, geography, or history). It must be documented by reference-grade sources such as Encyclopaedia Britannica, National Geographic, or History — no myths, speculation, or fringe claims. Respond ONLY as strict JSON, no markdown:
+{"fact":"2-3 sentence factual trivia","topic":"a concise encyclopedia article title to illustrate it (e.g. 'Giant Pacific octopus')","source":"Britannica" or "National Geographic" or "History"}`;
+  const j=await callAI(prompt, 300);
+  aiInFlight['t'+day]=false;
+  if(j && j.fact){ data.aiCache[day]={...(data.aiCache[day]||{}), trivia:j}; if(todayISO()===day) renderTrivia(); }
+}
+
+/* ---- Quote of the Day (relocated below the calendar) ---- */
+function fallbackQuote(dayISO){
+  const Q=[
+    "Small steps, taken daily, quietly become giant leaps.",
+    "Progress loves the person who simply begins.",
+    "You are allowed to grow at your own pace.",
+    "Focus on the next right action, not the whole mountain.",
+    "Discipline is choosing what you want most over what you want now.",
+    "Done imperfectly today beats perfect someday.",
+    "Your energy follows your attention — aim it kindly.",
+    "Rest is part of the work, not a reward for it.",
+    "Consistency turns effort into identity.",
+    "Start where you are; use what you have.",
+    "One deep-focus hour outshines a scattered day.",
+    "You don't have to be great to start — start to be great.",
+    "Tend today well and tomorrow tends itself.",
+    "Momentum is built, not found.",
+    "Be gentle with yourself and relentless with your goals."
   ];
-  return { quote:quotes[m], horoscope:horos[m], insights:ins[m] };
+  return Q[dayOfYear(dayISO) % Q.length];
+}
+function renderQuoteFooter(){
+  const el=document.getElementById('quoteFooter'); if(!el) return; const day=todayISO();
+  const cached=data.aiCache[day] && data.aiCache[day].quote;
+  el.textContent = `“${cached || fallbackQuote(day)}”`;
+  if(!cached && !aiInFlight['q'+day]){ aiInFlight['q'+day]=true; generateDailyQuote(day); }
+}
+async function generateDailyQuote(day){
+  const prompt = `Write ONE short original quote (max 16 words) about productivity, personal growth, or a positive daily mantra. Respond with ONLY the quote text — no quotation marks, no author, no preamble.`;
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:80,messages:[{role:'user',content:prompt}]})});
+    if(!r.ok) throw 0;
+    const j=await r.json();
+    let t=(j.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').trim().replace(/^["“']|["”']$/g,'').trim();
+    if(t){ data.aiCache[day]={...(data.aiCache[day]||{}), quote:t}; if(todayISO()===day){ const el=document.getElementById('quoteFooter'); if(el) el.textContent=`“${t}”`; } }
+  }catch(e){} finally{ aiInFlight['q'+day]=false; }
+}
+
+/* ---- On This Day (Wikipedia REST; inspiring science/tech/people, no politics) ---- */
+function fallbackHistory(){
+  const H=[
+    {year:1969,text:"Apollo 11 astronauts became the first humans to walk on the Moon."},
+    {year:1990,text:"The Hubble Space Telescope was deployed into orbit, transforming astronomy."},
+    {year:1989,text:"Tim Berners-Lee's proposal laid the groundwork for the World Wide Web."},
+    {year:1928,text:"Alexander Fleming discovered penicillin, launching the antibiotic era."},
+    {year:2012,text:"NASA's Curiosity rover successfully landed on Mars."}
+  ];
+  return H[new Date().getDate() % H.length];
+}
+function pickInspiringEvent(events){
+  const bad=/\b(war|battle|invasion|coup|assassinat|massacre|riot|election|senate|parliament|president|treaty|bomb|attack|terror|killed|kills|dies|died|death|execution|slaver|colon|rebellion|dictator|nazi|troops|army|military|siege|genocide|uprising)\b/i;
+  const good=/\b(discover|invent|launch|space|nasa|telescope|physics|chemistry|biolog|mathemat|comput|internet|algorithm|patent|vaccine|medicine|robot|satellite|spacecraft|probe|genome|award|nobel|premier|founded|opens|opened|published|first|record|expedition|climb|marathon|olympic)\b/i;
+  const timed=(events||[]).filter(e=>e.year && e.text);
+  let pool=timed.filter(e=>good.test(e.text)&&!bad.test(e.text));
+  if(!pool.length) pool=timed.filter(e=>!bad.test(e.text));
+  if(!pool.length) pool=timed;
+  if(!pool.length) return null;
+  return pool[new Date().getDate() % pool.length];
+}
+async function renderHistory(){
+  const el=document.getElementById('cardHist'); const now=new Date();
+  const mm=String(now.getMonth()+1).padStart(2,'0'), dd=String(now.getDate()).padStart(2,'0');
+  const key='hist_'+mm+dd;
+  const wikiLink=`https://en.wikipedia.org/wiki/Wikipedia:On_this_day/${MONTHS[now.getMonth()]}_${now.getDate()}`;
+  if(dailyCache[key]){ el.innerHTML=dailyCache[key]; return; }
+  try{
+    const r=await fetch(`https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${mm}/${dd}`);
+    if(!r.ok) throw 0;
+    const j=await r.json();
+    const ev=pickInspiringEvent(j.events);
+    if(!ev) throw 0;
+    const pg=ev.pages&&ev.pages[0];
+    const page=(pg&&pg.content_urls&&pg.content_urls.desktop&&pg.content_urls.desktop.page)||wikiLink;
+    const thumb=pg&&pg.thumbnail&&pg.thumbnail.source;
+    const extract=(pg&&pg.extract)?(' '+pg.extract):'';
+    const img=thumb?`<img class="alm-thumb" src="${esc(thumb)}" alt="" loading="lazy" onerror="this.remove()">`:'';
+    const html=`${img}<div class="alm-clamp"><span class="alm-year">${ev.year}</span>${esc(ev.text)}${esc(extract)}</div><a class="alm-src" href="${esc(page)}" target="_blank" rel="noopener">Wikipedia ↗</a>`;
+    dailyCache[key]=html; el.innerHTML=html;
+  }catch(e){
+    const fb=fallbackHistory();
+    el.innerHTML=`<div class="alm-clamp"><span class="alm-year">${fb.year}</span>${esc(fb.text)}</div><a class="alm-src" href="${wikiLink}" target="_blank" rel="noopener">Wikipedia ↗</a>`;
+  }
+}
+
+/* ---- This Month's Activity (insights computed from the calendar) ---- */
+function renderMonthActivity(){
+  const el=document.getElementById('cardIns');
+  const first=iso(view.y,view.m,1), dim=daysInMonth(view.y,view.m), last=iso(view.y,view.m,dim);
+  let total=0; const byDate={}; const catCount={}; let mins=0;
+  data.events.forEach(ev=>{
+    occurrencesInWindow(ev, first, last).forEach(dsx=>{
+      total++; byDate[dsx]=(byDate[dsx]||0)+1;
+      const e=effectiveEvent(ev,dsx);
+      eventCats(e).forEach(c=>catCount[c.name]=(catCount[c.name]||0)+1);
+      mins += eventDurationMin(e);
+    });
+  });
+  if(total===0){ el.innerHTML=`<span style="color:var(--faint)">No entries scheduled in ${MONTHS[view.m]} ${view.y} yet — add some to see insights here.</span>`; return; }
+  let busiest=null,bmax=0; for(const d in byDate) if(byDate[d]>bmax){bmax=byDate[d];busiest=d;}
+  let topCat=null,cmax=0; for(const n in catCount) if(catCount[n]>cmax){cmax=catCount[n];topCat=n;}
+  const hrs=Math.round(mins/60);
+  const bD=busiest?pd(busiest):null;
+  const parts=[
+    `📅 <b>${total}</b> ${total===1?'entry':'entries'} in ${MONTHS[view.m]}`,
+    `⏱️ <b>${hrs}</b> scheduled hour${hrs===1?'':'s'}`,
+    busiest?`🔆 Busiest day: <b>${DOW[bD.getDay()].slice(0,3)} ${bD.getDate()}</b> (${bmax})`:'',
+    topCat?`🏷️ Top category: <b>${esc(topCat)}</b> (${cmax})`:''
+  ].filter(Boolean);
+  el.innerHTML=`<ul>${parts.map(x=>`<li><span>${x}</span></li>`).join('')}</ul>`;
+}
+
+/* ---- Weather (Open-Meteo + geolocation; one-liner) ---- */
+function wmo(code){
+  const m={0:['☀️','Clear'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],
+    45:['🌫️','Fog'],48:['🌫️','Rime fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌦️','Dense drizzle'],
+    56:['🌧️','Freezing drizzle'],57:['🌧️','Freezing drizzle'],61:['🌧️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],
+    66:['🌧️','Freezing rain'],67:['🌧️','Freezing rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['🌨️','Heavy snow'],77:['🌨️','Snow grains'],
+    80:['🌦️','Rain showers'],81:['🌦️','Rain showers'],82:['⛈️','Violent showers'],85:['🌨️','Snow showers'],86:['🌨️','Snow showers'],
+    95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm'],99:['⛈️','Thunderstorm']};
+  return m[code] ? {emoji:m[code][0],label:m[code][1]} : {emoji:'🌡️',label:''};
+}
+function loadWeather(){
+  const el=document.getElementById('weather');
+  const fetchAt=async(lat,lon)=>{
+    try{
+      const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=1`;
+      const r=await fetch(u); if(!r.ok) throw 0; const j=await r.json();
+      const t=j.current?Math.round(j.current.temperature_2m):null;
+      const code=j.current?j.current.weather_code:0;
+      const hi=j.daily?Math.round(j.daily.temperature_2m_max[0]):null;
+      const lo=j.daily?Math.round(j.daily.temperature_2m_min[0]):null;
+      const w=wmo(code);
+      el.textContent = `${w.emoji} ${t!=null?t+'°C':''} ${w.label}${hi!=null?`  H:${hi}° L:${lo}°`:''}`.replace(/\s+/g,' ').trim();
+    }catch(e){ el.textContent='🌤️ Weather unavailable'; }
+  };
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      pos=>fetchAt(pos.coords.latitude.toFixed(3),pos.coords.longitude.toFixed(3)),
+      ()=>fetchAt(14.60,120.98),   // fallback location if permission denied
+      {timeout:6000, maximumAge:600000});
+  } else { fetchAt(14.60,120.98); }
 }
 
 /* ============================================================
@@ -1951,6 +2123,7 @@ function init(){
   });
 
   render();
+  loadWeather();
 }
 init();
 </script>
