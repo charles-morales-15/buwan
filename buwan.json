@@ -1,6 +1,6 @@
 {
-  "version": "1.0.18",
-  "lastSaved": "2026-08-07T07:10:17.971Z",
+  "version": "1.0.19",
+  "lastSaved": "2026-08-08T14:49:56.580Z",
   "events": [
     {
       "title": "Upper",
@@ -70,7 +70,8 @@
       "id": "xms3h1n1a1goj",
       "exceptions": [
         "2026-07-28",
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-08"
       ],
       "overrides": {
         "2026-08-07": {
@@ -120,7 +121,8 @@
       "emoji": "🚿",
       "id": "xms3h5962a105",
       "exceptions": [
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-08"
       ],
       "overrides": {
         "2026-08-07": {
@@ -189,6 +191,18 @@
           "allDay": false,
           "startTime": "15:30",
           "endTime": "16:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥗"
+        },
+        "2026-08-08": {
+          "title": "Breakfast",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:00",
+          "endTime": "15:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -274,7 +288,8 @@
       "emoji": "🏃",
       "id": "xms3iagdpb95m",
       "exceptions": [
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-08"
       ]
     },
     {
@@ -482,21 +497,10 @@
       "color": "#8E54D6",
       "emoji": "🤜",
       "id": "xms4wkjxcrptj",
-      "exceptions": [],
-      "overrides": {
-        "2026-08-07": {
-          "title": "Push",
-          "location": "Anytime Fitness",
-          "allDay": false,
-          "startTime": "20:00",
-          "endTime": "22:00",
-          "categoryIds": [
-            "xms3gxu6gl0zn"
-          ],
-          "color": "#8E54D6",
-          "emoji": "🤜"
-        }
-      }
+      "exceptions": [
+        "2026-08-07"
+      ],
+      "overrides": {}
     },
     {
       "title": "RTO",
@@ -603,6 +607,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-08-08": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "21:00",
+          "endTime": "22:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -651,6 +667,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-08-08": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "19:00",
+          "endTime": "19:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -687,15 +715,16 @@
       "emoji": "🥤",
       "id": "xms4ww79wreyl",
       "exceptions": [
-        "2026-08-06"
+        "2026-08-06",
+        "2026-08-07"
       ],
       "overrides": {
-        "2026-08-07": {
+        "2026-08-08": {
           "title": "Protein",
           "location": "Home",
           "allDay": false,
-          "startTime": "23:00",
-          "endTime": "23:30",
+          "startTime": "15:00",
+          "endTime": "15:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -736,6 +765,111 @@
       "color": "#3A4250",
       "emoji": "😀",
       "id": "xmshi5yl0u9c8",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "CCAO-F - Claude Certified Associate - Foundations Exam",
+      "location": "Online",
+      "startDate": "2026-08-31",
+      "endDate": "2026-08-31",
+      "categoryIds": [
+        "xms3gxu6g1cca"
+      ],
+      "allDay": false,
+      "startTime": "00:00",
+      "endTime": "03:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 31,
+        "weekOrdinal": 5,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-31",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#EE7A30",
+      "emoji": "🖊️",
+      "id": "xmsk7sgvvrbzg",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Learning - Anthropic",
+      "location": "Online",
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-08",
+      "categoryIds": [
+        "xms3gxu6g1cca"
+      ],
+      "allDay": false,
+      "startTime": "15:00",
+      "endTime": "23:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 8,
+        "weekOrdinal": 2,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-08",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#EE7A30",
+      "emoji": "💻",
+      "id": "xmsk7wl4b8h79",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Sherwin Listo",
+      "location": "T2 Light",
+      "startDate": "2026-08-07",
+      "endDate": "2026-08-07",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "17:00",
+      "endTime": "17:30",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 7,
+        "weekOrdinal": 1,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-07",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmsk86vkub6sn",
       "exceptions": [],
       "overrides": {}
     }
