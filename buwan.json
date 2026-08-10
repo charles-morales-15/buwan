@@ -1,6 +1,6 @@
 {
-  "version": "1.0.21",
-  "lastSaved": "2026-08-10T14:24:29.972Z",
+  "version": "1.0.22",
+  "lastSaved": "2026-08-10T14:37:29.475Z",
   "events": [
     {
       "title": "Upper",
@@ -818,7 +818,7 @@
       }
     },
     {
-      "title": "NCS CEO & CHRO Interview",
+      "title": "NCS Interview",
       "location": "The Curve Tower",
       "startDate": "2026-08-06",
       "endDate": "2026-08-06",
