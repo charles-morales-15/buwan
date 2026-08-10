@@ -1,6 +1,6 @@
 {
-  "version": "1.0.20",
-  "lastSaved": "2026-08-08T17:12:29.454Z",
+  "version": "1.0.21",
+  "lastSaved": "2026-08-10T14:24:29.972Z",
   "events": [
     {
       "title": "Upper",
@@ -34,7 +34,21 @@
       "color": "#8E54D6",
       "emoji": "💪",
       "id": "xms3gzdknkdbd",
-      "exceptions": []
+      "exceptions": [],
+      "overrides": {
+        "2026-08-10": {
+          "title": "Renew Membership",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "15:00",
+          "endTime": "16:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "💪"
+        }
+      }
     },
     {
       "title": "Mobility",
@@ -71,7 +85,8 @@
       "exceptions": [
         "2026-07-28",
         "2026-08-06",
-        "2026-08-08"
+        "2026-08-08",
+        "2026-08-10"
       ],
       "overrides": {
         "2026-08-07": {
@@ -80,6 +95,30 @@
           "allDay": false,
           "startTime": "13:00",
           "endTime": "14:00",
+          "categoryIds": [
+            "xms3gxu6gr9xk"
+          ],
+          "color": "#9C6B4A",
+          "emoji": "🤸"
+        },
+        "2026-08-16": {
+          "title": "Mobility",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:00",
+          "categoryIds": [
+            "xms3gxu6gr9xk"
+          ],
+          "color": "#9C6B4A",
+          "emoji": "🤸"
+        },
+        "2026-08-09": {
+          "title": "Mobility",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "17:00",
           "categoryIds": [
             "xms3gxu6gr9xk"
           ],
@@ -122,7 +161,8 @@
       "id": "xms3h5962a105",
       "exceptions": [
         "2026-08-06",
-        "2026-08-08"
+        "2026-08-08",
+        "2026-08-10"
       ],
       "overrides": {
         "2026-08-07": {
@@ -136,78 +176,30 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
-        }
-      }
-    },
-    {
-      "title": "Breakfast",
-      "location": "Home",
-      "startDate": "2026-07-27",
-      "endDate": "2026-07-27",
-      "categoryIds": [
-        "xms3gxu6gebeu"
-      ],
-      "allDay": false,
-      "startTime": "12:00",
-      "endTime": "12:30",
-      "recurrence": {
-        "type": "daily",
-        "interval": 1,
-        "weekdays": [
-          1
-        ],
-        "dailyMode": "every",
-        "monthlyMode": "dayOfMonth",
-        "dayOfMonth": 27,
-        "weekOrdinal": 4,
-        "weekday": 1,
-        "yearlyMode": "dayOfMonth",
-        "month": 6,
-        "rangeStart": "2026-07-27",
-        "endMode": "never",
-        "endDate": "",
-        "count": 10
-      },
-      "color": "#4FA45B",
-      "emoji": "🥗",
-      "id": "xms3h9kdbly81",
-      "exceptions": [],
-      "overrides": {
-        "2026-08-06": {
-          "title": "Breakfast",
-          "location": "Home",
-          "allDay": false,
-          "startTime": "14:00",
-          "endTime": "14:30",
-          "categoryIds": [
-            "xms3gxu6gebeu"
-          ],
-          "color": "#4FA45B",
-          "emoji": "🥗"
         },
-        "2026-08-07": {
-          "title": "Breakfast",
+        "2026-08-16": {
+          "title": "Bath AM",
           "location": "Home",
           "allDay": false,
-          "startTime": "15:30",
-          "endTime": "16:00",
+          "startTime": "17:00",
+          "endTime": "18:00",
           "categoryIds": [
-            "xms3gxu6gebeu"
+            "xms3gxu6gv3u6"
           ],
-          "color": "#4FA45B",
-          "emoji": "🥗"
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         },
-        "2026-08-08": {
-          "title": "Breakfast",
+        "2026-08-09": {
+          "title": "Bath",
           "location": "Home",
           "allDay": false,
-          "startTime": "15:00",
-          "endTime": "15:30",
+          "startTime": "17:00",
+          "endTime": "17:15",
           "categoryIds": [
-            "xms3gxu6gebeu"
+            "xms3gxu6gv3u6"
           ],
-          "color": "#4FA45B",
-          "emoji": "🥗"
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -250,8 +242,23 @@
       "exceptions": [
         "2026-08-06",
         "2026-08-05",
-        "2026-08-07"
-      ]
+        "2026-08-07",
+        "2026-08-13"
+      ],
+      "overrides": {
+        "2026-08-10": {
+          "title": "Learn Anthropic",
+          "location": "Online",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6g1cca"
+          ],
+          "color": "#EE7A30",
+          "emoji": "📚"
+        }
+      }
     },
     {
       "title": "Cardio",
@@ -290,7 +297,21 @@
       "exceptions": [
         "2026-08-06",
         "2026-08-08"
-      ]
+      ],
+      "overrides": {
+        "2026-08-13": {
+          "title": "Push",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "17:00",
+          "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🤜"
+        }
+      }
     },
     {
       "title": "Laundry",
@@ -582,7 +603,9 @@
       "color": "#3E8FE0",
       "emoji": "🚿",
       "id": "xms4wseoydhta",
-      "exceptions": [],
+      "exceptions": [
+        "2026-08-09"
+      ],
       "overrides": {
         "2026-08-06": {
           "title": "Bath PM",
@@ -609,6 +632,18 @@
           "emoji": "🚿"
         },
         "2026-08-08": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "21:00",
+          "endTime": "22:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-08-10": {
           "title": "Bath PM",
           "location": "Home",
           "allDay": false,
@@ -679,6 +714,42 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-08-09": {
+          "title": "Lunch + Dinner",
+          "location": "Tender Bob's",
+          "allDay": false,
+          "startTime": "19:00",
+          "endTime": "21:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-08-13": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "11:30",
+          "endTime": "12:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-08-10": {
+          "title": "Breakfast",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:00",
+          "endTime": "13:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -716,7 +787,8 @@
       "id": "xms4ww79wreyl",
       "exceptions": [
         "2026-08-06",
-        "2026-08-07"
+        "2026-08-07",
+        "2026-08-09"
       ],
       "overrides": {
         "2026-08-08": {
@@ -725,6 +797,18 @@
           "allDay": false,
           "startTime": "15:00",
           "endTime": "15:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-08-10": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "22:30",
+          "endTime": "23:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -769,7 +853,7 @@
       "overrides": {}
     },
     {
-      "title": "CCAO-F - Claude Certified Associate - Foundations Exam",
+      "title": "CCAO-F Exam",
       "location": "Online",
       "startDate": "2026-08-31",
       "endDate": "2026-08-31",
@@ -870,6 +954,181 @@
       "color": "#64748B",
       "emoji": "🍆",
       "id": "xmsk86vkub6sn",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Attend Mass",
+      "location": "EDSA Shangrila",
+      "startDate": "2026-08-09",
+      "endDate": "2026-08-09",
+      "categoryIds": [
+        "xms4wgmnq23bm"
+      ],
+      "allDay": false,
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 9,
+        "weekOrdinal": 2,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-09",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#45607A",
+      "emoji": "⛪",
+      "id": "xmslyi142j0a3",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Cleaning",
+      "location": "Home",
+      "startDate": "2026-08-09",
+      "endDate": "2026-08-09",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 9,
+        "weekOrdinal": 2,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-09",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "🧹",
+      "id": "xmslymccdfrro",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Learning - Anthropic",
+      "location": "Online",
+      "startDate": "2026-08-09",
+      "endDate": "2026-08-09",
+      "categoryIds": [
+        "xms3gxu6g1cca"
+      ],
+      "allDay": false,
+      "startTime": "21:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 9,
+        "weekOrdinal": 2,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-09",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#EE7A30",
+      "emoji": "💻",
+      "id": "xmslyr1o5autq",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Mama's Check-up",
+      "location": "PGH",
+      "startDate": "2026-08-13",
+      "endDate": "2026-08-13",
+      "categoryIds": [
+        "xms4wersa2l3w"
+      ],
+      "allDay": false,
+      "startTime": "12:00",
+      "endTime": "16:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 13,
+        "weekOrdinal": 2,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-13",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E24A4A",
+      "emoji": "🩺",
+      "id": "xmslzgihm4gln",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Laundry",
+      "location": "Home",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-10",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "20:00",
+      "endTime": "20:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 10,
+        "weekOrdinal": 2,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-10",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "🧺",
+      "id": "xmsnbmd6i4l2s",
       "exceptions": [],
       "overrides": {}
     }
