@@ -1,6 +1,6 @@
 {
-  "version": "1.0.24",
-  "lastSaved": "2026-08-11T12:11:32.662Z",
+  "version": "1.0.25",
+  "lastSaved": "2026-08-11T12:46:49.700Z",
   "events": [
     {
       "title": "Upper",
@@ -245,7 +245,8 @@
         "2026-08-06",
         "2026-08-05",
         "2026-08-07",
-        "2026-08-13"
+        "2026-08-13",
+        "2026-08-14"
       ],
       "overrides": {
         "2026-08-10": {
@@ -545,7 +546,8 @@
       "emoji": "🤜",
       "id": "xms4wkjxcrptj",
       "exceptions": [
-        "2026-08-07"
+        "2026-08-07",
+        "2026-08-14"
       ],
       "overrides": {}
     },
@@ -1201,6 +1203,76 @@
       "recurrence": {
         "type": "none"
       },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Jed's Send Off",
+      "location": "Online",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-14",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": false,
+      "startTime": "11:00",
+      "endTime": "13:30",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 14,
+        "weekOrdinal": 2,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-14",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "😀",
+      "id": "xmsonidets3yz",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "EMERGE Grad",
+      "location": "Marquis Events",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-14",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": false,
+      "startTime": "17:00",
+      "endTime": "19:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 14,
+        "weekOrdinal": 2,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-14",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "😀",
+      "id": "xmsonjrlzm5dp",
       "exceptions": [],
       "overrides": {}
     }
