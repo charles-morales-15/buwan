@@ -1,6 +1,6 @@
 {
-  "version": "1.0.23",
-  "lastSaved": "2026-08-10T14:44:30.032Z",
+  "version": "1.0.24",
+  "lastSaved": "2026-08-11T12:11:32.662Z",
   "events": [
     {
       "title": "Upper",
@@ -86,7 +86,8 @@
         "2026-07-28",
         "2026-08-06",
         "2026-08-08",
-        "2026-08-10"
+        "2026-08-10",
+        "2026-08-11"
       ],
       "overrides": {
         "2026-08-07": {
@@ -162,7 +163,8 @@
       "exceptions": [
         "2026-08-06",
         "2026-08-08",
-        "2026-08-10"
+        "2026-08-10",
+        "2026-08-11"
       ],
       "overrides": {
         "2026-08-07": {
@@ -257,6 +259,18 @@
           ],
           "color": "#EE7A30",
           "emoji": "📚"
+        },
+        "2026-08-11": {
+          "title": "Learn Thai",
+          "location": "Online",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:30",
+          "categoryIds": [
+            "xms3gxu6g1cca"
+          ],
+          "color": "#EE7A30",
+          "emoji": "📚"
         }
       }
     },
@@ -310,6 +324,18 @@
           ],
           "color": "#8E54D6",
           "emoji": "🤜"
+        },
+        "2026-08-11": {
+          "title": "Cardio",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "15:30",
+          "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🏃"
         }
       }
     },
@@ -555,7 +581,9 @@
       "color": "#3A4250",
       "emoji": "🧰",
       "id": "xms4wplxqotvx",
-      "exceptions": [],
+      "exceptions": [
+        "2026-08-14"
+      ],
       "overrides": {
         "2026-08-07": {
           "title": "RTO",
@@ -654,6 +682,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-08-11": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "18:30",
+          "endTime": "19:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -745,6 +785,18 @@
           "allDay": false,
           "startTime": "13:00",
           "endTime": "13:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-08-11": {
+          "title": "Brunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:30",
+          "endTime": "14:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -1129,6 +1181,26 @@
       "color": "#3E8FE0",
       "emoji": "🧺",
       "id": "xmsnbmd6i4l2s",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "id": "xmsncm0xastbl",
+      "title": "RTO",
+      "location": "CG2",
+      "allDay": false,
+      "startTime": "12:30",
+      "endTime": "13:00",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "color": "#3A4250",
+      "emoji": "🧰",
+      "startDate": "2026-08-12",
+      "endDate": "2026-08-12",
+      "recurrence": {
+        "type": "none"
+      },
       "exceptions": [],
       "overrides": {}
     }
