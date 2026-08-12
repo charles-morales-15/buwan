@@ -1,6 +1,6 @@
 {
-  "version": "1.0.25",
-  "lastSaved": "2026-08-11T12:46:49.700Z",
+  "version": "1.0.26",
+  "lastSaved": "2026-08-12T17:14:53.342Z",
   "events": [
     {
       "title": "Upper",
@@ -87,7 +87,8 @@
         "2026-08-06",
         "2026-08-08",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-12"
       ],
       "overrides": {
         "2026-08-07": {
@@ -202,6 +203,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-08-12": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "18:00",
+          "endTime": "18:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -246,7 +259,8 @@
         "2026-08-05",
         "2026-08-07",
         "2026-08-13",
-        "2026-08-14"
+        "2026-08-14",
+        "2026-08-12"
       ],
       "overrides": {
         "2026-08-10": {
@@ -476,7 +490,20 @@
       "emoji": "🦵",
       "id": "xms4w8hmhctps",
       "exceptions": [],
-      "overrides": {}
+      "overrides": {
+        "2026-08-12": {
+          "title": "Lower",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "19:00",
+          "endTime": "20:30",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🦵"
+        }
+      }
     },
     {
       "title": "Chie's Check-up",
@@ -696,6 +723,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-08-12": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "21:00",
+          "endTime": "22:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -804,6 +843,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-08-12": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "14:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -863,6 +914,18 @@
           "allDay": false,
           "startTime": "22:30",
           "endTime": "23:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-08-12": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "20:30",
+          "endTime": "21:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -1191,17 +1254,32 @@
       "title": "RTO",
       "location": "CG2",
       "allDay": false,
-      "startTime": "12:30",
-      "endTime": "13:00",
+      "startTime": "11:00",
+      "endTime": "11:30",
       "categoryIds": [
         "xms4wp6k79qsc"
       ],
       "color": "#3A4250",
       "emoji": "🧰",
-      "startDate": "2026-08-12",
-      "endDate": "2026-08-12",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-14",
       "recurrence": {
-        "type": "none"
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          3
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 12,
+        "weekOrdinal": 2,
+        "weekday": 3,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-12",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
       },
       "exceptions": [],
       "overrides": {}
@@ -1273,6 +1351,41 @@
       "color": "#F2A93B",
       "emoji": "😀",
       "id": "xmsonjrlzm5dp",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Haircut",
+      "location": "",
+      "startDate": "2026-08-12",
+      "endDate": "2026-08-12",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "15:30",
+      "endTime": "16:30",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          3
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 12,
+        "weekOrdinal": 2,
+        "weekday": 3,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-12",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "✂️",
+      "id": "xmsq9fmee2kjg",
       "exceptions": [],
       "overrides": {}
     }
