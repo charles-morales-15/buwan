@@ -1,6 +1,6 @@
 {
-  "version": "1.0.26",
-  "lastSaved": "2026-08-12T17:14:53.342Z",
+  "version": "1.0.27",
+  "lastSaved": "2026-08-13T13:32:32.387Z",
   "events": [
     {
       "title": "Upper",
@@ -88,7 +88,8 @@
         "2026-08-08",
         "2026-08-10",
         "2026-08-11",
-        "2026-08-12"
+        "2026-08-12",
+        "2026-08-13"
       ],
       "overrides": {
         "2026-08-07": {
@@ -215,6 +216,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-08-13": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:00",
+          "endTime": "15:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -329,16 +342,16 @@
       ],
       "overrides": {
         "2026-08-13": {
-          "title": "Push",
+          "title": "Cardio",
           "location": "Anytime Fitness",
           "allDay": false,
-          "startTime": "17:00",
-          "endTime": "20:00",
+          "startTime": "16:00",
+          "endTime": "17:30",
           "categoryIds": [
             "xms3gxu6gl0zn"
           ],
           "color": "#8E54D6",
-          "emoji": "🤜"
+          "emoji": "🏃"
         },
         "2026-08-11": {
           "title": "Cardio",
@@ -735,6 +748,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-08-13": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "18:00",
+          "endTime": "19:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -812,8 +837,8 @@
           "title": "Lunch",
           "location": "Home",
           "allDay": false,
-          "startTime": "11:30",
-          "endTime": "12:00",
+          "startTime": "14:00",
+          "endTime": "15:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -926,6 +951,18 @@
           "allDay": false,
           "startTime": "20:30",
           "endTime": "21:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-08-13": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "17:30",
+          "endTime": "18:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -1189,7 +1226,7 @@
       ],
       "allDay": false,
       "startTime": "12:00",
-      "endTime": "16:00",
+      "endTime": "14:00",
       "recurrence": {
         "type": "none",
         "interval": 1,
@@ -1386,6 +1423,109 @@
       "color": "#3E8FE0",
       "emoji": "✂️",
       "id": "xmsq9fmee2kjg",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Ben",
+      "location": "T3 4526",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-10",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "01:00",
+      "endTime": "03:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 10,
+        "weekOrdinal": 2,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-10",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmsrjzjt23jfu",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Pay Bills",
+      "location": "Online",
+      "startDate": "2026-08-13",
+      "endDate": "2026-08-13",
+      "categoryIds": [],
+      "allDay": false,
+      "startTime": "19:00",
+      "endTime": "20:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 13,
+        "weekOrdinal": 2,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-13",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#94A3B8",
+      "emoji": "💸",
+      "id": "xmsrk1ece5eex",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Shopping",
+      "location": "Lazada",
+      "startDate": "2026-08-13",
+      "endDate": "2026-08-13",
+      "categoryIds": [
+        "xms3gxu6g9j9b"
+      ],
+      "allDay": false,
+      "startTime": "20:00",
+      "endTime": "21:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 13,
+        "weekOrdinal": 2,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-13",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#17A79B",
+      "emoji": "💸",
+      "id": "xmsrk2szle6h1",
       "exceptions": [],
       "overrides": {}
     }
