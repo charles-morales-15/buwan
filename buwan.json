@@ -1,6 +1,6 @@
 {
-  "version": "1.0.27",
-  "lastSaved": "2026-08-13T13:32:32.387Z",
+  "version": "1.0.28",
+  "lastSaved": "2026-08-18T11:40:16.397Z",
   "events": [
     {
       "title": "Upper",
@@ -34,7 +34,9 @@
       "color": "#8E54D6",
       "emoji": "💪",
       "id": "xms3gzdknkdbd",
-      "exceptions": [],
+      "exceptions": [
+        "2026-08-17"
+      ],
       "overrides": {
         "2026-08-10": {
           "title": "Renew Membership",
@@ -89,7 +91,13 @@
         "2026-08-10",
         "2026-08-11",
         "2026-08-12",
-        "2026-08-13"
+        "2026-08-13",
+        "2026-08-17",
+        "2026-08-14",
+        "2026-08-15",
+        "2026-08-16",
+        "2026-08-18",
+        "2026-08-21"
       ],
       "overrides": {
         "2026-08-07": {
@@ -98,18 +106,6 @@
           "allDay": false,
           "startTime": "13:00",
           "endTime": "14:00",
-          "categoryIds": [
-            "xms3gxu6gr9xk"
-          ],
-          "color": "#9C6B4A",
-          "emoji": "🤸"
-        },
-        "2026-08-16": {
-          "title": "Mobility",
-          "location": "Home",
-          "allDay": false,
-          "startTime": "14:00",
-          "endTime": "15:00",
           "categoryIds": [
             "xms3gxu6gr9xk"
           ],
@@ -166,7 +162,8 @@
         "2026-08-06",
         "2026-08-08",
         "2026-08-10",
-        "2026-08-11"
+        "2026-08-11",
+        "2026-08-15"
       ],
       "overrides": {
         "2026-08-07": {
@@ -228,6 +225,42 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-08-14": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-08-18": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:30",
+          "endTime": "15:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-08-21": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "08:00",
+          "endTime": "09:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -273,7 +306,8 @@
         "2026-08-07",
         "2026-08-13",
         "2026-08-14",
-        "2026-08-12"
+        "2026-08-12",
+        "2026-08-21"
       ],
       "overrides": {
         "2026-08-10": {
@@ -294,6 +328,30 @@
           "allDay": false,
           "startTime": "14:00",
           "endTime": "15:30",
+          "categoryIds": [
+            "xms3gxu6g1cca"
+          ],
+          "color": "#EE7A30",
+          "emoji": "📚"
+        },
+        "2026-08-17": {
+          "title": "Learn Anthropic",
+          "location": "Online",
+          "allDay": false,
+          "startTime": "22:00",
+          "endTime": "00:00",
+          "categoryIds": [
+            "xms3gxu6g1cca"
+          ],
+          "color": "#EE7A30",
+          "emoji": "📚"
+        },
+        "2026-08-18": {
+          "title": "Learn Thai",
+          "location": "Online",
+          "allDay": false,
+          "startTime": "20:00",
+          "endTime": "00:00",
           "categoryIds": [
             "xms3gxu6g1cca"
           ],
@@ -358,6 +416,42 @@
           "location": "Anytime Fitness",
           "allDay": false,
           "startTime": "15:30",
+          "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🏃"
+        },
+        "2026-08-15": {
+          "title": "Push",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🏃"
+        },
+        "2026-08-18": {
+          "title": "Upper",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "15:30",
+          "endTime": "17:30",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🏃"
+        },
+        "2026-08-20": {
+          "title": "Push",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "16:00",
           "endTime": "18:00",
           "categoryIds": [
             "xms3gxu6gl0zn"
@@ -587,7 +681,8 @@
       "id": "xms4wkjxcrptj",
       "exceptions": [
         "2026-08-07",
-        "2026-08-14"
+        "2026-08-14",
+        "2026-08-21"
       ],
       "overrides": {}
     },
@@ -624,7 +719,8 @@
       "emoji": "🧰",
       "id": "xms4wplxqotvx",
       "exceptions": [
-        "2026-08-14"
+        "2026-08-14",
+        "2026-08-21"
       ],
       "overrides": {
         "2026-08-07": {
@@ -674,7 +770,9 @@
       "emoji": "🚿",
       "id": "xms4wseoydhta",
       "exceptions": [
-        "2026-08-09"
+        "2026-08-09",
+        "2026-08-14",
+        "2026-08-21"
       ],
       "overrides": {
         "2026-08-06": {
@@ -760,6 +858,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-08-18": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "18:00",
+          "endTime": "19:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -795,7 +905,11 @@
       "color": "#4FA45B",
       "emoji": "🍽️",
       "id": "xms4wuktskf42",
-      "exceptions": [],
+      "exceptions": [
+        "2026-08-14",
+        "2026-08-15",
+        "2026-08-21"
+      ],
       "overrides": {
         "2026-08-06": {
           "title": "Lunch",
@@ -880,6 +994,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-08-18": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:30",
+          "endTime": "14:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -918,7 +1044,10 @@
       "exceptions": [
         "2026-08-06",
         "2026-08-07",
-        "2026-08-09"
+        "2026-08-09",
+        "2026-08-14",
+        "2026-08-16",
+        "2026-08-21"
       ],
       "overrides": {
         "2026-08-08": {
@@ -958,6 +1087,18 @@
           "emoji": "🥤"
         },
         "2026-08-13": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "17:30",
+          "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-08-18": {
           "title": "Protein",
           "location": "Home",
           "allDay": false,
@@ -1366,7 +1507,7 @@
       ],
       "allDay": false,
       "startTime": "17:00",
-      "endTime": "19:00",
+      "endTime": "20:30",
       "recurrence": {
         "type": "none",
         "interval": 1,
@@ -1526,6 +1667,901 @@
       "color": "#17A79B",
       "emoji": "💸",
       "id": "xmsrk2szle6h1",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Aldrei Olan",
+      "location": "Guadalupe",
+      "startDate": "2026-08-16",
+      "endDate": "2026-08-16",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "20:00",
+      "endTime": "22:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 16,
+        "weekOrdinal": 3,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-16",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmsyjtqw015wa",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Game Night",
+      "location": "Maven",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-14",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "20:30",
+      "endTime": "03:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 14,
+        "weekOrdinal": 2,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-14",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🎲",
+      "id": "xmsyk7mr34s02",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Massage",
+      "location": "Home",
+      "startDate": "2026-08-13",
+      "endDate": "2026-08-13",
+      "categoryIds": [
+        "xms3gxu6g1tht"
+      ],
+      "allDay": false,
+      "startTime": "23:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 13,
+        "weekOrdinal": 2,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-13",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E85C97",
+      "emoji": "💆",
+      "id": "xmsykadooioyu",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "NCS JO",
+      "location": "Online",
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-17",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "allDay": false,
+      "startTime": "13:00",
+      "endTime": "14:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 17,
+        "weekOrdinal": 3,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-17",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3A4250",
+      "emoji": "📝",
+      "id": "xmsykokohluk7",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Arlene Resureccion",
+      "location": "",
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-17",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 17,
+        "weekOrdinal": 3,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-17",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsykpjul8vn3",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Natalie Jane De Guzman",
+      "location": "",
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-17",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 17,
+        "weekOrdinal": 3,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-17",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsykqnamw1hy",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Elizabeth Roque",
+      "location": "",
+      "startDate": "2026-08-02",
+      "endDate": "2026-08-02",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 2,
+        "weekOrdinal": 1,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-02",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsykrz0el7e0",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Canielyn Cavita",
+      "location": "",
+      "startDate": "2026-08-09",
+      "endDate": "2026-08-09",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 9,
+        "weekOrdinal": 2,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-09",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsyksnsbs8nm",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Sandra Lyn Delica",
+      "location": "",
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-08",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 8,
+        "weekOrdinal": 2,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-08",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsykti0fethv",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "John Irvin Teodoro",
+      "location": "",
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-01",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 1,
+        "weekOrdinal": 1,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-01",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsyku6ku1fuz",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Kent Albano",
+      "location": "",
+      "startDate": "2026-08-02",
+      "endDate": "2026-08-02",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 2,
+        "weekOrdinal": 1,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-02",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsykv393pwzk",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Glorifel Dela Pena",
+      "location": "",
+      "startDate": "2026-08-09",
+      "endDate": "2026-08-09",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 9,
+        "weekOrdinal": 2,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-09",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsykvpjfcq2j",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Karl Ian Cunanan",
+      "location": "",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-10",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 10,
+        "weekOrdinal": 2,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-10",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsykw6k6z39a",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Kailey Nicole Quiatson",
+      "location": "",
+      "startDate": "2026-08-11",
+      "endDate": "2026-08-11",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 11,
+        "weekOrdinal": 2,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-11",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsykwpe4hqqs",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Princess Chariza Dagasdas",
+      "location": "",
+      "startDate": "2026-08-13",
+      "endDate": "2026-08-13",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 13,
+        "weekOrdinal": 2,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-13",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsykx9exibg5",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Yolanda Jambalos",
+      "location": "",
+      "startDate": "2026-08-16",
+      "endDate": "2026-08-16",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 16,
+        "weekOrdinal": 3,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-16",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsykzotivtu8",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Mechelle Viernes",
+      "location": "",
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-17",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 17,
+        "weekOrdinal": 3,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-17",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsyl1byqqfko",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Ana Loren Rivera",
+      "location": "",
+      "startDate": "2026-08-19",
+      "endDate": "2026-08-19",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          3
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 19,
+        "weekOrdinal": 3,
+        "weekday": 3,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-19",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsyl1w60zbtw",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Chino James Cruz Sison",
+      "location": "",
+      "startDate": "2026-08-20",
+      "endDate": "2026-08-20",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 20,
+        "weekOrdinal": 3,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-20",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsyl2hddszss",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Ralph Jonathan Ignacio",
+      "location": "",
+      "startDate": "2026-08-27",
+      "endDate": "2026-08-27",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-27",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsyl39n4t1ti",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Jervy Escoto",
+      "location": "",
+      "startDate": "2026-08-29",
+      "endDate": "2026-08-29",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 29,
+        "weekOrdinal": 5,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-29",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsyl3r5q185p",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Angeli Pamplona",
+      "location": "",
+      "startDate": "2026-09-01",
+      "endDate": "2026-09-01",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 1,
+        "weekOrdinal": 1,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-01",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsyl4d8sq7qm",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Rexelle Jean Galvan",
+      "location": "",
+      "startDate": "2026-09-03",
+      "endDate": "2026-09-03",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": true,
+      "startTime": "",
+      "endTime": "",
+      "recurrence": {
+        "type": "yearly",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 3,
+        "weekOrdinal": 1,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-03",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmsyl56u8y3cj",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "aCommerce Interview",
+      "location": "Online",
+      "startDate": "2026-08-20",
+      "endDate": "2026-08-20",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "allDay": false,
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 20,
+        "weekOrdinal": 3,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-20",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3A4250",
+      "emoji": "☎️",
+      "id": "xmsyl6z37gpbf",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "id": "xmsyl8sl9uyzv",
+      "title": "RTO",
+      "location": "CG2",
+      "allDay": false,
+      "startTime": "14:00",
+      "endTime": "14:30",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "color": "#3A4250",
+      "emoji": "🧰",
+      "startDate": "2026-08-19",
+      "endDate": "2026-08-19",
+      "recurrence": {
+        "type": "none"
+      },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Pool Party",
+      "location": "Pansol",
+      "startDate": "2026-08-21",
+      "endDate": "2026-08-21",
+      "categoryIds": [
+        "xms3gxu6g57al"
+      ],
+      "allDay": false,
+      "startTime": "10:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 21,
+        "weekOrdinal": 3,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-21",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3F5FD6",
+      "emoji": "🏖️",
+      "id": "xmsylboknwtu7",
       "exceptions": [],
       "overrides": {}
     }
