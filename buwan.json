@@ -1,6 +1,6 @@
 {
-  "version": "1.0.28",
-  "lastSaved": "2026-08-18T11:40:16.397Z",
+  "version": "1.0.29",
+  "lastSaved": "2026-08-19T10:20:07.418Z",
   "events": [
     {
       "title": "Upper",
@@ -118,6 +118,18 @@
           "allDay": false,
           "startTime": "16:00",
           "endTime": "17:00",
+          "categoryIds": [
+            "xms3gxu6gr9xk"
+          ],
+          "color": "#9C6B4A",
+          "emoji": "🤸"
+        },
+        "2026-08-19": {
+          "title": "Mobility",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:00",
           "categoryIds": [
             "xms3gxu6gr9xk"
           ],
@@ -352,6 +364,18 @@
           "allDay": false,
           "startTime": "20:00",
           "endTime": "00:00",
+          "categoryIds": [
+            "xms3gxu6g1cca"
+          ],
+          "color": "#EE7A30",
+          "emoji": "📚"
+        },
+        "2026-08-19": {
+          "title": "Learn Thai",
+          "location": "Online",
+          "allDay": false,
+          "startTime": "18:00",
+          "endTime": "22:00",
           "categoryIds": [
             "xms3gxu6g1cca"
           ],
@@ -596,7 +620,9 @@
       "color": "#8E54D6",
       "emoji": "🦵",
       "id": "xms4w8hmhctps",
-      "exceptions": [],
+      "exceptions": [
+        "2026-08-19"
+      ],
       "overrides": {
         "2026-08-12": {
           "title": "Lower",
@@ -1104,6 +1130,18 @@
           "allDay": false,
           "startTime": "17:30",
           "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-08-19": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "16:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -2478,14 +2516,14 @@
     {
       "title": "aCommerce Interview",
       "location": "Online",
-      "startDate": "2026-08-20",
-      "endDate": "2026-08-20",
+      "startDate": "2026-08-27",
+      "endDate": "2026-08-27",
       "categoryIds": [
         "xms4wp6k79qsc"
       ],
       "allDay": false,
-      "startTime": "17:00",
-      "endTime": "18:00",
+      "startTime": "16:30",
+      "endTime": "17:30",
       "recurrence": {
         "type": "none",
         "interval": 1,
