@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buwan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Baloo+2:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EAF2F0;
+    --surface: rgba(255,255,255,.74);
+    --surface-2: rgba(255,255,255,.5);
+    --border: #E5E7EC;
+    --border-strong: #D3D7DF;
+    --text: #191C26;
+    --muted: #6A7180;
+    --faint: #9AA1B0;
+    --primary: #5B5FEF;
+    --primary-soft: #ECEDFF;
+    --primary-ink: #3B3FC7;
+    --today: #E23B3B;
+    --today-soft: #FCE7E7;
+    --danger: #E4483D;
+    --ok: #17A672;
+    --shadow: 0 1px 2px rgba(20,22,34,.04), 0 8px 24px rgba(20,22,34,.06);
+    --shadow-lg: 0 24px 64px rgba(20,22,34,.18);
+    --radius: 14px;
+    --cell-min-h: 138px;
+    --font-display: 'Baloo 2', 'Nunito', sans-serif;
+    --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  html[data-theme="dark"] {
+    --bg: #0E1017;
+    --surface: rgba(24,27,36,.74);
+    --surface-2: rgba(18,21,29,.55);
+    --border: #2A2E3A;
+    --border-strong: #363B49;
+    --text: #E9EBF2;
+    --muted: #9AA1B2;
+    --faint: #6B7284;
+    --primary: #8488FF;
+    --primary-soft: #23264A;
+    --primary-ink: #A6A9FF;
+    --today: #F0655B;
+    --today-soft: #3A1F1D;
+    --danger: #F0655B;
+    --ok: #35C48E;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.4);
+    --shadow-lg: 0 24px 70px rgba(0,0,0,.6);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    transition: background .3s ease, color .3s ease;
+    padding: 22px;
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* Ghibli-style backdrops (day scene for light mode, starry night for dark mode) */
+  .scene {
+    position: fixed; inset: 0; z-index: -1;
+    opacity: .6; pointer-events: none;
+    transition: opacity .3s ease;
+  }
+  .scene svg { width: 100%; height: 100%; display: block; }
+  .scene.night { display: none; opacity: .7; }
+  html[data-theme="dark"] .scene.day { display: none; }
+  html[data-theme="dark"] .scene.night { display: block; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  input, select, textarea { font-family: inherit; font-size: 14px; color: var(--text); }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; }
+
+  .app { width: 100%; max-width: 1600px; margin: 0 auto; }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    display: flex; align-items: center; gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .brand { display: flex; align-items: baseline; gap: 10px; }
+  .tools { display: flex; align-items: center; gap: 14px; margin-left: auto; flex-wrap: wrap; justify-content: flex-end; }
+  .brand .mark { font-family: var(--font-display); font-size: 26px; font-weight: 600; letter-spacing: -.3px; }
+  .brand .mark .moon-ico { display: inline-flex; vertical-align: -4px; margin-right: 2px; }
+  .weather { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--muted); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; padding: 6px 13px; box-shadow: var(--shadow); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); white-space: nowrap; transition: background .3s, color .3s, border-color .3s; }
+  .weather .wx-loading { color: var(--faint); }
+  .weather.wx-sun   { background: #FBD24D; border-color: #EDBE2E; color: #4A3800; }
+  .weather.wx-cloud { background: #6BA6E8; border-color: #4F90DC; color: #0B2A50; }
+  .weather.wx-rain  { background: #9198A3; border-color: #7C8592; color: #1E232D; }
+  .weather.wx-snow  { background: #CDD8E4; border-color: #B4C2D2; color: #1F2937; }
+  .brand .sub { font-size: 12px; color: var(--faint); letter-spacing: .04em; text-transform: uppercase; }
+
+  .toolgroup { display: flex; align-items: center; gap: 6px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 5px; box-shadow: var(--shadow); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .tbtn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 8px 13px; border-radius: 8px; font-size: 13px; font-weight: 500;
+    color: var(--muted); transition: background .15s, color .15s;
+  }
+  .tbtn:hover { background: var(--primary-soft); color: var(--primary-ink); }
+  .tbtn svg { width: 15px; height: 15px; }
+  .tbtn.primary { background: var(--primary); color: #fff; }
+  .tbtn.primary:hover { background: var(--primary-ink); }
+  .tbtn:disabled { opacity: .4; cursor: not-allowed; }
+  .tbtn.icononly { padding: 8px; }
+
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--faint); }
+  .status-dot.on { background: var(--ok); }
+
+  /* ---------- Calendar header ---------- */
+  .calbar {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    margin-bottom: 14px; position: relative;
+  }
+  .nav-arrow {
+    width: 34px; height: 34px; border-radius: 9px;
+    display: grid; place-items: center; flex: none;
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--muted); transition: all .15s;
+  }
+  .nav-arrow:hover { color: var(--primary); border-color: var(--primary); }
+  .nav-arrow svg { width: 11px; height: 11px; }
+  .monthtitle { font-family: var(--font-display); font-size: 42px; line-height: 1.05; font-weight: 700; letter-spacing: -.5px; text-align: center; min-width: 280px; }
+  .monthtitle .yr { color: var(--faint); font-weight: 400; margin-left: 8px; }
+  .month-quote { position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-family: var(--font-body); font-style: italic; font-weight: 500; font-size: 14px; color: var(--muted); max-width: 300px; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ---------- Grid ---------- */
+  .weekhead { display: grid; grid-template-columns: repeat(7,1fr); gap: 8px; margin-bottom: 8px; }
+  .weekhead div { text-align: center; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); padding: 4px 0; }
+  .weekhead div.wend { color: var(--primary); }
+
+  .grid { display: grid; grid-template-columns: repeat(7,1fr); grid-auto-rows: minmax(var(--cell-min-h), auto); gap: 8px; align-items: stretch; }
+  .cell {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    min-height: var(--cell-min-h); padding: 8px;
+    display: flex; flex-direction: column; gap: 5px;
+    transition: border-color .15s, box-shadow .15s;
+    position: relative; overflow: visible;
+    backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px);
+  }
+  .cell:hover { border-color: var(--border-strong); box-shadow: var(--shadow); }
+  .cell.outside { background: var(--surface-2); }
+  .cell.outside .daynum { color: var(--faint); }
+  .cell .dayhead { display: flex; align-items: center; justify-content: space-between; }
+  .daynum { font-size: 13px; font-weight: 600; color: var(--muted); width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; }
+  .cell.istoday .daynum { background: var(--today); color: #fff; }
+  .add-day { opacity: 0; width: 20px; height: 20px; border-radius: 6px; display: grid; place-items: center; color: var(--faint); font-size: 15px; transition: opacity .15s, background .15s; }
+  .cell:hover .add-day { opacity: 1; }
+  .add-day:hover { background: var(--primary-soft); color: var(--primary); }
+
+  .chips { display: flex; flex-direction: column; gap: 4px; overflow: visible; }
+  .chip {
+    display: flex; align-items: center; gap: 5px;
+    font-size: 11.5px; font-weight: 500; line-height: 1.3;
+    padding: 3px 7px; border-radius: 6px;
+    background: var(--chip-bg); color: var(--chip-fg);
+    border-left: 3px solid var(--chip-accent);
+    cursor: pointer; white-space: nowrap; overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,.16);
+    transition: transform .1s, filter .15s;
+  }
+  html[data-theme="dark"] .chip { box-shadow: 0 1px 3px rgba(0,0,0,.4); }
+  .chip:hover { filter: brightness(.96); transform: translateX(1px); }
+  html[data-theme="dark"] .chip:hover { filter: brightness(1.12); }
+  .chip .emo { flex: none; }
+  .chip .txt { overflow: hidden; text-overflow: ellipsis; }
+  .chip .time { font-size: 10px; opacity: 1; margin-left: 0; flex: none; }
+
+  /* 2-line calendar chip: line 1 = emoji/title/time, line 2 = location — all left-justified */
+  .chip.cal { flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 1px; padding: 4px 7px; min-height: 36px; }
+  .chip.cal .line { display: flex; align-items: center; justify-content: flex-start; gap: 5px; min-width: 0; line-height: 1.25; }
+  .chip.cal .line1 { align-items: flex-start; }
+  .chip.cal .chip-main { flex: 0 1 auto; min-width: 0; display: flex; align-items: center; gap: 5px; overflow: hidden; }
+  .chip.cal .chip-main .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+  .chip.cal .time { margin-left: auto; flex: none; align-self: flex-start; font-variant-numeric: tabular-nums; letter-spacing: -.2px; }
+  .chip.cal .dots { margin-left: 4px; flex: none; }
+  .chip.cal .line2 { font-size: 10px; }
+  .chip.cal .line2 .loc { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .more { font-size: 11px; color: var(--faint); font-weight: 500; padding: 1px 7px; cursor: pointer; }
+  .more:hover { color: var(--primary); }
+
+  /* ---------- Almanac ---------- */
+  .almanac { margin: 6px 0 30px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .almanac-head { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 18px; cursor: pointer; user-select: none; position: relative; }
+  .almanac-head .title { font-family: var(--font-display); font-size: 17px; font-weight: 600; }
+  .almanac-head .hint { font-size: 12px; color: var(--faint); }
+  .almanac-head .chev { position: absolute; right: 18px; top: 0; bottom: 0; display: flex; align-items: center; color: var(--muted); transition: transform .25s; }
+  .almanac.collapsed .chev { transform: rotate(-90deg); }
+  .almanac-body { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1px; background: var(--border); border-top: 1px solid var(--border); max-height: 720px; transition: max-height .3s ease, opacity .25s; overflow: hidden; }
+  .almanac.collapsed .almanac-body { max-height: 0; opacity: 0; border-top: none; }
+  .alm-card { background: var(--surface); padding: 18px; border-top: 3px solid var(--card-accent); }
+  .alm-card .lbl { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); font-weight: 600; margin-bottom: 9px; display: flex; align-items: center; gap: 6px; }
+  .alm-card .lbl .glyph { color: var(--card-accent); }
+  .alm-card .content { font-size: 13.5px; color: var(--text); }
+  .alm-card.quote .content { font-family: var(--font-body); font-style: italic; font-weight: 500; font-size: 13.5px; line-height: 1.55; }
+  .alm-card .content ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .alm-card .content li { display: flex; gap: 8px; align-items: flex-start; font-size: 13px; color: var(--muted); }
+  .alm-card .content li b { color: var(--text); font-weight: 600; }
+  .alm-src { display: inline-flex; align-items: center; gap: 3px; margin-top: 9px; font-size: 11px; font-weight: 600; color: var(--card-accent); text-decoration: none; }
+  .alm-src:hover { text-decoration: underline; }
+  .alm-year { font-family: var(--font-display); font-weight: 700; color: var(--card-accent); margin-right: 4px; }
+  .alm-thumb { width: 100%; height: 82px; object-fit: cover; border-radius: 8px; margin-bottom: 9px; background: var(--surface-2); display: block; }
+  .alm-clamp { display: -webkit-box; -webkit-line-clamp: 5; line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.45; }
+  .alm-card .content .alm-src { display: inline-flex; margin-top: 8px; }
+  .alm-term { color: var(--card-accent); font-weight: 700; }
+  .topquote { flex: 0 1 auto; min-width: 0; font-size: 13px; font-style: italic; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .loading-shimmer { color: var(--faint); font-size: 13px; font-style: italic; }
+  @media (max-width: 820px) { .almanac-body { grid-template-columns: 1fr; } }
+
+  /* ---------- Modal ---------- */
+  .overlay { position: fixed; inset: 0; background: rgba(15,17,23,.5); backdrop-filter: blur(3px); display: none; align-items: flex-start; justify-content: center; z-index: 100; padding: 40px 20px; overflow-y: auto; }
+  .overlay.show { display: flex; }
+  .modal { background: var(--bg); border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow-lg); width: 100%; max-width: 480px; animation: pop .2s ease; }
+  .modal.wide { max-width: 520px; }
+  @keyframes pop { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: none; } }
+  .modal-head { padding: 20px 22px 0; display: flex; align-items: center; justify-content: space-between; }
+  .modal-head h2 { font-family: var(--font-display); font-size: 20px; font-weight: 600; }
+  .x-btn { width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center; color: var(--muted); font-size: 18px; }
+  .x-btn:hover { background: var(--primary-soft); color: var(--primary); }
+  .modal-body { padding: 18px 22px; display: flex; flex-direction: column; gap: 15px; }
+  .field label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+  .field .hlp { font-size: 11.5px; color: var(--faint); margin-top: 5px; }
+  .input, select.input, textarea.input {
+    width: 100%; padding: 9px 11px; border-radius: 9px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-soft); }
+  .input[type="date"], .input[type="time"] { cursor: pointer; }
+  .input::-webkit-calendar-picker-indicator { cursor: pointer; opacity: .8; }
+  html[data-theme="dark"] .input::-webkit-calendar-picker-indicator { filter: invert(1) brightness(1.5); opacity: .9; }
+  .row { display: flex; gap: 12px; }
+  .row > * { flex: 1; }
+  .check { display: flex; align-items: center; gap: 8px; }
+  .check input { width: 16px; height: 16px; accent-color: var(--primary); }
+  .check label { margin: 0; font-size: 13px; color: var(--text); font-weight: 500; }
+
+  .sw { width: 28px; height: 28px; border-radius: 8px; cursor: pointer; border: 2px solid transparent; transition: transform .1s; position: relative; }
+  .sw:hover { transform: scale(1.12); border-color: var(--text); }
+
+  /* chosen categories inside entry modal */
+  .cat-chosen { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 9px; min-height: 8px; }
+  .cat-none { font-size: 12.5px; color: var(--faint); font-style: italic; }
+  .cat-tag { display: inline-flex; align-items: center; gap: 6px; padding: 4px 9px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid; }
+  .cat-tag .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .cat-tag .rm { cursor: pointer; opacity: .55; font-size: 11px; }
+  .cat-tag .rm:hover { opacity: 1; }
+  .btn.small { padding: 7px 12px; font-size: 13px; }
+
+  /* category manager */
+  .cat-layout { display: flex; gap: 14px; }
+  .cat-listwrap { flex: 1; border: 1px solid var(--border); border-radius: 11px; overflow: hidden; background: var(--surface-2); }
+  .cat-list { max-height: 320px; overflow-y: auto; }
+  .cat-row { display: flex; align-items: center; gap: 11px; padding: 9px 12px; cursor: pointer; border-bottom: 1px solid var(--border); }
+  .cat-row:last-child { border-bottom: none; }
+  .cat-row:hover { background: var(--surface); }
+  .cat-row.sel { background: var(--primary-soft); }
+  .cat-check { width: 16px; height: 16px; accent-color: var(--primary); flex: none; }
+  .cat-sw { width: 18px; height: 18px; border-radius: 5px; flex: none; box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); }
+  .cat-name { font-size: 14px; font-weight: 500; }
+  .cat-name-edit { font-size: 14px; padding: 3px 7px; border: 1px solid var(--primary); border-radius: 7px; background: var(--bg); color: var(--text); outline: none; box-shadow: 0 0 0 3px var(--primary-soft); }
+  .cat-side { width: 138px; display: flex; flex-direction: column; gap: 8px; }
+  .cat-side .btn { width: 100%; justify-content: center; text-align: center; }
+  .cat-color-wrap { margin-top: 6px; position: relative; }
+  .cat-color-wrap label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 6px; }
+  .cat-color-btn { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .cat-color-sw { width: 22px; height: 22px; border-radius: 5px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.15); }
+  .cat-color-pop { display: none; position: absolute; top: 100%; left: 0; margin-top: 6px; z-index: 5; grid-template-columns: repeat(5,1fr); gap: 6px; padding: 10px; background: var(--bg); border: 1px solid var(--border); border-radius: 11px; box-shadow: var(--shadow-lg); }
+  .cat-color-pop.show { display: grid; }
+
+  .emojis { display: flex; flex-direction: column; max-height: 240px; overflow-y: auto; padding: 4px 6px; background: var(--surface-2); border-radius: 9px; border: 1px solid var(--border); }
+  .emo-group-label { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); margin: 8px 2px 5px; position: sticky; top: 0; background: var(--surface-2); padding: 3px 0; z-index: 1; }
+  .emo-group-label:first-child { margin-top: 2px; }
+  .emo-grid { display: flex; gap: 4px; flex-wrap: wrap; }
+  .emo-opt { width: 30px; height: 30px; border-radius: 7px; display: grid; place-items: center; font-size: 18px; transition: background .12s; cursor: pointer; }
+  .emo-opt:hover { background: var(--primary-soft); }
+  .emo-opt.sel { background: var(--primary-soft); box-shadow: 0 0 0 2px var(--primary); }
+
+  /* multi-category dots on calendar chips */
+  .chip .dots { display: inline-flex; gap: 2px; margin-left: auto; flex: none; }
+  .chip .dots i { width: 6px; height: 6px; border-radius: 50%; display: block; }
+  .chip .dots + .time { margin-left: 6px; }
+
+  .modal-foot { padding: 16px 22px 22px; display: flex; gap: 10px; align-items: center; }
+  .btn { padding: 10px 18px; border-radius: 10px; font-size: 14px; font-weight: 600; transition: all .15s; }
+  .btn.primary { background: var(--primary); color: #fff; }
+  .btn.primary:hover { background: var(--primary-ink); }
+  .btn.ghost { background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); }
+  .btn.ghost:hover { border-color: var(--border-strong); }
+  .btn.danger { background: transparent; color: var(--danger); margin-right: auto; }
+  .btn.danger:hover { background: rgba(228,72,61,.1); }
+  .btn:disabled { opacity: .5; cursor: not-allowed; }
+  .btn.danger-solid { background: var(--danger); color: #fff; }
+  .btn.danger-solid:hover { filter: brightness(.94); }
+  .scope-choices { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+
+  /* recurrence field summary */
+  .recur-row { display: flex; align-items: center; gap: 10px; }
+  .recur-summary { flex: 1; font-size: 13.5px; color: var(--text); padding: 9px 11px; border-radius: 9px; background: var(--surface-2); border: 1px solid var(--border); }
+
+  /* Appointment Recurrence dialog */
+  .recur-modal { max-width: 620px; }
+  .rec-fs { border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin: 0; }
+  .rec-fs + .rec-fs { margin-top: 14px; }
+  .rec-fs legend { font-size: 12px; font-weight: 700; color: var(--muted); padding: 0 6px; }
+  .rec-time-grid { display: grid; grid-template-columns: 90px 200px; gap: 10px 12px; align-items: center; }
+  .rec-time-grid label { font-size: 13px; color: var(--muted); }
+  .rec-time-grid .input { width: 200px; }
+  .rec-duration { font-size: 13px; color: var(--text); font-weight: 500; }
+  .rec-pattern { display: flex; gap: 18px; }
+  .rec-radios { display: flex; flex-direction: column; gap: 13px; min-width: 108px; border-right: 1px solid var(--border); padding-right: 16px; }
+  .rec-radio { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+  .rec-radio input { width: 16px; height: 16px; accent-color: var(--primary); flex: none; }
+  .rec-detail { flex: 1; min-width: 0; }
+  .rec-panel { display: none; flex-direction: column; gap: 12px; }
+  .rec-inline { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; font-size: 14px; color: var(--text); }
+  .rec-inline input[type=radio] { width: 16px; height: 16px; accent-color: var(--primary); flex: none; }
+  .mini { width: 58px; padding: 6px 8px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); text-align: center; color: var(--text); }
+  .mini-sel { padding: 6px 8px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text); }
+  .rec-weekdays { display: flex; flex-wrap: wrap; gap: 8px; }
+  .wd-box { display: flex; align-items: center; gap: 6px; font-size: 13px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+  .wd-box input { accent-color: var(--primary); }
+  .rec-range { display: flex; flex-direction: column; gap: 12px; }
+  .rec-range-start { display: flex; align-items: center; gap: 10px; }
+  .rec-range-start label { font-size: 13px; color: var(--muted); }
+  .rec-range-start .input { width: 210px; }
+  .rec-range-end { display: grid; grid-template-columns: auto 1fr; gap: 11px 12px; align-items: center; }
+  .rec-range-end .input { width: 210px; }
+  @media (max-width: 640px){
+    .rec-pattern { flex-direction: column; }
+    .rec-radios { flex-direction: row; flex-wrap: wrap; border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 12px; }
+    .rec-time-grid, .rec-range-end { grid-template-columns: 1fr; }
+    .rec-time-grid .input, .rec-range-start .input, .rec-range-end .input { width: 100%; }
+  }
+
+  /* feedback banners */
+  .banner { padding: 11px 13px; border-radius: 10px; font-size: 13px; display: none; align-items: flex-start; gap: 9px; line-height: 1.45; }
+  .banner.show { display: flex; }
+  .banner.err { background: rgba(228,72,61,.1); color: var(--danger); border: 1px solid rgba(228,72,61,.25); }
+  .banner.ok { background: rgba(23,166,114,.1); color: var(--ok); border: 1px solid rgba(23,166,114,.25); }
+  .banner .ic { flex: none; font-weight: 700; }
+
+  /* toast */
+  .toast-wrap { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 200; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .toast { background: var(--text); color: var(--bg); padding: 11px 18px; border-radius: 10px; font-size: 13px; font-weight: 500; box-shadow: var(--shadow-lg); animation: rise .25s ease; max-width: 90vw; }
+  .toast.long { max-width: 440px; white-space: normal; line-height: 1.45; text-align: left; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    .monthtitle { font-size: 24px; }
+    .month-quote { display: none; }
+    :root { --cell-min-h: 84px; }
+    .chip .time { display: none; }
+    .brand .sub { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="scene day" aria-hidden="true">
+<svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FCEAD6"/>
+      <stop offset="0.5" stop-color="#F7E1E7"/>
+      <stop offset="1" stop-color="#CBE8F3"/>
+    </linearGradient>
+    <radialGradient id="sun">
+      <stop offset="0" stop-color="#FFF3D2" stop-opacity="1"/>
+      <stop offset="1" stop-color="#FFF3D2" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hillA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BBD8E0"/><stop offset="1" stop-color="#AECBD6"/>
+    </linearGradient>
+    <g id="cloud" fill="#ffffff" opacity="0.92">
+      <ellipse cx="0" cy="0" rx="48" ry="27"/>
+      <ellipse cx="42" cy="9" rx="40" ry="22"/>
+      <ellipse cx="-42" cy="9" rx="38" ry="20"/>
+      <ellipse cx="8" cy="-15" rx="34" ry="22"/>
+    </g>
+  </defs>
+
+  <!-- sky + sun -->
+  <rect width="1440" height="900" fill="url(#sky)"/>
+  <circle cx="1170" cy="175" r="120" fill="url(#sun)"/>
+  <circle cx="1170" cy="175" r="60" fill="#FFF1CE"/>
+
+  <!-- clouds -->
+  <use href="#cloud" transform="translate(250,150)"/>
+  <use href="#cloud" transform="translate(620,95) scale(.8)"/>
+  <use href="#cloud" transform="translate(980,220) scale(1.1)"/>
+  <use href="#cloud" transform="translate(430,270) scale(.6)"/>
+
+  <!-- birds -->
+  <g stroke="#6A7A82" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M900 150 q9 -7 18 0 q9 -7 18 0"/>
+    <path d="M960 120 q7 -5 14 0 q7 -5 14 0"/>
+    <path d="M860 185 q7 -5 14 0 q7 -5 14 0"/>
+  </g>
+
+  <!-- hot-air balloon (journey) -->
+  <g transform="translate(1010,250)">
+    <path d="M0 -50 C48 -50 60 22 26 92 C16 112 -16 112 -26 92 C-60 22 -48 -50 0 -50 Z" fill="#E8846B"/>
+    <path d="M-11 -49 C-16 10 -12 60 -3 92 L3 92 C12 60 16 10 11 -49 Z" fill="#F4C879"/>
+    <path d="M-30 -20 C-34 20 -24 62 -14 90 L-8 91 C-18 60 -26 18 -22 -30 Z" fill="#7FA6C9" opacity=".85"/>
+    <line x1="-14" y1="92" x2="-8" y2="120" stroke="#8A5A3B" stroke-width="1.5"/>
+    <line x1="14" y1="92" x2="8" y2="120" stroke="#8A5A3B" stroke-width="1.5"/>
+    <rect x="-11" y="118" width="22" height="16" rx="3" fill="#8A5A3B"/>
+  </g>
+
+  <!-- distant mountains -->
+  <path d="M0 560 L150 460 L300 545 L470 445 L640 545 L820 455 L1000 550 L1180 460 L1360 545 L1440 500 L1440 640 L0 640 Z" fill="url(#hillA)"/>
+  <!-- mid rolling hills -->
+  <path d="M0 615 Q 260 555 520 605 T 1040 600 T 1440 596 L1440 720 L0 720 Z" fill="#B6D69E"/>
+  <!-- foreground hills -->
+  <path d="M0 715 Q 360 655 720 700 T 1440 698 L1440 900 L0 900 Z" fill="#84BC7E"/>
+  <path d="M0 800 Q 320 735 660 805 L 660 900 L 0 900 Z" fill="#65A469"/>
+
+  <!-- winding road -->
+  <path d="M660 900 C 720 812 700 742 726 674 C 736 648 752 630 766 614 L 792 620 C 780 638 766 654 758 680 C 736 750 792 822 862 900 Z" fill="#EFE3C7"/>
+  <path d="M736 872 C 754 812 742 760 760 700" stroke="#D8C79E" stroke-width="4" fill="none" stroke-dasharray="10 14" stroke-linecap="round" opacity=".8"/>
+
+  <!-- trees -->
+  <g>
+    <rect x="243" y="636" width="11" height="34" rx="3" fill="#6B4E3A"/>
+    <ellipse cx="248" cy="620" rx="42" ry="48" fill="#6FA96A"/>
+    <ellipse cx="262" cy="632" rx="26" ry="28" fill="#5C9459"/>
+  </g>
+  <g>
+    <rect x="1116" y="686" width="12" height="38" rx="3" fill="#6B4E3A"/>
+    <ellipse cx="1122" cy="666" rx="46" ry="52" fill="#6FA96A"/>
+    <ellipse cx="1108" cy="680" rx="28" ry="30" fill="#5C9459"/>
+  </g>
+</svg>
+</div>
+<div class="scene night" aria-hidden="true">
+<svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="nsky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#141A3A"/>
+      <stop offset="0.45" stop-color="#222A55"/>
+      <stop offset="1" stop-color="#3A3A6B"/>
+    </linearGradient>
+    <radialGradient id="moonGlow">
+      <stop offset="0" stop-color="#FFF6D8" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#FFF6D8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fire">
+      <stop offset="0" stop-color="#FFE39A" stop-opacity="1"/>
+      <stop offset="1" stop-color="#FFE39A" stop-opacity="0"/>
+    </radialGradient>
+    <g id="ncloud" fill="#2E366A" opacity="0.55">
+      <ellipse cx="0" cy="0" rx="60" ry="22"/>
+      <ellipse cx="48" cy="7" rx="46" ry="18"/>
+      <ellipse cx="-48" cy="7" rx="44" ry="16"/>
+    </g>
+  </defs>
+
+  <!-- night sky -->
+  <rect width="1440" height="900" fill="url(#nsky)"/>
+
+  <!-- stars -->
+  <g fill="#FFFFFF">
+    <circle cx="120" cy="90" r="1.6" opacity=".9"/><circle cx="210" cy="160" r="1.1" opacity=".6"/>
+    <circle cx="320" cy="70" r="2" opacity="1"/><circle cx="400" cy="140" r="1.2" opacity=".7"/>
+    <circle cx="500" cy="60" r="1.5" opacity=".85"/><circle cx="560" cy="200" r="1" opacity=".5"/>
+    <circle cx="640" cy="110" r="1.8" opacity=".95"/><circle cx="720" cy="60" r="1.1" opacity=".6"/>
+    <circle cx="300" cy="230" r="1.3" opacity=".7"/><circle cx="150" cy="260" r="1.6" opacity=".8"/>
+    <circle cx="470" cy="250" r="1" opacity=".5"/><circle cx="60" cy="170" r="1.4" opacity=".75"/>
+    <circle cx="820" cy="130" r="1.5" opacity=".85"/><circle cx="900" cy="70" r="1.1" opacity=".6"/>
+    <circle cx="1000" cy="150" r="1.9" opacity="1"/><circle cx="1080" cy="90" r="1.2" opacity=".7"/>
+    <circle cx="1180" cy="60" r="1.5" opacity=".85"/><circle cx="1260" cy="130" r="1" opacity=".55"/>
+    <circle cx="1340" cy="80" r="1.7" opacity=".9"/><circle cx="1400" cy="180" r="1.2" opacity=".7"/>
+    <circle cx="760" cy="240" r="1.3" opacity=".7"/><circle cx="1130" cy="230" r="1.5" opacity=".8"/>
+    <circle cx="980" cy="270" r="1" opacity=".5"/><circle cx="1300" cy="250" r="1.3" opacity=".7"/>
+    <circle cx="250" cy="120" r="1" opacity=".5"/><circle cx="680" cy="180" r="1.1" opacity=".6"/>
+    <circle cx="860" cy="210" r="1" opacity=".5"/><circle cx="440" cy="100" r="1" opacity=".55"/>
+  </g>
+  <!-- twinkles -->
+  <g stroke="#FFF7DA" stroke-width="1.4" stroke-linecap="round" opacity=".9">
+    <path d="M330 70 l0 -7 M330 70 l0 7 M330 70 l-7 0 M330 70 l7 0"/>
+    <path d="M1000 150 l0 -6 M1000 150 l0 6 M1000 150 l-6 0 M1000 150 l6 0"/>
+    <path d="M640 110 l0 -6 M640 110 l0 6 M640 110 l-6 0 M640 110 l6 0"/>
+  </g>
+
+  <!-- moon glow + crescent -->
+  <circle cx="250" cy="170" r="120" fill="url(#moonGlow)"/>
+  <g transform="translate(250,170)">
+    <circle cx="0" cy="0" r="62" fill="#FCEFC0"/>
+    <circle cx="26" cy="-10" r="58" fill="#222A55"/>
+  </g>
+
+  <!-- drifting night clouds -->
+  <use href="#ncloud" transform="translate(560,150) scale(1)"/>
+  <use href="#ncloud" transform="translate(1080,210) scale(.8)"/>
+
+  <!-- silhouette hills -->
+  <path d="M0 560 L150 470 L300 548 L470 452 L640 548 L820 462 L1000 552 L1180 468 L1360 548 L1440 505 L1440 640 L0 640 Z" fill="#2A2F5A"/>
+  <path d="M0 615 Q 260 558 520 606 T 1040 601 T 1440 598 L1440 720 L0 720 Z" fill="#232850"/>
+  <path d="M0 715 Q 360 656 720 700 T 1440 699 L1440 900 L0 900 Z" fill="#1B1F42"/>
+  <path d="M0 800 Q 320 736 660 805 L 660 900 L 0 900 Z" fill="#141834"/>
+
+  <!-- winding road (moonlit) -->
+  <path d="M660 900 C 720 812 700 742 726 674 C 736 648 752 630 766 614 L 792 620 C 780 638 766 654 758 680 C 736 750 792 822 862 900 Z" fill="#3A3F70" opacity=".8"/>
+  <path d="M736 872 C 754 812 742 760 760 700" stroke="#8E93C8" stroke-width="4" fill="none" stroke-dasharray="10 14" stroke-linecap="round" opacity=".7"/>
+
+  <!-- silhouette trees -->
+  <g>
+    <rect x="243" y="636" width="11" height="34" rx="3" fill="#12152E"/>
+    <ellipse cx="248" cy="620" rx="42" ry="48" fill="#1A1E3E"/>
+  </g>
+  <g>
+    <rect x="1116" y="686" width="12" height="38" rx="3" fill="#12152E"/>
+    <ellipse cx="1122" cy="666" rx="46" ry="52" fill="#1A1E3E"/>
+  </g>
+
+  <!-- fireflies -->
+  <g>
+    <circle cx="520" cy="700" r="7" fill="url(#fire)"/><circle cx="520" cy="700" r="1.6" fill="#FFF0B0"/>
+    <circle cx="900" cy="740" r="6" fill="url(#fire)"/><circle cx="900" cy="740" r="1.4" fill="#FFF0B0"/>
+    <circle cx="1180" cy="690" r="6" fill="url(#fire)"/><circle cx="1180" cy="690" r="1.4" fill="#FFF0B0"/>
+    <circle cx="360" cy="760" r="5" fill="url(#fire)"/><circle cx="360" cy="760" r="1.2" fill="#FFF0B0"/>
+  </g>
+</svg>
+</div>
+<div class="app">
+
+  <!-- Top toolbar -->
+  <div class="topbar">
+    <div class="brand">
+      <span class="mark"><span class="moon-ico">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <defs>
+            <radialGradient id="moonG" cx="38%" cy="35%" r="70%">
+              <stop offset="0%" stop-color="#FFF6D6"/><stop offset="70%" stop-color="#FCE39A"/><stop offset="100%" stop-color="#F4C862"/>
+            </radialGradient>
+          </defs>
+          <!-- crescent -->
+          <path d="M20.5 12a8.5 8.5 0 1 1-8.9-8.49 6.6 6.6 0 0 0 0 12.98A8.47 8.47 0 0 0 20.5 12z" fill="url(#moonG)"/>
+          <!-- smiling face on the lit crescent -->
+          <circle cx="7.4" cy="9.6" r="1.05" fill="#C9993A"/>
+          <path d="M5.4 13.2 q2.2 2.2 4.6 0.4" fill="none" stroke="#C9993A" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+      </span> Buwan</span>
+    </div>
+
+    <div class="weather" id="weather" title="Today's weather"><span class="wx-loading">🌤️ …</span></div>
+    <div class="topquote" id="topQuote"></div>
+
+    <div class="tools">
+    <div class="toolgroup">
+      <button class="tbtn" id="btnLoad" title="Load latest data from GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>Load
+      </button>
+      <button class="tbtn" id="btnSave" title="Save data to GitHub">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Save
+      </button>
+      <button class="tbtn" id="btnUndo" title="Undo last change" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v6h6"/><path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13"/></svg>Undo
+      </button>
+      <button class="tbtn" id="btnSync" title="GitHub connection settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0114.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0020.5 15"/></svg>Sync
+      </button>
+    </div>
+
+    <div class="toolgroup">
+      <span class="status-dot" id="connDot" title="Not connected"></span>
+      <button class="tbtn icononly" id="btnCats" title="Manage color categories">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.6 13.4L12 22l-9-9V4a1 1 0 011-1h9l7.6 7.6a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor" stroke="none"/></svg>
+      </button>
+      <button class="tbtn icononly" id="btnTheme" title="Toggle light / dark">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      </button>
+    </div>
+    </div>
+  </div>
+
+  <!-- Gabay panel (above the calendar) -->
+  <div class="almanac" id="almanac">
+    <div class="almanac-head" id="almanacHead">
+      <span class="title">✦ Gabay</span>
+      <span class="chev">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </span>
+    </div>
+    <div class="almanac-body">
+      <div class="alm-card hist" style="--card-accent:#EE7A30">
+        <div class="lbl"><span class="glyph">📜</span> On This Day</div>
+        <div class="content" id="cardHist"><span class="loading-shimmer">…</span></div>
+      </div>
+      <div class="alm-card trivia" style="--card-accent:#17A79B">
+        <div class="lbl"><span class="glyph">💡</span> Trivia</div>
+        <div class="content" id="cardTrivia"><span class="loading-shimmer">…</span></div>
+      </div>
+      <div class="alm-card mental" style="--card-accent:#C6455C">
+        <div class="lbl"><span class="glyph">🩺</span> Mental (DSM-5-TR)</div>
+        <div class="content" id="cardMental"><span class="loading-shimmer">…</span></div>
+      </div>
+      <div class="alm-card psyche" style="--card-accent:#7C6CF0">
+        <div class="lbl"><span class="glyph">🧠</span> Psyche</div>
+        <div class="content" id="cardPsyche"><span class="loading-shimmer">…</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calendar header -->
+  <div class="calbar">
+    <button class="nav-arrow" id="prevMonth" title="Previous month">
+      <svg viewBox="0 0 12 12"><polygon points="8,1 3,6 8,11" fill="currentColor"/></svg>
+    </button>
+    <div class="monthtitle" id="monthTitle">Month <span class="yr">Year</span></div>
+    <button class="nav-arrow" id="nextMonth" title="Next month">
+      <svg viewBox="0 0 12 12"><polygon points="4,1 9,6 4,11" fill="currentColor"/></svg>
+    </button>
+  </div>
+
+  <!-- Week header -->
+  <div class="weekhead" id="weekHead"></div>
+  <!-- Grid -->
+  <div class="grid" id="grid"></div>
+</div>
+
+<!-- ============ Entry modal ============ -->
+<div class="overlay" id="entryOverlay">
+  <div class="modal wide">
+    <div class="modal-head">
+      <h2 id="entryTitle">New entry</h2>
+      <button class="x-btn" data-close="entryOverlay">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="field">
+        <label>Title</label>
+        <input class="input" id="fTitle" placeholder="e.g. Coffee with Sam" maxlength="80">
+      </div>
+
+      <div class="field">
+        <label>Location</label>
+        <input class="input" id="fLocation" placeholder="e.g. Starbucks, Zoom, Room 2A" maxlength="80">
+      </div>
+
+      <div class="field">
+        <label>Date</label>
+        <input class="input" type="date" id="fDate">
+      </div>
+
+      <div class="check"><input type="checkbox" id="fAllDay"><label for="fAllDay">All-day event</label></div>
+
+      <div class="row" id="timeRow">
+        <div class="field"><label>Starts</label><input class="input" type="time" id="fStart" value="09:00"></div>
+        <div class="field"><label>Ends</label><input class="input" type="time" id="fEnd" value="10:00"></div>
+      </div>
+
+      <div class="field">
+        <label>Recurrence</label>
+        <div class="recur-row">
+          <span class="recur-summary" id="recurSummary">Does not repeat</span>
+          <button class="btn ghost small" id="btnRecur" type="button">Change…</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Categories</label>
+        <div class="cat-chosen" id="catChosen"></div>
+        <button class="btn ghost small" id="btnPickCats" type="button">🏷️ Choose categories…</button>
+      </div>
+
+      <div class="field">
+        <label>Emoji</label>
+        <div class="emojis" id="emojiPicker"></div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn danger" id="btnDelete" style="display:none">Delete</button>
+      <button class="btn ghost" data-close="entryOverlay">Cancel</button>
+      <button class="btn primary" id="btnSaveEntry">Save entry</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Appointment Recurrence (Outlook-style) ============ -->
+<div class="overlay" id="recurOverlay">
+  <div class="modal wide recur-modal">
+    <div class="modal-head">
+      <h2>Appointment Recurrence</h2>
+      <button class="x-btn" data-close="recurOverlay">✕</button>
+    </div>
+    <div class="modal-body">
+      <fieldset class="rec-fs" id="recTimeFs">
+        <legend>Appointment time</legend>
+        <div class="rec-time-grid">
+          <label>Start:</label><input class="input" type="time" id="rStart">
+          <label>End:</label><input class="input" type="time" id="rEnd">
+          <label>Duration:</label><span class="rec-duration" id="rDuration">—</span>
+        </div>
+      </fieldset>
+
+      <fieldset class="rec-fs">
+        <legend>Recurrence pattern</legend>
+        <div class="rec-pattern">
+          <div class="rec-radios">
+            <label class="rec-radio"><input type="radio" name="recType" value="daily"><span>Daily</span></label>
+            <label class="rec-radio"><input type="radio" name="recType" value="weekly"><span>Weekly</span></label>
+            <label class="rec-radio"><input type="radio" name="recType" value="monthly"><span>Monthly</span></label>
+            <label class="rec-radio"><input type="radio" name="recType" value="yearly"><span>Yearly</span></label>
+          </div>
+          <div class="rec-detail">
+            <!-- DAILY -->
+            <div class="rec-panel" id="panDaily">
+              <label class="rec-inline"><input type="radio" name="dailyMode" value="every"> Every <input class="mini" type="number" min="1" id="dailyEvery" value="1"> day(s)</label>
+              <label class="rec-inline"><input type="radio" name="dailyMode" value="weekday"> Every weekday</label>
+            </div>
+            <!-- WEEKLY -->
+            <div class="rec-panel" id="panWeekly">
+              <div class="rec-inline">Recur every <input class="mini" type="number" min="1" id="weeklyEvery" value="1"> week(s) on:</div>
+              <div class="rec-weekdays" id="weekdayBoxes"></div>
+            </div>
+            <!-- MONTHLY -->
+            <div class="rec-panel" id="panMonthly">
+              <label class="rec-inline"><input type="radio" name="monthlyMode" value="dayOfMonth"> Day <input class="mini" type="number" min="1" max="31" id="monthDay" value="1"> of every <input class="mini" type="number" min="1" id="monthEvery" value="1"> month(s)</label>
+              <label class="rec-inline"><input type="radio" name="monthlyMode" value="dayOfWeek"> The <select class="mini-sel" id="monthOrd"></select> <select class="mini-sel" id="monthWeekday"></select> of every <input class="mini" type="number" min="1" id="monthEvery2" value="1"> month(s)</label>
+            </div>
+            <!-- YEARLY -->
+            <div class="rec-panel" id="panYearly">
+              <label class="rec-inline"><input type="radio" name="yearlyMode" value="dayOfMonth"> Every <select class="mini-sel" id="yearMonth"></select> <input class="mini" type="number" min="1" max="31" id="yearDay" value="1"></label>
+              <label class="rec-inline"><input type="radio" name="yearlyMode" value="dayOfWeek"> The <select class="mini-sel" id="yearOrd"></select> <select class="mini-sel" id="yearWeekday"></select> of <select class="mini-sel" id="yearMonth2"></select></label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="rec-fs">
+        <legend>Range of recurrence</legend>
+        <div class="rec-range">
+          <div class="rec-range-start"><label>Start:</label><input class="input" type="date" id="rangeStart"></div>
+          <div class="rec-range-end">
+            <label class="rec-radio"><input type="radio" name="endMode" value="byDate"><span>End by:</span></label>
+            <input class="input" type="date" id="endByDate">
+            <label class="rec-radio"><input type="radio" name="endMode" value="afterCount"><span>End after:</span></label>
+            <span><input class="mini" type="number" min="1" id="endCount" value="10"> occurrences</span>
+            <label class="rec-radio"><input type="radio" name="endMode" value="never"><span>No end date</span></label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="modal-foot">
+      <button class="btn danger" id="btnRemoveRecur" style="margin-right:auto">Remove Recurrence</button>
+      <button class="btn ghost" data-close="recurOverlay">Cancel</button>
+      <button class="btn primary" id="btnRecurOK">OK</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Delete recurring item ============ -->
+<div class="overlay" id="deleteOverlay">
+  <div class="modal">
+    <div class="modal-head"><h2 id="delTitle">Delete recurring entry</h2><button class="x-btn" data-close="deleteOverlay">✕</button></div>
+    <div class="modal-body">
+      <p id="delMsg" style="font-size:14px;color:var(--muted);line-height:1.5">This is a recurring entry. Do you want to delete just the occurrence on <b style="color:var(--text)"></b>, or the entire series?</p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn ghost" data-close="deleteOverlay">Cancel</button>
+      <button class="btn ghost" id="btnDelOccurrence" style="margin-left:auto">Delete this occurrence</button>
+      <button class="btn danger-solid" id="btnDelSeries">Delete the series</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Edit recurring item scope (Outlook-style) ============ -->
+<div class="overlay" id="editScopeOverlay">
+  <div class="modal">
+    <div class="modal-head"><h2>Edit Recurring Entry</h2><button class="x-btn" data-close="editScopeOverlay">✕</button></div>
+    <div class="modal-body">
+      <p style="font-size:14px;color:var(--muted);line-height:1.5">This is one entry in a series (<b id="editScopeDate" style="color:var(--text)"></b>). What do you want to edit?</p>
+      <div class="scope-choices">
+        <label class="rec-radio"><input type="radio" name="editScope" value="occurrence" checked><span>Just this one</span></label>
+        <label class="rec-radio"><input type="radio" name="editScope" value="series"><span>The entire series</span></label>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn ghost" data-close="editScopeOverlay">Cancel</button>
+      <button class="btn primary" id="btnEditScopeOK" style="margin-left:auto">OK</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Color Categories manager ============ -->
+<div class="overlay" id="catOverlay">
+  <div class="modal wide cat-manager">
+    <div class="modal-head">
+      <h2>Color Categories</h2>
+      <button class="x-btn" data-close="catOverlay">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="hlp" id="catMgrHint" style="margin-top:-4px"></div>
+      <div class="cat-layout">
+        <div class="cat-listwrap"><div class="cat-list" id="catList"></div></div>
+        <div class="cat-side">
+          <button class="btn ghost" id="btnCatNew">New…</button>
+          <button class="btn ghost" id="btnCatRename">Rename</button>
+          <button class="btn ghost" id="btnCatDelete">Delete</button>
+          <div class="cat-color-wrap">
+            <label>Color</label>
+            <button class="btn ghost cat-color-btn" id="btnCatColor" type="button">
+              <span class="cat-color-sw" id="catColorSw"></span>
+              <span class="caret">▾</span>
+            </button>
+            <div class="cat-color-pop" id="catColorPop"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn primary" id="catMgrApply" style="margin-left:auto">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Sync modal ============ -->
+<div class="overlay" id="syncOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h2>GitHub Sync</h2>
+      <button class="x-btn" data-close="syncOverlay">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="banner err" id="syncErr"><span class="ic">!</span><span id="syncErrMsg"></span></div>
+      <div class="banner ok" id="syncOk"><span class="ic">✓</span><span id="syncOkMsg"></span></div>
+
+      <div class="field">
+        <label>Personal Access Token</label>
+        <input class="input" type="password" id="sToken" placeholder="ghp_••••••••••••••••••••">
+        <div class="hlp">A fine-grained or classic token with <b>repo → Contents (Read &amp; Write)</b> access. Stored only in this browser.</div>
+      </div>
+      <div class="field">
+        <label>GitHub Username</label>
+        <input class="input" id="sUser" value="charles-morales-15">
+      </div>
+      <div class="field">
+        <label>Repository Name</label>
+        <input class="input" id="sRepo" value="buwan">
+      </div>
+      <div class="field">
+        <label>File Path (JSON)</label>
+        <input class="input" id="sPath" value="buwan.json" placeholder="buwan.json">
+        <div class="hlp">Path inside the repo where the calendar data lives.</div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn ghost" id="btnTest">Test connection</button>
+      <button class="btn primary" id="btnSaveSettings" style="margin-left:auto">Save settings</button>
+    </div>
+  </div>
+</div>
+
+<!-- Overflow-day modal removed (all entries now render inline) -->
+
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+/* ============================================================
+   Safe storage: localStorage with in-memory fallback
+   (works both when self-hosted and inside sandboxed previews)
+============================================================ */
+const store = (() => {
+  const mem = {};
+  let ok = true;
+  try { const k='__t'; localStorage.setItem(k,'1'); localStorage.removeItem(k); } catch(e){ ok=false; }
+  return {
+    get: k => { try { return ok ? localStorage.getItem(k) : (mem[k] ?? null); } catch(e){ return mem[k] ?? null; } },
+    set: (k,v) => { try { ok ? localStorage.setItem(k,v) : (mem[k]=v); } catch(e){ mem[k]=v; } },
+  };
+})();
+
+/* ============================================================
+   App state
+============================================================ */
+// 20 unique Outlook-style category colors
+const CAT_COLORS = [
+  '#E24A4A','#EE7A30','#F2A93B','#E8C13F','#A7C947',
+  '#4FA45B','#17A79B','#2BB5D6','#3E8FE0','#3F5FD6',
+  '#6357D6','#8E54D6','#A845C4','#D24BB0','#E85C97',
+  '#C6455C','#9C6B4A','#64748B','#45607A','#3A4250'
+];
+const EMOJI_GROUPS = {
+  'Smileys & Emotion': ['😀','😃','😄','😁','😆','😅','🤣','😂','🙂','🙃','🫠','😉','😊','😇','🥰','😍','🤩','😘','😗','☺️','😚','😙','🥲','😋','😛','😜','🤪','😝','🤑','🤗','🤭','🫢','🫣','🤫','🤔','🫡','🤐','🤨','😐','😑','😶','🫥','😏','😒','🙄','😬','🤥','😌','😔','😪','🤤','😴','😷','🤒','🤕','🤢','🤮','🤧','🥵','🥶','🥴','😵','🤯','🤠','🥳','🥸','😎','🤓','🧐','😕','🫤','😟','🙁','☹️','😮','😯','😲','😳','🥺','🥹','😦','😧','😨','😰','😥','😢','😭','😱','😖','😣','😞','😓','😩','😫','🥱','😤','😡','😠','🤬','😈','👿','💀','☠️','💩','🤡','👹','👺','👻','👽','👾','🤖','😺','😸','😹','😻','😼','😽','🙀','😿','😾','💋','💌','💘','💝','💖','💗','💓','💞','💕','💟','❣️','💔','❤️','🧡','💛','💚','💙','💜','🤎','🖤','🤍','💯','💢','💥','💫','💦','💨','🕳️','💬','💭','💤'],
+  'People & Body': ['👋','🤚','🖐️','✋','🖖','🫱','🫲','🫳','🫴','👌','🤌','🤏','✌️','🤞','🫰','🤟','🤘','🤙','👈','👉','👆','🖕','👇','☝️','🫵','👍','👎','✊','👊','🤛','🤜','👏','🙌','🫶','👐','🤲','🙏','✍️','💅','🤳','💪','🦾','🦵','🦿','🦶','👣','👂','🦻','👃','🧠','🫀','🫁','🦷','🦴','👀','👁️','👅','👄','🫦','👶','🧒','👦','👧','🧑','👱','👨','🧔','👩','🧓','👴','👵','🙍','🙎','🙅','🙆','💁','🙋','🧏','🙇','🤦','🤷','👮','🕵️','💂','🥷','👷','🫅','🤴','👸','👳','👲','🧕','🤵','👰','🤰','🫃','🫄','🤱','👼','🎅','🤶','🦸','🦹','🧙','🧚','🧛','🧜','🧝','🧞','🧟','💆','💇','🚶','🧍','🧎','🏃','💃','🕺','👯','🧖','🧗','🤺','🏇','⛷️','🏂','🏌️','🏄','🚣','🏊','⛹️','🏋️','🚴','🚵','🤸','🤼','🤽','🤾','🤹','🧘','🛀','🛌'],
+  'Animals & Nature': ['🐵','🐶','🐺','🦊','🦝','🐱','🦁','🐯','🐴','🦄','🦓','🦌','🦬','🐮','🐷','🐗','🐭','🐹','🐰','🐻','🐨','🐼','🦥','🦦','🦨','🦘','🦡','🐔','🐧','🐦','🐤','🐣','🐥','🦆','🦅','🦉','🦇','🦋','🐌','🐛','🐜','🐝','🪲','🐞','🦗','🕷️','🕸️','🦂','🐢','🐍','🦎','🦖','🦕','🐙','🦑','🦐','🦞','🦀','🐡','🐠','🐟','🐬','🐳','🐋','🦈','🐊','🐆','🐅','🐃','🐂','🐄','🦣','🐘','🦛','🦏','🐪','🐫','🦒','🐎','🐖','🐏','🐑','🦙','🐐','🦌','🐕','🐩','🦮','🐈','🐓','🦃','🦚','🦜','🦢','🦩','🕊️','🐇','🦝','🐿️','🦔','🌵','🎄','🌲','🌳','🌴','🪵','🌱','🌿','☘️','🍀','🎍','🪴','🎋','🍃','🍂','🍁','🍄','🐚','🪸','🪨','🌾','💐','🌷','🌹','🥀','🌺','🌸','🌼','🌻','🌞','🌝','🌚','🌍','🌎','🌏','🪐','⭐','🌟','🌠','🌌','☁️','⛅','⛈️','🌤️','🌥️','🌦️','🌧️','🌨️','🌩️','❄️','☃️','⛄','🌬️','💨','💧','💦','☔','🌊'],
+  'Food & Drink': ['🍏','🍎','🍐','🍊','🍋','🍌','🍉','🍇','🍓','🫐','🍈','🍒','🍑','🥭','🍍','🥥','🥝','🍅','🍆','🥑','🥦','🥬','🥒','🌶️','🫑','🌽','🥕','🫒','🧄','🧅','🥔','🍠','🥐','🥯','🍞','🥖','🥨','🧀','🥚','🍳','🧈','🥞','🧇','🥓','🥩','🍗','🍖','🦴','🌭','🍔','🍟','🍕','🫓','🥪','🥙','🧆','🌮','🌯','🫔','🥗','🥘','🫕','🥫','🍝','🍜','🍲','🍛','🍣','🍱','🥟','🦪','🍤','🍙','🍚','🍘','🍥','🥠','🥮','🍢','🍡','🍧','🍨','🍦','🥧','🧁','🍰','🎂','🍮','🍭','🍬','🍫','🍿','🍩','🍪','🌰','🥜','🍯','🥛','🍼','🫖','☕','🍵','🧃','🥤','🧋','🍶','🍺','🍻','🥂','🍷','🥃','🍸','🍹','🧉','🍾','🧊','🥄','🍴','🍽️','🥢'],
+  'Activity': ['⚽','🏀','🏈','⚾','🥎','🎾','🏐','🏉','🥏','🎱','🪀','🏓','🏸','🏒','🏑','🥍','🏏','🪃','🥅','⛳','🪁','🏹','🎣','🤿','🥊','🥋','🎽','🛹','🛼','🛷','⛸️','🥌','🎿','🏆','🥇','🥈','🥉','🏅','🎖️','🏵️','🎗️','🎫','🎟️','🎪','🎭','🩰','🎨','🎬','🎤','🎧','🎼','🎹','🥁','🪘','🎷','🎺','🪗','🎸','🪕','🎻','🎲','♟️','🎯','🎳','🎮','🎰','🧩'],
+  'Travel & Places': ['🚗','🚕','🚙','🚌','🚎','🏎️','🚓','🚑','🚒','🚐','🛻','🚚','🚛','🚜','🦯','🦽','🦼','🛴','🚲','🛵','🏍️','🛺','🚨','🚔','🚍','🚘','🚖','🚡','🚠','🚟','🚃','🚋','🚞','🚝','🚄','🚅','🚈','🚂','🚆','🚇','🚊','🚉','✈️','🛫','🛬','🛩️','💺','🛰️','🚀','🛸','🚁','🛶','⛵','🚤','🛥️','🛳️','⛴️','🚢','⚓','⛽','🚧','🚦','🚥','🗺️','🗿','🗽','🗼','🏰','🏯','🏟️','🎡','🎢','🎠','⛲','⛱️','🏖️','🏝️','🏜️','🌋','⛰️','🏔️','🗻','🏕️','⛺','🏠','🏡','🏘️','🏚️','🏗️','🏭','🏢','🏬','🏣','🏤','🏥','🏦','🏨','🏪','🏫','🏩','💒','🏛️','⛪','🕌','🕍','🛕','🕋','⛩️','🌁','🌃','🏙️','🌄','🌅','🌆','🌇','🌉','♨️','🎑'],
+  'Objects': ['⌚','📱','📲','💻','⌨️','🖥️','🖨️','🖱️','🖲️','🕹️','💽','💾','💿','📀','📼','📷','📸','📹','🎥','📽️','🎞️','📞','☎️','📟','📠','📺','📻','🎙️','🎚️','🎛️','🧭','⏱️','⏲️','⏰','🕰️','⌛','⏳','📡','🔋','🔌','💡','🔦','🕯️','🪔','🧯','🛢️','💸','💵','💴','💶','💷','🪙','💰','💳','🧾','💎','⚖️','🪜','🧰','🪛','🔧','🔨','⚒️','🛠️','⛏️','🪚','🔩','⚙️','🧱','⛓️','🧲','🔫','💣','🧨','🪓','🔪','🗡️','⚔️','🛡️','🚬','⚰️','⚱️','🏺','🔮','📿','🧿','💈','⚗️','🔭','🔬','🕳️','🩹','🩺','💊','💉','🩸','🧬','🦠','🧫','🧪','🌡️','🧹','🪠','🧺','🧻','🚽','🚰','🚿','🛁','🛀','🧼','🪥','🪒','🧽','🪣','🧴','🛎️','🔑','🗝️','🚪','🪑','🛋️','🛏️','🛌','🧸','🪆','🖼️','🪞','🪟','🛍️','🛒','🎁','🎈','🎏','🎀','🪄','🪅','🎊','🎉','🎎','🏮','🎐','🧧','✉️','📩','📨','📧','📥','📤','📦','🏷️','📪','📫','📬','📭','📮','📜','📃','📄','📑','🧾','📊','📈','📉','🗒️','🗓️','📆','📅','🗑️','📇','🗃️','🗳️','🗄️','📋','📁','📂','🗂️','🗞️','📰','📓','📔','📒','📕','📗','📘','📙','📚','📖','🔖','🧷','🔗','📎','🖇️','📐','📏','🧮','📌','📍','✂️','🖊️','🖋️','✒️','🖌️','🖍️','📝','✏️','🔍','🔎','🔏','🔐','🔒','🔓'],
+  'Symbols': ['❤️','🧡','💛','💚','💙','💜','🖤','🤍','🤎','💔','❣️','💕','💞','💓','💗','💖','💘','💝','☮️','✝️','☪️','🕉️','☸️','✡️','🔯','🕎','☯️','☦️','🛐','⛎','♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓','🆔','⚛️','🉑','☢️','☣️','📴','📳','🈶','🈚','🈸','🈺','🈷️','✴️','🆚','💮','🉐','㊙️','㊗️','🈴','🈵','🈹','🈲','🅰️','🅱️','🆎','🆑','🅾️','🆘','❌','⭕','🛑','⛔','📛','🚫','💯','💢','♨️','🚷','🚯','🚳','🚱','🔞','📵','🚭','❗','❕','❓','❔','‼️','⁉️','🔅','🔆','〽️','⚠️','🚸','🔱','⚜️','🔰','♻️','✅','🈯','💹','❇️','✳️','❎','🌐','💠','Ⓜ️','🌀','💤','🏧','🚾','♿','🅿️','🛗','🈳','🈂️','🛂','🛃','🛄','🛅','🚹','🚺','🚼','⚧️','🚻','🚮','🎦','📶','🈁','🔣','ℹ️','🔤','🔡','🔠','🆖','🆗','🆙','🆒','🆕','🆓','🔟','🔢','▶️','⏸️','⏯️','⏹️','⏺️','⏭️','⏮️','⏩','⏪','⏫','⏬','◀️','🔼','🔽','➡️','⬅️','⬆️','⬇️','↗️','↘️','↙️','↖️','↕️','↔️','↩️','↪️','⤴️','⤵️','🔀','🔁','🔂','🔄','🔃','🎵','🎶','➕','➖','➗','✖️','🟰','♾️','💲','💱','™️','©️','®️','〰️','➰','➿','🔚','🔙','🔛','🔝','🔜','✔️','☑️','🔘','🔴','🟠','🟡','🟢','🔵','🟣','⚫','⚪','🟤','🔺','🔻','🔸','🔹','🔶','🔷','🔳','🔲','▪️','▫️','◾','◽','◼️','◻️','🟥','🟧','🟨','🟩','🟦','🟪','⬛','⬜','🟫','🔈','🔇','🔉','🔊','🔔','🔕','📣','📢','♠️','♣️','♥️','♦️','🃏','🎴','🀄','🕐','🕑','🕒','🕓','🕔','🕕','🕖','🕗','🕘','🕙','🕚','🕛']
+};
+const EMOJIS = Object.values(EMOJI_GROUPS).flat();
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DOW = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const NO_CAT_COLOR = '#94A3B8';
+
+let data = defaultData();
+let undoStack = [];
+let view = { y: new Date().getFullYear(), m: new Date().getMonth() };
+let editingId = null;
+let editingOccDate = null;
+let editScope = 'series';      // 'series' | 'occurrence'
+let pendingEdit = null;        // {id, occDate} awaiting scope choice
+let picked = { emoji: EMOJIS[0], categoryIds: [], recurrence: null };
+let recDraft = null;
+let aiInFlight = {};
+let catManager = { mode: 'manage', selId: null }; // mode: 'assign' | 'manage'
+
+function seedCategories(){
+  const defs = [
+    ['Admin','#64748B'],['Meetings','#3F5FD6'],['Health','#4FA45B'],['Personal','#8E54D6'],
+    ['Work','#3E8FE0'],['Travel','#EE7A30'],['Family','#E85C97'],['Finance','#17A79B'],
+    ['Training','#F2A93B'],['Non-Work','#9C6B4A']
+  ];
+  return defs.map(([name,color])=>({ id: uid(), name, color }));
+}
+function defaultData(){
+  return {
+    version: '1.0.0',
+    lastSaved: null,
+    events: [],
+    categories: seedCategories(),
+    settings: { githubToken:'', githubUsername:'charles-morales-15', repoName:'buwan', filePath:'buwan.json' },
+    aiCache: {}
+  };
+}
+function uid(){ return 'x'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
+function monthKey(y,m){ return y+'-'+String(m+1).padStart(2,'0'); }
+function iso(y,m,d){ return y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'); }
+function todayISO(){ const t=new Date(); return iso(t.getFullYear(),t.getMonth(),t.getDate()); }
+
+/* Category helpers */
+function getCat(id){ return (data.categories||[]).find(c=>c.id===id); }
+function eventCats(ev){ return (ev.categoryIds||[]).map(getCat).filter(Boolean); }
+function eventColor(ev){ const cs=eventCats(ev); return cs[0] ? cs[0].color : (ev.color || NO_CAT_COLOR); }
+// A single occurrence may carry per-date overrides (edited "just this one")
+function effectiveEvent(ev, occDate){ const ov = (ev.overrides && occDate && ev.overrides[occDate]) || null; return ov ? {...ev, ...ov} : ev; }
+// Chronological key for a given day (all-day first, then by effective start time)
+function dayTimeKey(ev, ds){ const e = effectiveEvent(ev, ds); return e.allDay ? '' : (e.startTime || ''); }
+function sortDayEvents(events, ds){ return events.slice().sort((a,b)=> dayTimeKey(a,ds).localeCompare(dayTimeKey(b,ds))); }
+function nextUnusedColor(){
+  const used = new Set((data.categories||[]).map(c=>c.color));
+  return CAT_COLORS.find(c=>!used.has(c)) || CAT_COLORS[(data.categories||[]).length % CAT_COLORS.length];
+}
+
+/* ============================================================
+   Undo
+============================================================ */
+function snapshot(){
+  undoStack.push(JSON.stringify({ events: data.events, categories: data.categories }));
+  if(undoStack.length>50) undoStack.shift();
+  document.getElementById('btnUndo').disabled = false;
+}
+function doUndo(){
+  if(!undoStack.length) return;
+  const s = JSON.parse(undoStack.pop());
+  data.events = s.events; data.categories = s.categories;
+  document.getElementById('btnUndo').disabled = !undoStack.length;
+  render(); toast('Change undone');
+}
+
+/* ============================================================
+   Recurrence engine (Outlook-style)
+============================================================ */
+function pd(isoStr){ return new Date(isoStr+'T00:00:00'); }
+function toISO(d){ return iso(d.getFullYear(), d.getMonth(), d.getDate()); }
+function addDaysD(d,n){ const x=new Date(d); x.setDate(x.getDate()+n); return x; }
+function daysInMonth(y,m){ return new Date(y, m+1, 0).getDate(); }
+function dowOf(isoStr){ return pd(isoStr).getDay(); }
+function ordinalOfDate(isoStr){ return Math.floor((pd(isoStr).getDate()-1)/7)+1; }
+function nthWeekdayOfMonth(y,m,ordinal,weekday){
+  if(ordinal===-1){
+    const last=daysInMonth(y,m); const d=new Date(y,m,last);
+    const back=(d.getDay()-weekday+7)%7; return new Date(y,m,last-back);
+  }
+  const first=new Date(y,m,1); const fwd=(weekday-first.getDay()+7)%7;
+  const day=1+fwd+(ordinal-1)*7;
+  if(day>daysInMonth(y,m)) return null;
+  return new Date(y,m,day);
+}
+function defaultRecurrence(startDate){
+  const sd = startDate || todayISO();
+  return {
+    type:'none', interval:1,
+    weekdays:[dowOf(sd)], dailyMode:'every',
+    monthlyMode:'dayOfMonth', dayOfMonth:pd(sd).getDate(),
+    weekOrdinal:ordinalOfDate(sd), weekday:dowOf(sd),
+    yearlyMode:'dayOfMonth', month:pd(sd).getMonth(),
+    rangeStart:sd, endMode:'never', endDate:'', count:10
+  };
+}
+function normalizeRecurrence(ev){
+  const sd = ev.startDate;
+  let r = ev.recurrence;
+  if(!r || typeof r==='string'){
+    const t = (typeof r==='string') ? r : 'none';
+    r = { type: t };
+  }
+  const merged = Object.assign(defaultRecurrence(sd), r);
+  if(!Array.isArray(merged.weekdays) || !merged.weekdays.length) merged.weekdays=[dowOf(sd)];
+  if(!merged.rangeStart) merged.rangeStart = sd;
+  return merged;
+}
+// Returns array of ISO date strings this event occupies within [winStart, winEnd]
+function occurrencesInWindow(ev, winStart, winEnd){
+  const rec = normalizeRecurrence(ev);
+  const ex = new Set(ev.exceptions||[]);
+  if(rec.type==='none'){
+    const d = ev.startDate;
+    return (d>=winStart && d<=winEnd && !ex.has(d)) ? [d] : [];
+  }
+  const start = rec.rangeStart || ev.startDate;
+  const out=[]; let count=0; let iter=0; const MAX=20000;
+  const endBy = (rec.endMode==='byDate' && rec.endDate) ? rec.endDate : null;
+  const maxCount = (rec.endMode==='afterCount') ? Math.max(1, rec.count|0) : null;
+  // step: register one chronological occurrence; return false to stop generation
+  const step = (isoStr)=>{
+    if(endBy && isoStr>endBy) return false;
+    count++;
+    if(maxCount && count>maxCount) return false;
+    if(isoStr>winEnd) return false;
+    if(isoStr>=winStart && !ex.has(isoStr)) out.push(isoStr);
+    return true;
+  };
+  const iv = Math.max(1, rec.interval|0);
+
+  if(rec.type==='daily'){
+    if(rec.dailyMode==='weekday'){
+      let d=pd(start);
+      while(iter++<MAX){ const wd=d.getDay(); if(wd>=1&&wd<=5){ if(!step(toISO(d))){break;} } d=addDaysD(d,1); }
+    } else {
+      let d=pd(start);
+      while(iter++<MAX){ if(!step(toISO(d))){break;} d=addDaysD(d,iv); }
+    }
+  } else if(rec.type==='weekly'){
+    const wds=[...rec.weekdays].sort((a,b)=>a-b);
+    const s=pd(start); let wk=addDaysD(s, -s.getDay()); // Sunday of start's week
+    while(iter++<MAX){
+      let brk=false;
+      for(const wd of wds){
+        const cd=addDaysD(wk, wd); const cISO=toISO(cd);
+        if(cISO<start) continue;
+        if(!step(cISO)){ brk=true; break; }
+      }
+      if(brk) break;
+      wk=addDaysD(wk, 7*iv);
+      if(toISO(wk)>winEnd){ // whole future weeks are out of window
+        // still allow one more check only if maxCount unmet & need counting? window done, safe to break
+        break;
+      }
+    }
+  } else if(rec.type==='monthly'){
+    let y=pd(start).getFullYear(), mo=pd(start).getMonth();
+    while(iter++<MAX){
+      if(iso(y,mo,1)>winEnd) break;
+      let cISO=null;
+      if(rec.monthlyMode==='dayOfWeek'){
+        const nd=nthWeekdayOfMonth(y,mo,rec.weekOrdinal,rec.weekday);
+        if(nd) cISO=toISO(nd);
+      } else {
+        if(rec.dayOfMonth<=daysInMonth(y,mo)) cISO=iso(y,mo,rec.dayOfMonth);
+      }
+      if(cISO && cISO>=start){ if(!step(cISO)){ break; } }
+      mo+=iv; while(mo>11){ mo-=12; y++; }
+    }
+  } else if(rec.type==='yearly'){
+    let y=pd(start).getFullYear();
+    while(iter++<MAX){
+      if(iso(y,rec.month,1)>winEnd) break;
+      let cISO=null;
+      if(rec.yearlyMode==='dayOfWeek'){
+        const nd=nthWeekdayOfMonth(y,rec.month,rec.weekOrdinal,rec.weekday);
+        if(nd) cISO=toISO(nd);
+      } else {
+        if(rec.dayOfMonth<=daysInMonth(y,rec.month)) cISO=iso(y,rec.month,rec.dayOfMonth);
+      }
+      if(cISO && cISO>=start){ if(!step(cISO)){ break; } }
+      y+=iv;
+    }
+  }
+  return out;
+}
+// Back-compat single-date test
+function occursOn(ev, dateStr){ return occurrencesInWindow(ev, dateStr, dateStr).length>0; }
+
+function recurrenceSummary(rec){
+  if(!rec || rec.type==='none') return 'Does not repeat';
+  const iv=Math.max(1,rec.interval|0);
+  const ord=['','first','second','third','fourth','last'];
+  const ordName=(n)=> n===-1?'last':ord[n]||(n+'th');
+  let base='';
+  if(rec.type==='daily') base = rec.dailyMode==='weekday' ? 'Every weekday' : (iv===1?'Daily':`Every ${iv} days`);
+  else if(rec.type==='weekly'){
+    const days=[...rec.weekdays].sort((a,b)=>a-b).map(d=>DOW[d].slice(0,3)).join(', ');
+    base = (iv===1?'Weekly':`Every ${iv} weeks`)+` on ${days}`;
+  }
+  else if(rec.type==='monthly'){
+    base = rec.monthlyMode==='dayOfWeek'
+      ? `The ${ordName(rec.weekOrdinal)} ${DOW[rec.weekday]} of every ${iv===1?'':iv+' '}month${iv===1?'':'s'}`
+      : `Day ${rec.dayOfMonth} of every ${iv===1?'':iv+' '}month${iv===1?'':'s'}`;
+  }
+  else if(rec.type==='yearly'){
+    base = rec.yearlyMode==='dayOfWeek'
+      ? `Every ${ordName(rec.weekOrdinal)} ${DOW[rec.weekday]} of ${MONTHS[rec.month]}`
+      : `Every ${MONTHS[rec.month]} ${rec.dayOfMonth}`;
+  }
+  let tail='';
+  if(rec.endMode==='byDate' && rec.endDate) tail = `, until ${fmtDate(rec.endDate)}`;
+  else if(rec.endMode==='afterCount') tail = `, ${rec.count} times`;
+  return base+tail;
+}
+function fmtDate(isoStr){ if(!isoStr) return ''; const d=pd(isoStr); return `${d.getDate()} ${MONTHS[d.getMonth()].slice(0,3)} ${d.getFullYear()}`; }
+
+/* ============================================================
+   Rendering
+============================================================ */
+function render(){
+  const {y,m} = view;
+  document.getElementById('monthTitle').innerHTML = `${MONTHS[m]} <span class="yr">${y}</span>`;
+
+  // week header
+  const wh = document.getElementById('weekHead');
+  wh.innerHTML = DOW.map((d,i)=>`<div class="${i===0||i===6?'wend':''}">${d.slice(0,3)}</div>`).join('');
+
+  // 42-day grid starting Sunday
+  const first = new Date(y,m,1);
+  const start = new Date(y,m,1 - first.getDay());
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  const tISO = todayISO();
+
+  // Build occurrence map for the visible window
+  const winStart = iso(start.getFullYear(), start.getMonth(), start.getDate());
+  const endD = new Date(start); endD.setDate(start.getDate()+41);
+  const winEnd = iso(endD.getFullYear(), endD.getMonth(), endD.getDate());
+  const dayMap = {};
+  data.events.forEach(ev=>{
+    occurrencesInWindow(ev, winStart, winEnd).forEach(ds=>{
+      (dayMap[ds] = dayMap[ds] || []).push(ev);
+    });
+  });
+
+  for(let i=0;i<42;i++){
+    const dt = new Date(start); dt.setDate(start.getDate()+i);
+    const cy=dt.getFullYear(), cm=dt.getMonth(), cd=dt.getDate();
+    const ds = iso(cy,cm,cd);
+    const outside = cm!==m;
+    const cell = document.createElement('div');
+    cell.className = 'cell'+(outside?' outside':'')+(ds===tISO?' istoday':'');
+
+    const evs = sortDayEvents(dayMap[ds]||[], ds);
+
+    const head = document.createElement('div');
+    head.className='dayhead';
+    head.innerHTML = `<span class="daynum">${cd}</span><button class="add-day" title="Add entry">+</button>`;
+    head.querySelector('.add-day').addEventListener('click', e=>{ e.stopPropagation(); openEntry(null, ds); });
+    cell.appendChild(head);
+
+    const chips = document.createElement('div'); chips.className='chips';
+    evs.forEach(ev=> chips.appendChild(makeChip(ev, ds)));
+    cell.appendChild(chips);
+    cell.addEventListener('dblclick', ()=> openEntry(null, ds));
+    grid.appendChild(cell);
+  }
+
+  renderAlmanac();
+}
+
+function makeChip(ev, occDate){
+  const c = document.createElement('div');
+  c.className='chip cal';
+  const e = effectiveEvent(ev, occDate);   // apply per-occurrence overrides for display
+  const cats = eventCats(e);
+  const col = eventColor(e);
+  c.style.setProperty('--chip-accent', darken(col,.22));
+  c.style.setProperty('--chip-bg', col);           // solid, 0% transparency
+  c.style.setProperty('--chip-fg', chipTextColor(col)); // black or white only
+  const hasTime = !e.allDay && e.startTime;
+  const timeHtml = hasTime ? `<span class="time">${fmtTime(e.startTime)}</span>` : '';
+  const dots = cats.length>1 ? `<span class="dots">${cats.slice(0,4).map(k=>`<i style="background:${k.color}"></i>`).join('')}</span>` : '';
+  const mainHtml = `<span class="chip-main"><span class="emo">${e.emoji||''}</span><span class="txt">${esc(e.title)}</span></span>`;
+  // title/emoji left; time pinned to the upper-right
+  const line1 = `<span class="line line1">${mainHtml}${dots}${timeHtml}</span>`;
+  const line2 = e.location ? `<span class="line line2"><span class="txt loc">📍 ${esc(e.location)}</span></span>` : '';
+  c.innerHTML = line1 + line2;
+  // Outlook-style: entries longer than 1 hour grow taller with duration; <=1hr keep default height
+  const h = chipHeightFor(e);
+  if(h) c.style.minHeight = h+'px';
+  // hover tooltip: entry name + location only (no category)
+  c.title = [e.title, e.location ? '📍 '+e.location : ''].filter(Boolean).join('\n');
+  c.addEventListener('click', ev2=>{ ev2.stopPropagation(); openEntry(ev.id, occDate); });
+  return c;
+}
+// Chip height scales with duration beyond 1 hour (default height otherwise)
+const CHIP_BASE_H = 36, CHIP_PER_HOUR = 26, CHIP_MAX_EXTRA = 200;
+function eventDurationMin(e){
+  if(e.allDay || !e.startTime || !e.endTime) return 0;
+  const [sh,sm]=e.startTime.split(':').map(Number);
+  const [eh,em]=e.endTime.split(':').map(Number);
+  let mins=(eh*60+em)-(sh*60+sm);
+  if(mins<0) mins+=1440; // overnight
+  return mins;
+}
+function chipHeightFor(e){
+  const mins = eventDurationMin(e);
+  if(mins<=60) return null; // default height for <=1hr (or all-day/untimed)
+  const extra = Math.min((mins-60)/60*CHIP_PER_HOUR, CHIP_MAX_EXTRA);
+  return Math.round(CHIP_BASE_H + extra);
+}
+
+function fmtTime(t){ if(!t) return ''; let [h,mn]=t.split(':').map(Number); const ap=h<12?'AM':'PM'; let hh=h%12; if(hh===0) hh=12; return `${String(hh).padStart(2,'0')}:${String(mn||0).padStart(2,'0')}${ap}`; }
+function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function hexA(hex,a){ const n=parseInt(hex.slice(1),16); return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`; }
+function chipFg(hex){ // readable text depending on theme
+  const dark = document.documentElement.dataset.theme==='dark';
+  return dark ? lighten(hex,.55) : darken(hex,.35);
+}
+function lighten(hex,f){ const n=parseInt(hex.slice(1),16); let r=n>>16&255,g=n>>8&255,b=n&255; r+= (255-r)*f; g+=(255-g)*f; b+=(255-b)*f; return `rgb(${r|0},${g|0},${b|0})`; }
+function darken(hex,f){ const n=parseInt(hex.slice(1),16); let r=n>>16&255,g=n>>8&255,b=n&255; r*=(1-f); g*=(1-f); b*=(1-f); return `rgb(${r|0},${g|0},${b|0})`; }
+// Pure black or white text for readability on a solid color block
+function chipTextColor(hex){ const n=parseInt(hex.slice(1),16); const r=n>>16&255,g=n>>8&255,b=n&255; const L=0.2126*r+0.7152*g+0.0722*b; return L>150 ? '#111111' : '#FFFFFF'; }
+
+/* ============================================================
+   Entry modal
+============================================================ */
+function buildPickers(){
+  const ep=document.getElementById('emojiPicker'); ep.innerHTML='';
+  Object.entries(EMOJI_GROUPS).forEach(([label,list])=>{
+    const h=document.createElement('div'); h.className='emo-group-label'; h.textContent=label; ep.appendChild(h);
+    const grid=document.createElement('div'); grid.className='emo-grid';
+    list.forEach(em=>{
+      const b=document.createElement('div'); b.className='emo-opt'; b.textContent=em; b.dataset.em=em;
+      b.addEventListener('click',()=>{ picked.emoji=em; markSel(ep,'.emo-opt',b,'sel'); });
+      grid.appendChild(b);
+    });
+    ep.appendChild(grid);
+  });
+}
+function markSel(container,sel,el,cls){ container.querySelectorAll(sel).forEach(x=>x.classList.remove(cls)); el.classList.add(cls); }
+function selectPicked(){
+  document.querySelectorAll('#emojiPicker .emo-opt').forEach(x=> x.classList.toggle('sel', x.dataset.em===picked.emoji));
+}
+
+/* chosen-category chips inside the entry modal */
+function renderCatChosen(){
+  const box=document.getElementById('catChosen'); box.innerHTML='';
+  if(!picked.categoryIds.length){
+    box.innerHTML='<span class="cat-none">No categories — uncategorized</span>';
+    return;
+  }
+  picked.categoryIds.map(getCat).filter(Boolean).forEach(cat=>{
+    const t=document.createElement('span'); t.className='cat-tag';
+    t.style.borderColor=cat.color; t.style.background=hexA(cat.color,.12); t.style.color=chipFg(cat.color);
+    t.innerHTML=`<span class="dot" style="background:${cat.color}"></span>${esc(cat.name)}<span class="rm">✕</span>`;
+    t.querySelector('.rm').addEventListener('click',()=>{ picked.categoryIds=picked.categoryIds.filter(id=>id!==cat.id); renderCatChosen(); });
+    box.appendChild(t);
+  });
+}
+
+// Entry click dispatcher: recurring entries first ask "just this one" vs "the entire series"
+function openEntry(id, dateStr){
+  const ev = id ? data.events.find(e=>e.id===id) : null;
+  if(ev){
+    const rec = normalizeRecurrence(ev);
+    if(rec.type!=='none'){ openRecurringChoice(id, dateStr || ev.startDate); return; }
+  }
+  openEntryModal(id, dateStr, 'series');
+}
+function openRecurringChoice(id, occDate){
+  pendingEdit = { id, occDate };
+  const r = document.querySelector('input[name="editScope"][value="occurrence"]'); if(r) r.checked = true;
+  document.getElementById('editScopeDate').textContent = occDate ? fmtDate(occDate) : 'this date';
+  show('editScopeOverlay');
+}
+function editScopeOK(){
+  if(!pendingEdit) { hide('editScopeOverlay'); return; }
+  const scope = (document.querySelector('input[name="editScope"]:checked')||{}).value || 'occurrence';
+  const {id, occDate} = pendingEdit;
+  hide('editScopeOverlay');
+  openEntryModal(id, occDate, scope);
+}
+
+function openEntryModal(id, dateStr, scope){
+  editingId = id;
+  editScope = scope || 'series';
+  const ev = id ? data.events.find(e=>e.id===id) : null;
+  editingOccDate = id ? (dateStr || (ev? ev.startDate : null)) : null;
+  const occ = editScope==='occurrence';
+  // occurrence edits read the merged (override-applied) values for that specific date
+  const src = (ev && occ) ? effectiveEvent(ev, editingOccDate) : ev;
+  const isRecurring = ev ? (normalizeRecurrence(ev).type!=='none') : false;
+  document.getElementById('entryTitle').textContent = !ev ? 'New entry' : (occ ? 'Edit this occurrence' : (isRecurring ? 'Edit series' : 'Edit entry'));
+  document.getElementById('btnDelete').style.display = ev? 'block':'none';
+  document.getElementById('fTitle').value = src? src.title : '';
+  document.getElementById('fLocation').value = src? (src.location||'') : '';
+  document.getElementById('fDate').value = occ ? editingOccDate : (ev? ev.startDate : (dateStr || todayISO()));
+  document.getElementById('fAllDay').checked = src? !!src.allDay : false;
+  document.getElementById('fStart').value = src? (src.startTime||'09:00') : '09:00';
+  document.getElementById('fEnd').value = src? (src.endTime||'10:00') : '10:00';
+  picked.recurrence = ev ? normalizeRecurrence(ev) : defaultRecurrence(document.getElementById('fDate').value);
+  picked.categoryIds = src ? [...(src.categoryIds||[])] : [];
+  picked.emoji = src? (src.emoji||EMOJIS[0]) : EMOJIS[0];
+  // The date is always editable (so a mistakenly-dated entry can be moved to a past/future date).
+  document.getElementById('fDate').disabled = false;
+  // Recurrence still belongs to the whole series, so it stays locked when editing just one occurrence.
+  document.getElementById('btnRecur').disabled = occ;
+  selectPicked();
+  renderCatChosen();
+  updateRecurSummary();
+  toggleTimeRow();
+  show('entryOverlay');
+  setTimeout(()=>document.getElementById('fTitle').focus(),50);
+}
+function updateRecurSummary(){ document.getElementById('recurSummary').textContent = recurrenceSummary(picked.recurrence); }
+function toggleTimeRow(){ document.getElementById('timeRow').style.display = document.getElementById('fAllDay').checked ? 'none':'flex'; }
+
+function saveEntry(){
+  const title = document.getElementById('fTitle').value.trim();
+  if(!title){ toast('Give the entry a title first'); document.getElementById('fTitle').focus(); return; }
+  const allDay = document.getElementById('fAllDay').checked;
+  const ids = picked.categoryIds.filter(id=>getCat(id));
+
+  // "Just this one": same-day edits store an override; changing the date detaches the occurrence.
+  if(editingId && editScope==='occurrence' && editingOccDate){
+    const ev = data.events.find(e=>e.id===editingId);
+    if(ev){
+      snapshot();
+      const newDate = document.getElementById('fDate').value || editingOccDate;
+      const fields = {
+        title,
+        location: document.getElementById('fLocation').value.trim(),
+        allDay,
+        startTime: allDay? '' : document.getElementById('fStart').value,
+        endTime: allDay? '' : document.getElementById('fEnd').value,
+        categoryIds: ids,
+        color: ids.length ? getCat(ids[0]).color : NO_CAT_COLOR,
+        emoji: picked.emoji
+      };
+      if(newDate === editingOccDate){
+        ev.overrides = ev.overrides || {};
+        ev.overrides[editingOccDate] = fields;
+        toast('This occurrence updated');
+      } else {
+        // moved off its original day: skip it in the series and create a standalone entry on the new day
+        ev.exceptions = [...(ev.exceptions||[]), editingOccDate];
+        if(ev.overrides && ev.overrides[editingOccDate]) delete ev.overrides[editingOccDate];
+        data.events.push({ id:uid(), ...fields, startDate:newDate, endDate:newDate, recurrence:{type:'none'}, exceptions:[], overrides:{} });
+        toast('Occurrence moved to '+fmtDate(newDate));
+      }
+      hide('entryOverlay'); render();
+    }
+    return;
+  }
+
+  const startDate = document.getElementById('fDate').value || todayISO();
+  const recur = picked.recurrence || defaultRecurrence(startDate);
+  if(recur.type!=='none' && !recur.rangeStart) recur.rangeStart = startDate;
+  const rec = {
+    title,
+    location: document.getElementById('fLocation').value.trim(),
+    startDate,
+    endDate: startDate,
+    categoryIds: ids,
+    allDay,
+    startTime: allDay? '' : document.getElementById('fStart').value,
+    endTime: allDay? '' : document.getElementById('fEnd').value,
+    recurrence: recur,
+    color: ids.length ? getCat(ids[0]).color : NO_CAT_COLOR,
+    emoji: picked.emoji
+  };
+  snapshot();
+  if(editingId){ const i=data.events.findIndex(e=>e.id===editingId); data.events[i]={...data.events[i],...rec}; toast(editScope==='series'?'Series updated':'Entry updated'); }
+  else { rec.id=uid(); rec.exceptions=[]; rec.overrides={}; data.events.push(rec); toast('Entry added'); }
+  hide('entryOverlay'); render();
+}
+function deleteEntry(){
+  if(!editingId) return;
+  const ev = data.events.find(e=>e.id===editingId);
+  if(!ev) return;
+  const rec = normalizeRecurrence(ev);
+  const occBtn = document.getElementById('btnDelOccurrence');
+  const serBtn = document.getElementById('btnDelSeries');
+  const title  = document.getElementById('delTitle');
+  const msg    = document.getElementById('delMsg');
+  if(rec.type==='none'){
+    // single entry -> simple confirm (still a popup, so nothing is deleted by accident)
+    occBtn.style.display='none';
+    serBtn.textContent='Delete entry';
+    if(title) title.textContent='Delete entry';
+    if(msg) msg.textContent='Delete this entry? You can undo this right after.';
+    show('deleteOverlay');
+    return;
+  }
+  // recurring -> ask occurrence vs series (Outlook-style)
+  if(!editingOccDate) editingOccDate = ev.startDate;   // safety
+  occBtn.style.display='';
+  serBtn.textContent='Delete the series';
+  if(title) title.textContent='Delete recurring entry';
+  if(msg) msg.innerHTML='This is a recurring entry. Do you want to delete just the occurrence on <b style="color:var(--text)">'+esc(fmtDate(editingOccDate))+'</b>, or the entire series?';
+  show('deleteOverlay');
+}
+function commitDelete(scope){
+  const ev = data.events.find(e=>e.id===editingId);
+  if(!ev){ hide('deleteOverlay'); hide('entryOverlay'); return; }
+  const rec = normalizeRecurrence(ev);
+  snapshot();
+  if(scope==='occurrence'){
+    // delete ONLY this occurrence — never fall through to removing the series
+    const occ = editingOccDate || ev.startDate;
+    ev.exceptions = [...(ev.exceptions||[]), occ];
+    if(ev.overrides && ev.overrides[occ]) delete ev.overrides[occ];
+    toast('Deleted this occurrence');
+  } else {
+    data.events = data.events.filter(e=>e.id!==editingId);
+    toast(rec.type==='none' ? 'Entry deleted' : 'Series deleted');
+  }
+  hide('deleteOverlay'); hide('entryOverlay'); render();
+}
+
+/* ============================================================
+   Appointment Recurrence dialog
+============================================================ */
+const REC_ORDS = [[1,'first'],[2,'second'],[3,'third'],[4,'fourth'],[-1,'last']];
+function buildWeekdayBoxes(){
+  const box=document.getElementById('weekdayBoxes'); box.innerHTML='';
+  DOW.forEach((d,i)=>{ const l=document.createElement('label'); l.className='wd-box';
+    l.innerHTML=`<input type="checkbox" data-d="${i}"><span>${d.slice(0,3)}</span>`; box.appendChild(l); });
+}
+function buildRecSelects(){
+  const o=(v,t)=>`<option value="${v}">${t}</option>`;
+  const ordHtml=REC_ORDS.map(([v,t])=>o(v,t)).join('');
+  const wdHtml=DOW.map((d,i)=>o(i,d)).join('');
+  const moHtml=MONTHS.map((m,i)=>o(i,m)).join('');
+  ['monthOrd','yearOrd'].forEach(id=>document.getElementById(id).innerHTML=ordHtml);
+  ['monthWeekday','yearWeekday'].forEach(id=>document.getElementById(id).innerHTML=wdHtml);
+  ['yearMonth','yearMonth2'].forEach(id=>document.getElementById(id).innerHTML=moHtml);
+}
+function setRecType(type){
+  document.querySelectorAll('input[name="recType"]').forEach(r=> r.checked = (r.value===type));
+  document.getElementById('panDaily').style.display   = type==='daily'  ?'flex':'none';
+  document.getElementById('panWeekly').style.display  = type==='weekly' ?'flex':'none';
+  document.getElementById('panMonthly').style.display = type==='monthly'?'flex':'none';
+  document.getElementById('panYearly').style.display  = type==='yearly' ?'flex':'none';
+}
+function openRecurrenceDialog(){
+  const formDate = document.getElementById('fDate').value || todayISO();
+  recDraft = JSON.parse(JSON.stringify(picked.recurrence || defaultRecurrence(formDate)));
+  if(recDraft.type==='none') recDraft.type='weekly';
+  if(!recDraft.rangeStart) recDraft.rangeStart = formDate;
+  document.getElementById('rStart').value = document.getElementById('fStart').value || '09:00';
+  document.getElementById('rEnd').value   = document.getElementById('fEnd').value || '10:00';
+  document.getElementById('recTimeFs').style.display = document.getElementById('fAllDay').checked ? 'none':'block';
+  populateRecFields(recDraft);
+  recDurationUpdate();
+  show('recurOverlay');
+}
+function populateRecFields(r){
+  setRecType(r.type);
+  // daily
+  document.querySelectorAll('input[name="dailyMode"]').forEach(x=> x.checked = (x.value===(r.dailyMode||'every')));
+  document.getElementById('dailyEvery').value = r.type==='daily'? (r.interval||1) : 1;
+  // weekly
+  document.getElementById('weeklyEvery').value = r.type==='weekly'? (r.interval||1) : 1;
+  document.querySelectorAll('#weekdayBoxes input').forEach(cb=> cb.checked = (r.weekdays||[]).includes(+cb.dataset.d));
+  // monthly
+  document.querySelectorAll('input[name="monthlyMode"]').forEach(x=> x.checked = (x.value===(r.monthlyMode||'dayOfMonth')));
+  document.getElementById('monthDay').value = r.dayOfMonth||1;
+  document.getElementById('monthEvery').value = r.type==='monthly'? (r.interval||1):1;
+  document.getElementById('monthEvery2').value = r.type==='monthly'? (r.interval||1):1;
+  document.getElementById('monthOrd').value = String(r.weekOrdinal||1);
+  document.getElementById('monthWeekday').value = String(r.weekday||0);
+  // yearly
+  document.querySelectorAll('input[name="yearlyMode"]').forEach(x=> x.checked = (x.value===(r.yearlyMode||'dayOfMonth')));
+  document.getElementById('yearMonth').value = String(r.month||0);
+  document.getElementById('yearMonth2').value = String(r.month||0);
+  document.getElementById('yearDay').value = r.dayOfMonth||1;
+  document.getElementById('yearOrd').value = String(r.weekOrdinal||1);
+  document.getElementById('yearWeekday').value = String(r.weekday||0);
+  // range
+  document.getElementById('rangeStart').value = r.rangeStart || document.getElementById('fDate').value || todayISO();
+  document.querySelectorAll('input[name="endMode"]').forEach(x=> x.checked = (x.value===(r.endMode||'never')));
+  document.getElementById('endByDate').value = r.endDate || '';
+  document.getElementById('endCount').value = r.count || 10;
+}
+function recDurationUpdate(){
+  const s=document.getElementById('rStart').value, e=document.getElementById('rEnd').value;
+  const el=document.getElementById('rDuration');
+  if(!s||!e){ el.textContent='—'; return; }
+  const [sh,sm]=s.split(':').map(Number),[eh,em]=e.split(':').map(Number);
+  let mins=(eh*60+em)-(sh*60+sm); if(mins<0) mins+=1440;
+  if(mins===0){ el.textContent='0 minutes'; return; }
+  const h=Math.floor(mins/60), mm=mins%60;
+  el.textContent = [h?`${h} hour${h>1?'s':''}`:'', mm?`${mm} minutes`:''].filter(Boolean).join(' ');
+}
+function collectRec(){
+  const type = document.querySelector('input[name="recType"]:checked').value;
+  const r = { type };
+  const num=(id)=>Math.max(1, parseInt(document.getElementById(id).value)||1);
+  if(type==='daily'){
+    r.dailyMode = document.querySelector('input[name="dailyMode"]:checked').value;
+    r.interval = num('dailyEvery');
+  } else if(type==='weekly'){
+    r.interval = num('weeklyEvery');
+    r.weekdays = [...document.querySelectorAll('#weekdayBoxes input:checked')].map(cb=>+cb.dataset.d);
+  } else if(type==='monthly'){
+    r.monthlyMode = document.querySelector('input[name="monthlyMode"]:checked').value;
+    if(r.monthlyMode==='dayOfMonth'){ r.dayOfMonth = Math.min(31,Math.max(1,parseInt(document.getElementById('monthDay').value)||1)); r.interval=num('monthEvery'); }
+    else { r.weekOrdinal = parseInt(document.getElementById('monthOrd').value); r.weekday = parseInt(document.getElementById('monthWeekday').value); r.interval=num('monthEvery2'); }
+  } else if(type==='yearly'){
+    r.interval = 1;
+    r.yearlyMode = document.querySelector('input[name="yearlyMode"]:checked').value;
+    if(r.yearlyMode==='dayOfMonth'){ r.month = parseInt(document.getElementById('yearMonth').value); r.dayOfMonth = Math.min(31,Math.max(1,parseInt(document.getElementById('yearDay').value)||1)); }
+    else { r.month = parseInt(document.getElementById('yearMonth2').value); r.weekOrdinal = parseInt(document.getElementById('yearOrd').value); r.weekday = parseInt(document.getElementById('yearWeekday').value); }
+  }
+  r.rangeStart = document.getElementById('rangeStart').value || document.getElementById('fDate').value || todayISO();
+  r.endMode = document.querySelector('input[name="endMode"]:checked').value;
+  r.endDate = document.getElementById('endByDate').value || '';
+  r.count = Math.max(1, parseInt(document.getElementById('endCount').value)||1);
+  return r;
+}
+function recurrenceOK(){
+  const r = collectRec();
+  if(r.type==='weekly' && (!r.weekdays || !r.weekdays.length)){ toast('Pick at least one day of the week'); return; }
+  if(r.endMode==='byDate' && !r.endDate){ toast('Choose an end date, or pick another end option'); return; }
+  if(r.endMode==='byDate' && r.endDate < r.rangeStart){ toast('End date is before the start date'); return; }
+  // fill in any missing defaults from start date
+  picked.recurrence = Object.assign(defaultRecurrence(r.rangeStart), r);
+  // sync appointment time back to the form
+  if(!document.getElementById('fAllDay').checked){
+    document.getElementById('fStart').value = document.getElementById('rStart').value;
+    document.getElementById('fEnd').value = document.getElementById('rEnd').value;
+  }
+  updateRecurSummary();
+  hide('recurOverlay');
+}
+function removeRecurrenceAction(){
+  picked.recurrence = defaultRecurrence(document.getElementById('fDate').value || todayISO());
+  picked.recurrence.type='none';
+  updateRecurSummary();
+  hide('recurOverlay');
+}
+
+/* ============================================================
+   Color Categories manager (Outlook-style)
+============================================================ */
+function openCatManager(mode){
+  catManager.mode = mode || 'manage';
+  catManager.selId = data.categories[0] ? data.categories[0].id : null;
+  document.getElementById('catMgrHint').textContent = mode==='assign'
+    ? 'Tick the categories to tag this entry, or create and edit categories on the right.'
+    : 'Create, rename, recolor, or delete your color categories.';
+  document.getElementById('catMgrApply').textContent = mode==='assign' ? 'OK' : 'Done';
+  renderCatManager();
+  show('catOverlay');
+}
+function renderCatManager(){
+  const list=document.getElementById('catList'); list.innerHTML='';
+  const assign = catManager.mode==='assign';
+  (data.categories||[]).forEach(cat=>{
+    const row=document.createElement('div');
+    row.className='cat-row'+(cat.id===catManager.selId?' sel':'');
+    let html='';
+    if(assign){
+      const on = picked.categoryIds.includes(cat.id);
+      html+=`<input type="checkbox" class="cat-check" ${on?'checked':''}>`;
+    }
+    html+=`<span class="cat-sw" style="background:${cat.color}"></span><span class="cat-name">${esc(cat.name)}</span>`;
+    row.innerHTML=html;
+    if(assign){
+      row.querySelector('.cat-check').addEventListener('change',e=>{
+        if(e.target.checked){ if(!picked.categoryIds.includes(cat.id)) picked.categoryIds.push(cat.id); }
+        else picked.categoryIds = picked.categoryIds.filter(id=>id!==cat.id);
+      });
+    }
+    row.addEventListener('click',e=>{ if(e.target.classList.contains('cat-check')) return; catManager.selId=cat.id; renderCatManager(); });
+    row.querySelector('.cat-name').addEventListener('dblclick',()=>{ catManager.selId=cat.id; startRename(); });
+    list.appendChild(row);
+  });
+  const has=!!catManager.selId;
+  document.getElementById('btnCatRename').disabled=!has;
+  document.getElementById('btnCatDelete').disabled=!has;
+  document.getElementById('btnCatColor').disabled=!has;
+  const sel=getCat(catManager.selId);
+  document.getElementById('catColorSw').style.background = sel? sel.color : 'transparent';
+  document.getElementById('catColorPop').classList.remove('show');
+}
+function newCategory(){
+  snapshot();
+  const cat={ id:uid(), name:'New Category', color: nextUnusedColor() };
+  data.categories.push(cat);
+  catManager.selId=cat.id;
+  renderCatManager();
+  startRename(true);
+}
+function startRename(selectAll){
+  const row=[...document.querySelectorAll('.cat-row')].find(r=>r.classList.contains('sel'));
+  if(!row) return;
+  const nameEl=row.querySelector('.cat-name');
+  const cat=getCat(catManager.selId);
+  const input=document.createElement('input');
+  input.className='cat-name-edit'; input.value=cat.name; input.maxLength=40;
+  nameEl.replaceWith(input); input.focus(); if(selectAll) input.select();
+  const commit=()=>{ const v=input.value.trim(); if(v && v!==cat.name){ snapshotIfNeeded(); cat.name=v; } renderCatManager(); render(); };
+  input.addEventListener('blur',commit);
+  input.addEventListener('keydown',e=>{ if(e.key==='Enter'){ input.blur(); } if(e.key==='Escape'){ input.value=cat.name; input.blur(); } });
+}
+let _renameSnapped=false;
+function snapshotIfNeeded(){ if(!_renameSnapped){ snapshot(); _renameSnapped=true; setTimeout(()=>_renameSnapped=false,50);} }
+function deleteCategory(){
+  const cat=getCat(catManager.selId); if(!cat) return;
+  snapshot();
+  data.categories = data.categories.filter(c=>c.id!==cat.id);
+  data.events.forEach(ev=>{ if(ev.categoryIds) ev.categoryIds=ev.categoryIds.filter(id=>id!==cat.id); });
+  picked.categoryIds = picked.categoryIds.filter(id=>id!==cat.id);
+  catManager.selId = data.categories[0]? data.categories[0].id : null;
+  renderCatManager(); render(); toast('Category deleted');
+}
+function buildCatColorPop(){
+  const pop=document.getElementById('catColorPop'); pop.innerHTML='';
+  CAT_COLORS.forEach(col=>{
+    const s=document.createElement('div'); s.className='sw'; s.style.background=col;
+    s.addEventListener('click',()=>{
+      const cat=getCat(catManager.selId); if(!cat) return;
+      snapshot(); cat.color=col; renderCatManager(); render();
+    });
+    pop.appendChild(s);
+  });
+}
+
+
+/* ============================================================
+   GitHub API
+============================================================ */
+function ghHeaders(){ return { 'Authorization':'Bearer '+data.settings.githubToken, 'Accept':'application/vnd.github+json' }; }
+function ghContentUrl(){ const s=data.settings; return `https://api.github.com/repos/${s.githubUsername}/${s.repoName}/contents/${s.filePath}`; }
+
+function friendlyError(status, ctx){
+  switch(status){
+    case 401: return 'Your access token was rejected. It may be mistyped, expired, or revoked — generate a fresh one in GitHub → Settings → Developer settings → Personal access tokens.';
+    case 403: return ctx==='save'
+      ? 'GitHub refused to save. Your token can read but not write here — edit the token and set Repository permissions → Contents → Read and write (and make sure it is scoped to this repository).'
+      : 'GitHub refused the request. The token is likely missing the "Contents: Read & Write" permission for this repository, or you have hit a rate limit — wait a moment and retry.';
+    case 404: return ctx==='repo'
+      ? 'That repository could not be found. Check the username and repository name for typos, and make sure the token can see it (private repos need repo access).'
+      : ctx==='save'
+      ? 'GitHub returned "not found" while saving. This usually means the token cannot write to this repo — set the token to Contents: Read and write and confirm the username/repository/path are correct.'
+      : 'The file was not found on the default branch yet. Click Save once to create it — or check the username, repository, and file path for typos.';
+    case 409: return 'GitHub blocked the save. Either the file changed since you last loaded it (click Load, then Save) or a repository rule rejected the content — see the reason below.';
+    case 422: return 'GitHub could not process that — usually a bad file path or an out-of-date version. Try Load, then Save again.';
+    default:  return `GitHub returned an unexpected error (status ${status}). Check your internet connection and try again.`;
+  }
+}
+// Extract GitHub's own error message from a failed response
+async function ghMsg(r){ try{ const j=await r.json(); return (j && j.message) ? j.message : ''; }catch(e){ return ''; } }
+function validateSettings(){
+  const s=data.settings;
+  if(!s.githubToken) return 'Please enter your Personal Access Token.';
+  if(!s.githubUsername) return 'Please enter your GitHub username.';
+  if(!s.repoName) return 'Please enter the repository name.';
+  if(!s.filePath) return 'Please enter the JSON file path.';
+  if(!/\.json$/i.test(s.filePath)) return 'The file path should end in .json (e.g. buwan.json).';
+  return null;
+}
+
+async function ghLoad(){
+  const v=validateSettings(); if(v){ toast(v); openSync(); return; }
+  toast('Loading from GitHub…');
+  try{
+    // No ref -> GitHub uses the repo's default branch. (ref=HEAD is not a valid ref name and 404s.)
+    const r = await fetch(ghContentUrl()+'?t='+Date.now(), {headers:ghHeaders()});
+    if(!r.ok){ const gm=await ghMsg(r); toast(friendlyError(r.status,'file')+(gm?`  [GitHub: ${gm}]`:''), 8000); return; }
+    const j = await r.json();
+    if(!j || typeof j.content!=='string'){ toast('That path points to a folder, not a JSON file — check the File Path in Sync.'); return; }
+    const raw = decodeURIComponent(escape(atob(j.content.replace(/\n/g,''))));
+    const loaded = JSON.parse(raw);
+    // keep local token settings, but adopt loaded data
+    const keepSettings = data.settings;
+    data = {...defaultData(), ...loaded};
+    if(!Array.isArray(data.categories) || !data.categories.length) data.categories = seedCategories();
+    data.settings = {...data.settings, ...keepSettings};
+    data._sha = j.sha;
+    undoStack=[]; document.getElementById('btnUndo').disabled=true;
+    render(); toast('Loaded latest calendar ✓');
+  }catch(e){ toast('Could not read the file — it may not be valid JSON. ('+e.message+')'); }
+}
+
+async function ghSave(){
+  const v=validateSettings(); if(v){ toast(v); openSync(); return; }
+  toast('Saving to GitHub…');
+  try{
+    // compute the next version/stamp locally; only commit to memory on success
+    const parts = (data.version||'1.0.0').split('.').map(Number);
+    parts[2]=(parts[2]||0)+1;
+    const newVersion = parts.join('.');
+    const lastSaved = new Date().toISOString();
+    const {_sha, ...rest} = data;
+    // NEVER write the token (or any secret) into the committed file — GitHub push protection blocks it.
+    const clean = {...rest, version:newVersion, lastSaved, settings: {...(rest.settings||{}), githubToken: ''}};
+    const body = JSON.stringify(clean, null, 2);
+    const content = btoa(unescape(encodeURIComponent(body)));
+    const stamp = lastSaved.replace('T',' ').slice(0,19);
+    const payload = { message:`Calendar v${newVersion} — ${stamp}`, content };
+    if(data._sha) payload.sha = data._sha;
+    const put = ()=> fetch(ghContentUrl(), {method:'PUT', headers:{...ghHeaders(),'Content-Type':'application/json'}, body:JSON.stringify(payload)});
+    let r = await put();
+    // 409/422 = our stored version is stale or missing (buwan.json changed on GitHub). Refetch the current sha and retry once.
+    if(r.status===409 || r.status===422){
+      try{
+        const cur = await fetch(ghContentUrl()+'?t='+Date.now(), {headers:ghHeaders()});
+        if(cur.ok){ const cj = await cur.json(); if(cj && cj.sha){ data._sha = cj.sha; payload.sha = cj.sha; r = await put(); } }
+      }catch(e){}
+    }
+    if(!r.ok){ const gm=await ghMsg(r); toast(friendlyError(r.status,'save')+(gm?`  [GitHub: ${gm}]`:''), 9000); return; }
+    const j = await r.json();
+    data._sha = j.content.sha;
+    data.version = newVersion;
+    data.lastSaved = lastSaved;
+    toast(`Saved as v${newVersion} ✓`);
+  }catch(e){ toast('Save failed — check your connection. ('+e.message+')'); }
+}
+
+async function ghTest(){
+  syncBanner(null,null);
+  const btn=document.getElementById('btnTest'); btn.textContent='Testing…'; btn.disabled=true;
+  const s = collectSyncFields();
+  const missing = quickValidate(s);
+  if(missing){ syncBanner('err', missing); btn.textContent='Test connection'; btn.disabled=false; return; }
+  try{
+    const r = await fetch(`https://api.github.com/repos/${s.githubUsername}/${s.repoName}`, {headers:{'Authorization':'Bearer '+s.githubToken,'Accept':'application/vnd.github+json'}});
+    if(!r.ok){ const gm=await ghMsg(r); syncBanner('err', friendlyError(r.status,'repo')+(gm?`  [GitHub: ${gm}]`:'')); }
+    else{
+      const repo = await r.json();
+      const perm = repo.permissions && (repo.permissions.push||repo.permissions.admin);
+      if(perm===false) syncBanner('err','Connected to the repo, but this token is read-only. Edit it and set Contents: Read and write so Save can work.');
+      else syncBanner('ok', `Reached ${repo.full_name} ✓  Read access confirmed. If Save later fails, your token needs Contents: Read and write on this repo.`);
+    }
+  }catch(e){ syncBanner('err','Could not reach GitHub. Check your internet connection, then try again.'); }
+  btn.textContent='Test connection'; btn.disabled=false;
+}
+function quickValidate(s){
+  if(!s.githubToken) return 'Please enter your Personal Access Token.';
+  if(!s.githubUsername) return 'Please enter your GitHub username.';
+  if(!s.repoName) return 'Please enter the repository name.';
+  if(!s.filePath) return 'Please enter the JSON file path.';
+  if(!/\.json$/i.test(s.filePath)) return 'The file path should end in .json (e.g. buwan.json).';
+  return null;
+}
+function collectSyncFields(){
+  return {
+    githubToken: document.getElementById('sToken').value.trim(),
+    githubUsername: document.getElementById('sUser').value.trim(),
+    repoName: document.getElementById('sRepo').value.trim(),
+    filePath: document.getElementById('sPath').value.trim()
+  };
+}
+function syncBanner(type,msg){
+  const e=document.getElementById('syncErr'), o=document.getElementById('syncOk');
+  e.classList.remove('show'); o.classList.remove('show');
+  if(type==='err'){ document.getElementById('syncErrMsg').textContent=msg; e.classList.add('show'); }
+  if(type==='ok'){ document.getElementById('syncOkMsg').textContent=msg; o.classList.add('show'); }
+}
+function saveSettings(){
+  const s=collectSyncFields();
+  const bad=quickValidate(s); if(bad){ syncBanner('err',bad); return; }
+  data.settings={...data.settings,...s};
+  persistSettings();
+  updateConnDot();
+  syncBanner('ok','Settings saved on this device ✓');
+  toast('Sync settings saved');
+}
+function persistSettings(){ store.set('cal_settings', JSON.stringify(data.settings)); }
+function loadSettings(){
+  const raw=store.get('cal_settings');
+  if(raw){ try{ data.settings={...data.settings,...JSON.parse(raw)}; }catch(e){} }
+}
+function openSync(){
+  const s=data.settings;
+  document.getElementById('sToken').value=s.githubToken||'';
+  document.getElementById('sUser').value=s.githubUsername||'charles-morales-15';
+  document.getElementById('sRepo').value=s.repoName||'buwan';
+  document.getElementById('sPath').value=s.filePath||'buwan.json';
+  syncBanner(null,null);
+  show('syncOverlay');
+}
+function updateConnDot(){
+  const dot=document.getElementById('connDot');
+  const on=!!data.settings.githubToken;
+  dot.classList.toggle('on',on);
+  dot.title = on? 'Sync configured':'Not connected — click Sync';
+}
+
+/* ============================================================
+   Gabay — daily quote, trivia, on-this-day, month activity
+============================================================ */
+const dailyCache = {}; // in-memory per-day cache for trivia/history
+
+function renderAlmanac(){ // keep name; render() calls this
+  pruneAiCache();
+  renderPsyche();
+  renderTrivia();
+  renderHistory();
+  renderMental();
+  renderTopQuote();
+}
+// keep the day-keyed content cache from growing without bound (retain ~60 recent days)
+function pruneAiCache(){
+  try{
+    if(!data.aiCache) return; const cutoff=epochDay(todayISO())-60;
+    Object.keys(data.aiCache).forEach(k=>{ if(/^\d{4}-\d{2}-\d{2}$/.test(k) && epochDay(k)<cutoff) delete data.aiCache[k]; });
+  }catch(e){}
+}
+
+/* ---- shared helpers ---- */
+function dayOfYear(isoStr){ const d=pd(isoStr); const start=new Date(d.getFullYear(),0,0); return Math.floor((d-start)/86400000); }
+// Absolute day number, and a daily index that visits EVERY item before repeating (well-spread, not sequential).
+function epochDay(isoStr){ return Math.floor(pd(isoStr).getTime()/86400000); }
+function pickDaily(isoStr, N, salt){ if(!N || N<1) return 0; return (((epochDay(isoStr)*97 + (salt||0)) % N) + N) % N; } // 97 is coprime to any pool < 97, so no repeat for N days
+function cap(s){ s=(s||'').trim(); return s.charAt(0).toUpperCase()+s.slice(1); }
+function decodeEntities(s){ try{ const t=document.createElement('textarea'); t.innerHTML=s; return t.value; }catch(e){ return s; } }
+function stripHtml(s){ return decodeEntities((s||'').replace(/<[^>]*>/g,'')).replace(/\s+/g,' ').trim(); }
+async function callAI(prompt, maxTokens){
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:maxTokens||400,messages:[{role:'user',content:prompt}]})});
+    if(!r.ok) return null;
+    const jd=await r.json();
+    let text=(jd.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').trim().replace(/```json|```/g,'').trim();
+    return JSON.parse(text);
+  }catch(e){ return null; }
+}
+// reputable, always-valid source links (never fancy/unverified)
+function normSource(source){ const s=(source||'').toLowerCase();
+  if(s.includes('geographic')) return 'National Geographic';
+  if(s.includes('history')) return 'History';
+  return 'Britannica';
+}
+function reputableUrl(source, q){ const t=encodeURIComponent(q||''); const s=normSource(source);
+  if(s==='National Geographic') return 'https://www.nationalgeographic.com/search?q='+t;
+  if(s==='History') return 'https://www.history.com/search?q='+t;
+  return 'https://www.britannica.com/search?query='+t;
+}
+// illustrative photo (freely-licensed Wikimedia image) for a topic; memoized
+const imgMemo={};
+async function topicImage(topic){
+  if(!topic) return null;
+  if(topic in imgMemo) return imgMemo[topic];
+  let out=null;
+  try{
+    const r=await fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(topic));
+    if(r.ok){ const j=await r.json(); out=(j.thumbnail&&j.thumbnail.source)||(j.originalimage&&j.originalimage.source)||null; }
+  }catch(e){}
+  imgMemo[topic]=out; return out;
+}
+// build a card: image slot + 5-line clamp + source on the 6th line
+function cardHTML(innerHTML, srcLabel, srcUrl){
+  return `<div data-img></div><div class="alm-clamp">${innerHTML}</div><a class="alm-src" href="${esc(srcUrl)}" target="_blank" rel="noopener">${esc(srcLabel)} ↗</a>`;
+}
+function setCardImg(el, imgUrl){
+  if(!el || !imgUrl) return; const h=el.querySelector('[data-img]');
+  if(h) h.innerHTML=`<img class="alm-thumb" src="${esc(imgUrl.replace(/^http:\/\//,'https://'))}" alt="" loading="lazy" onerror="this.remove()">`;
+}
+
+/* ---- Psyche: real excerpt from a published psychology book (Google Books) ---- */
+const PSYCH_TOPICS=['cognitive dissonance','operant conditioning','attachment theory','flow psychology','learned helplessness','confirmation bias','self-actualization','classical conditioning','bystander effect','growth mindset','emotional intelligence','halo effect','priming psychology','Dunning-Kruger effect','cognitive load','spotlight effect','delayed gratification','neuroplasticity','mere exposure effect','fundamental attribution error','Zeigarnik effect','psychological reactance','availability heuristic','social proof','intrinsic motivation','endowment effect','anchoring bias','diffusion of responsibility','self-efficacy','Barnum effect','locus of control','defense mechanisms','working memory','theory of mind','the id ego and superego','hindsight bias','loss aversion','the framing effect','cognitive behavioral therapy','the placebo effect','the Hawthorne effect','the Pygmalion effect','the negativity bias','the peak-end rule','the Stroop effect','the Flynn effect','the Baader-Meinhof phenomenon','sunk cost fallacy','the false consensus effect','the just-world hypothesis','reciprocity psychology','cognitive reframing','the mirror neuron','episodic memory','the fight-or-flight response','habituation psychology','self-fulfilling prophecy','the primacy effect','the recency effect','the availability cascade'];
+function fallbackPsyche(dayISO){
+  const P=[
+    {term:"Confirmation bias",definition:"the tendency to seek and favor information that supports what we already believe.",example:"Reading only news sources that agree with your opinion.",topic:"Confirmation bias"},
+    {term:"Classical conditioning",definition:"learning in which a neutral cue triggers a response after being paired with a meaningful stimulus.",example:"Feeling hungry the moment you hear a lunch bell.",topic:"Classical conditioning"},
+    {term:"Cognitive dissonance",definition:"the mental discomfort of holding two conflicting beliefs or acting against your values.",example:"Knowing junk food is unhealthy but eating it, then downplaying the risk.",topic:"Cognitive dissonance"},
+    {term:"Bystander effect",definition:"people are less likely to help someone when other people are present.",example:"No one calls for help in a crowd, each assuming another will.",topic:"Bystander effect"},
+    {term:"Anchoring",definition:"relying too heavily on the first piece of information when making a decision.",example:"A high original price makes a discount feel like a great deal.",topic:"Anchoring effect"},
+    {term:"Operant conditioning",definition:"learning shaped by rewards and consequences that follow a behavior.",example:"A child does chores more often after being praised for it.",topic:"Operant conditioning"},
+    {term:"Growth mindset",definition:"the belief that abilities can be developed through effort, strategy, and learning.",example:"Treating a failed test as feedback rather than a verdict on your ability.",topic:"Mindset"}
+  ];
+  return P[pickDaily(dayISO, P.length, 3)];
+}
+function paintPsyche(el, p){
+  if(p.snippet){
+    const html = `<b class="alm-term">${esc(cap(p.term))}.</b> ${esc(p.snippet)}`;
+    el.innerHTML = cardHTML(html, p.source||'Google Books', p.link||('https://www.google.com/search?tbm=bks&q='+encodeURIComponent(p.term)));
+    if(p.img) setCardImg(el, p.img); else topicImage(p.topic||p.term).then(u=>setCardImg(el,u));
+  } else {
+    const html = `<b class="alm-term">${esc(p.term)}</b> — ${esc(p.definition)} <i>e.g.</i> ${esc(p.example||'')}`;
+    el.innerHTML = cardHTML(html, 'Britannica', reputableUrl('Britannica', p.term));
+    topicImage(p.topic||p.term).then(u=>setCardImg(el,u));
+  }
+}
+function renderPsyche(){
+  const el=document.getElementById('cardPsyche'); const day=todayISO();
+  let p = data.aiCache[day] && data.aiCache[day].psyche;
+  if(p){ paintPsyche(el, p); return; }
+  paintPsyche(el, fallbackPsyche(day));           // show a verified fallback immediately
+  if(!aiInFlight['p'+day]){ aiInFlight['p'+day]=true; fetchPsyche(day); }
+}
+// Fetch a legit excerpt from a PUBLISHED book via Google Books.
+// Pagination advances each full cycle through the topic list, so a recurring topic still yields a NEW book.
+async function fetchBookExcerpt(query, day, listLen){
+  const seq = Math.max(0, epochDay(day) - epochDay('2025-01-01'));
+  const startIndex = Math.floor(seq / Math.max(1,listLen)) % 40; // page deeper each cycle (capped so results stay valid)
+  const url=`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}&startIndex=${startIndex}&maxResults=6&printType=books&langRestrict=en`;
+  const r=await fetch(url); if(!r.ok) throw 0;
+  const j=await r.json(); const items=(j.items||[]);
+  // prefer real published books: has an author + a usable snippet
+  const it = items.find(x=> x.searchInfo && x.searchInfo.textSnippet && x.volumeInfo && x.volumeInfo.authors)
+          || items.find(x=> x.searchInfo && x.searchInfo.textSnippet)
+          || items[0];
+  if(!it) throw 0;
+  const vi=it.volumeInfo||{}, si=it.searchInfo||{};
+  const snippet=stripHtml(si.textSnippet || vi.description || ''); if(!snippet) throw 0;
+  const author=(vi.authors&&vi.authors[0])||'';
+  const title=vi.title||'a published text';
+  const img=(vi.imageLinks&&(vi.imageLinks.thumbnail||vi.imageLinks.smallThumbnail))||null;
+  return { snippet, img, source: author ? `${title} — ${author}` : title,
+    link: vi.infoLink || vi.canonicalVolumeLink || ('https://www.google.com/search?tbm=bks&q='+encodeURIComponent(query)) };
+}
+
+async function fetchPsyche(day){
+  const topic = PSYCH_TOPICS[pickDaily(day, PSYCH_TOPICS.length, 3)];
+  try{
+    const b = await fetchBookExcerpt(topic + ' psychology', day, PSYCH_TOPICS.length);
+    const p = { term:topic, topic, ...b };
+    data.aiCache[day]={...(data.aiCache[day]||{}), psyche:p};
+    if(todayISO()===day) paintPsyche(document.getElementById('cardPsyche'), p);
+  }catch(e){ /* keep fallback */ }
+  finally{ aiInFlight['p'+day]=false; }
+}
+
+/* ---- Mental: paraphrased DSM-5-TR learning note (educational, non-verbatim) ---- */
+const DSM_URL='https://charles-morales-15.github.io/buwan/DSM-5-TR.pdf';
+const DSM_TOPICS=[
+  {name:"Major Depressive Disorder",topic:"Major depressive disorder",note:"Diagnosed after at least two weeks of persistent low mood or loss of interest, usually with changes in sleep, appetite, energy, concentration, or feelings of worthlessness, causing real impairment."},
+  {name:"Generalized Anxiety Disorder",topic:"Generalized anxiety disorder",note:"Excessive, hard-to-control worry occurring more days than not for at least six months, paired with restlessness, fatigue, irritability, or muscle tension."},
+  {name:"Panic Disorder",topic:"Panic disorder",note:"Recurrent unexpected panic attacks — abrupt surges of intense fear peaking within minutes — followed by lasting worry about having more attacks."},
+  {name:"Post-Traumatic Stress Disorder",topic:"Posttraumatic stress disorder",note:"After exposure to trauma: intrusive memories, avoidance of reminders, negative shifts in mood and thinking, and heightened arousal lasting more than a month."},
+  {name:"Obsessive-Compulsive Disorder",topic:"Obsessive–compulsive disorder",note:"Intrusive, unwanted obsessions and repetitive compulsions done to reduce distress; they are time-consuming (over an hour a day) or clearly impairing."},
+  {name:"Bipolar I Disorder",topic:"Bipolar disorder",note:"Defined by at least one manic episode — a distinct period of elevated or irritable mood with increased energy — commonly alternating with depressive episodes."},
+  {name:"Attention-Deficit/Hyperactivity Disorder",topic:"Attention deficit hyperactivity disorder",note:"A neurodevelopmental pattern of inattention and/or hyperactivity-impulsivity, present before age 12 and interfering across two or more settings."},
+  {name:"Autism Spectrum Disorder",topic:"Autism spectrum disorder",note:"Persistent differences in social communication and interaction plus restricted, repetitive behaviors or interests, present from early development."},
+  {name:"Social Anxiety Disorder",topic:"Social anxiety disorder",note:"Marked fear of social or performance situations involving possible scrutiny, leading to avoidance and distress out of proportion to the actual threat."},
+  {name:"Schizophrenia",topic:"Schizophrenia",note:"Involves psychotic features such as delusions, hallucinations, and disorganized thought, with functional decline over a continuous period of about six months."},
+  {name:"Persistent Depressive Disorder",topic:"Dysthymia",note:"A chronic depression with low mood most days for at least two years (one year in youth) — often milder than a major episode but longer-lasting."},
+  {name:"Specific Phobia",topic:"Specific phobia",note:"A marked, out-of-proportion fear of a specific object or situation that is actively avoided and reliably provokes anxiety."},
+  {name:"Borderline Personality Disorder",topic:"Borderline personality disorder",note:"A pervasive pattern of instability in relationships, self-image, and emotions, with marked impulsivity beginning by early adulthood."},
+  {name:"Anorexia Nervosa",topic:"Anorexia nervosa",note:"Restriction of energy intake leading to significantly low weight, intense fear of gaining weight, and a disturbance in how body weight or shape is experienced."},
+  {name:"Insomnia Disorder",topic:"Insomnia",note:"Dissatisfaction with sleep quantity or quality despite adequate opportunity, occurring at least three nights a week for three months, with daytime impact."},
+  {name:"Adjustment Disorder",topic:"Adjustment disorder",note:"Emotional or behavioral symptoms arising within three months of an identifiable stressor, out of proportion to the stressor and causing impairment."},
+  {name:"Bipolar II Disorder",topic:"Bipolar II disorder",note:"Characterized by at least one hypomanic episode and one major depressive episode, without the full manic episodes seen in Bipolar I."},
+  {name:"Agoraphobia",topic:"Agoraphobia",note:"Marked fear or anxiety about situations like open spaces, crowds, or public transport where escape might be difficult, leading to avoidance."},
+  {name:"Separation Anxiety Disorder",topic:"Separation anxiety disorder",note:"Developmentally excessive fear about separation from attachment figures, with distress, worry, or reluctance to be apart from them."},
+  {name:"Bulimia Nervosa",topic:"Bulimia nervosa",note:"Recurrent binge eating followed by compensatory behaviors such as vomiting or excessive exercise, with self-evaluation overly tied to shape and weight."},
+  {name:"Binge-Eating Disorder",topic:"Binge eating disorder",note:"Recurrent episodes of eating unusually large amounts with a sense of loss of control, without the regular compensatory behaviors of bulimia."},
+  {name:"Body Dysmorphic Disorder",topic:"Body dysmorphic disorder",note:"Preoccupation with perceived flaws in appearance that are minor or unobservable to others, driving repetitive behaviors and distress."},
+  {name:"Hoarding Disorder",topic:"Hoarding disorder",note:"Persistent difficulty discarding possessions regardless of value, leading to clutter that compromises the use of living spaces."},
+  {name:"Illness Anxiety Disorder",topic:"Hypochondriasis",note:"Preoccupation with having or acquiring a serious illness despite few or no somatic symptoms, with high health anxiety."},
+  {name:"Narcolepsy",topic:"Narcolepsy",note:"Recurrent, irrepressible need to sleep or lapses into sleep, often with sudden loss of muscle tone (cataplexy) triggered by emotion."},
+  {name:"Seasonal Affective (MDD, seasonal pattern)",topic:"Seasonal affective disorder",note:"A depressive pattern that recurs at a particular time of year, most often winter, remitting as seasons change."},
+  {name:"Premenstrual Dysphoric Disorder",topic:"Premenstrual dysphoric disorder",note:"Marked mood, irritability, and physical symptoms in the week before menses that improve after onset, causing significant impairment."},
+  {name:"Tourette's Disorder",topic:"Tourette syndrome",note:"Multiple motor tics and at least one vocal tic present for more than a year, with onset before age 18."},
+  {name:"Substance Use Disorder",topic:"Substance use disorder",note:"A problematic pattern of substance use with impaired control, social impairment, risky use, and tolerance or withdrawal."},
+  {name:"Narcissistic Personality Disorder",topic:"Narcissistic personality disorder",note:"A pervasive pattern of grandiosity, need for admiration, and lack of empathy beginning by early adulthood."},
+  {name:"Antisocial Personality Disorder",topic:"Antisocial personality disorder",note:"A long-standing disregard for and violation of the rights of others, with deceit, impulsivity, and lack of remorse."},
+  {name:"Avoidant Personality Disorder",topic:"Avoidant personality disorder",note:"Pervasive social inhibition, feelings of inadequacy, and hypersensitivity to criticism leading to avoidance of closeness."},
+  {name:"Obsessive-Compulsive Personality Disorder",topic:"Obsessive–compulsive personality disorder",note:"A preoccupation with orderliness, perfectionism, and control at the expense of flexibility and openness."},
+  {name:"Dissociative Identity Disorder",topic:"Dissociative identity disorder",note:"Disruption of identity with two or more distinct personality states and recurrent gaps in memory beyond ordinary forgetting."},
+  {name:"Depersonalization/Derealization Disorder",topic:"Depersonalization-derealization disorder",note:"Persistent experiences of detachment from one's self or surroundings, while reality testing stays intact."},
+  {name:"Somatic Symptom Disorder",topic:"Somatic symptom disorder",note:"Distressing physical symptoms accompanied by excessive thoughts, feelings, or behaviors about their seriousness."},
+  {name:"Delusional Disorder",topic:"Delusional disorder",note:"One or more firmly held false beliefs lasting at least a month, without the broader symptoms seen in schizophrenia."},
+  {name:"Schizoaffective Disorder",topic:"Schizoaffective disorder",note:"A combination of psychotic symptoms and mood-episode symptoms, with psychosis also occurring apart from the mood episodes."},
+  {name:"Cyclothymic Disorder",topic:"Cyclothymia",note:"Chronic mood fluctuation with numerous periods of hypomanic and depressive symptoms over at least two years, below full-episode thresholds."},
+  {name:"Trichotillomania",topic:"Trichotillomania",note:"Recurrent pulling out of one's hair leading to hair loss, with repeated attempts to stop."},
+  {name:"Selective Mutism",topic:"Selective mutism",note:"Consistent failure to speak in specific social situations despite speaking in others, interfering with functioning."},
+  {name:"Conduct Disorder",topic:"Conduct disorder",note:"A repetitive pattern of behavior violating others' rights or age-appropriate norms, such as aggression, deceit, or rule-breaking."}
+];
+function renderMental(){
+  const el=document.getElementById('cardMental'); const day=todayISO();
+  const d = DSM_TOPICS[pickDaily(day, DSM_TOPICS.length, 1)];
+  const m = data.aiCache[day] && data.aiCache[day].mental;
+  if(m && m.snippet){
+    el.innerHTML = cardHTML(`<b class="alm-term">${esc(m.name)}.</b> ${esc(m.snippet)}`, m.source||'DSM-5-TR', m.link||DSM_URL);
+    if(m.img) setCardImg(el,m.img); else topicImage(m.topic||d.topic).then(u=>setCardImg(el,u));
+    return;
+  }
+  // curated DSM paraphrase shown instantly; then fetch a real published-book excerpt
+  el.innerHTML = cardHTML(`<b class="alm-term">${esc(d.name)}.</b> ${esc(d.note)}`, 'DSM-5-TR', DSM_URL);
+  topicImage(d.topic).then(u=>setCardImg(el,u));
+  if(!aiInFlight['m'+day]){ aiInFlight['m'+day]=true; fetchMental(day); }
+}
+async function fetchMental(day){
+  const d = DSM_TOPICS[pickDaily(day, DSM_TOPICS.length, 1)];
+  try{
+    const b = await fetchBookExcerpt(d.name + ' psychology', day, DSM_TOPICS.length);
+    const m = { name:d.name, topic:d.topic, ...b };
+    data.aiCache[day]={...(data.aiCache[day]||{}), mental:m};
+    if(todayISO()===day) renderMental();
+  }catch(e){ /* keep curated DSM fallback + link */ }
+  finally{ aiInFlight['m'+day]=false; }
+}
+
+/* ---- Trivia (verified fact from reference-grade knowledge; image; reputable source) ---- */
+function fallbackTrivia(dayISO){
+  const T=[
+    {fact:"The giant Pacific octopus has three hearts and blue, copper-based blood — two hearts pump blood to the gills and one to the rest of the body.",topic:"Giant Pacific octopus",source:"National Geographic"},
+    {fact:"Honey can stay edible for thousands of years. Sealed pots found in ancient Egyptian tombs were still preserved.",topic:"Honey",source:"History"},
+    {fact:"A day on Venus is longer than its year — it rotates once every 243 Earth days but orbits the Sun every 225.",topic:"Venus",source:"Britannica"},
+    {fact:"Lightning heats the surrounding air to roughly 30,000°C — about five times the temperature of the Sun's surface.",topic:"Lightning",source:"National Geographic"},
+    {fact:"The Great Barrier Reef is the largest living structure on Earth, stretching over 2,300 km and visible from space.",topic:"Great Barrier Reef",source:"Britannica"},
+    {fact:"Sharks are older than trees — they have existed for over 400 million years, predating the first forests.",topic:"Shark",source:"Britannica"},
+    {fact:"The Eiffel Tower can grow more than 15 cm taller in summer, as its iron structure expands in the heat.",topic:"Eiffel Tower",source:"History"},
+    {fact:"Bananas are radioactive — they contain potassium-40, a naturally occurring radioactive isotope, in tiny harmless amounts.",topic:"Potassium-40",source:"Britannica"},
+    {fact:"A bolt of the fungus Armillaria in Oregon is among Earth's largest organisms, spanning several square kilometres underground.",topic:"Armillaria ostoyae",source:"National Geographic"},
+    {fact:"Water expands when it freezes, which is why ice floats — a rare property that helps aquatic life survive winter.",topic:"Ice",source:"Britannica"},
+    {fact:"Hummingbirds are the only birds that can fly backwards, beating their wings up to 80 times per second.",topic:"Hummingbird",source:"National Geographic"},
+    {fact:"The Sahara was green just a few thousand years ago, with lakes and grasslands, before shifting to desert.",topic:"Sahara",source:"History"},
+    {fact:"Octopuses can taste with their arms, whose suckers are lined with chemical-sensing receptors.",topic:"Octopus",source:"National Geographic"},
+    {fact:"The tardigrade can survive extreme heat, cold, radiation, and even the vacuum of space.",topic:"Tardigrade",source:"Britannica"},
+    {fact:"Mount Everest grows about 4 mm taller each year as the Indian and Eurasian plates keep colliding.",topic:"Mount Everest",source:"National Geographic"},
+    {fact:"The human body contains roughly 37 trillion cells, continually replaced throughout life.",topic:"Cell (biology)",source:"Britannica"},
+    {fact:"Saturn's density is so low that, given a large enough ocean, the planet would float in it.",topic:"Saturn",source:"Britannica"},
+    {fact:"Honeybees communicate the direction and distance of food through a movement called the waggle dance.",topic:"Waggle dance",source:"National Geographic"},
+    {fact:"The Great Wall of China was built and rebuilt over roughly two thousand years by successive dynasties.",topic:"Great Wall of China",source:"History"},
+    {fact:"Some deep-sea anglerfish males fuse permanently to the much larger female, becoming a lifelong mate.",topic:"Anglerfish",source:"National Geographic"},
+    {fact:"The speed of light in a vacuum is about 299,792 kilometres per second — nature's ultimate speed limit.",topic:"Speed of light",source:"Britannica"},
+    {fact:"Antarctica is technically the world's largest desert, receiving very little precipitation each year.",topic:"Antarctica",source:"National Geographic"},
+    {fact:"Human DNA shares about 60% of its genes with the banana, a reminder of life's shared ancestry.",topic:"DNA",source:"Britannica"},
+    {fact:"The pistol shrimp snaps its claw so fast it creates a bubble that briefly reaches thousands of degrees.",topic:"Pistol shrimp",source:"National Geographic"},
+    {fact:"Cleopatra lived closer in time to the Moon landing than to the building of the Great Pyramid of Giza.",topic:"Cleopatra",source:"History"},
+    {fact:"Venus is the hottest planet in the Solar System because a thick CO₂ atmosphere traps heat.",topic:"Venus",source:"Britannica"},
+    {fact:"A group of flamingos is called a 'flamboyance,' and their pink color comes from their diet.",topic:"Flamingo",source:"National Geographic"},
+    {fact:"The Rosetta Stone was the key that let scholars finally decipher ancient Egyptian hieroglyphs.",topic:"Rosetta Stone",source:"History"}
+  ];
+  return T[pickDaily(dayISO, T.length, 2)];
+}
+function paintTrivia(el, t){
+  const label = t.link ? (t.source||'Wikipedia') : normSource(t.source);
+  const url = t.link || reputableUrl(t.source, t.topic);
+  el.innerHTML = cardHTML(esc(t.fact), label, url);
+  if(t.img) setCardImg(el, t.img); else topicImage(t.topic).then(u=>setCardImg(el,u));
+}
+function renderTrivia(){
+  const el=document.getElementById('cardTrivia'); const day=todayISO();
+  let t = data.aiCache[day] && data.aiCache[day].trivia;
+  if(t){ paintTrivia(el, t); return; }
+  paintTrivia(el, fallbackTrivia(day));               // offline-safe fallback shown immediately
+  if(!aiInFlight['t'+day]){ aiInFlight['t'+day]=true; fetchTrivia(day); }
+}
+// Wikipedia "Today's Featured Article" — a different curated, verified article every calendar day
+async function fetchTrivia(day){
+  const d=pd(day); const y=d.getFullYear(), mo=String(d.getMonth()+1).padStart(2,'0'), dd=String(d.getDate()).padStart(2,'0');
+  try{
+    const r=await fetch(`https://en.wikipedia.org/api/rest_v1/feed/featured/${y}/${mo}/${dd}`);
+    if(!r.ok) throw 0;
+    const j=await r.json();
+    const a=j.tfa;
+    const extract = a && stripHtml(a.extract||'');
+    if(!a || !extract) throw 0;
+    const t={ fact: extract,
+      topic: (a.titles && a.titles.normalized) || a.title || '',
+      img: (a.thumbnail && a.thumbnail.source) || null,
+      source: 'Wikipedia',
+      link: (a.content_urls && a.content_urls.desktop && a.content_urls.desktop.page) || null };
+    data.aiCache[day]={...(data.aiCache[day]||{}), trivia:t};
+    if(todayISO()===day) paintTrivia(document.getElementById('cardTrivia'), t);
+  }catch(e){ /* keep fallback */ }
+  finally{ aiInFlight['t'+day]=false; }
+}
+
+/* ---- Quote of the Day (relocated below the calendar) ---- */
+function fallbackQuote(dayISO){
+  const Q=[
+    "Small steps, taken daily, quietly become giant leaps.",
+    "Progress loves the person who simply begins.",
+    "You are allowed to grow at your own pace.",
+    "Focus on the next right action, not the whole mountain.",
+    "Discipline is choosing what you want most over what you want now.",
+    "Done imperfectly today beats perfect someday.",
+    "Your energy follows your attention — aim it kindly.",
+    "Rest is part of the work, not a reward for it.",
+    "Consistency turns effort into identity.",
+    "Start where you are; use what you have.",
+    "One deep-focus hour outshines a scattered day.",
+    "You don't have to be great to start — start to be great.",
+    "Tend today well and tomorrow tends itself.",
+    "Momentum is built, not found.",
+    "Be gentle with yourself and relentless with your goals.",
+    "What you do daily matters more than what you do occasionally.",
+    "Direction beats speed; aim before you sprint.",
+    "Growth begins the moment you stop making excuses.",
+    "Protect your mornings and your mind will thank you.",
+    "Finish one thing fully before chasing the next.",
+    "Small wins, stacked patiently, build unstoppable confidence.",
+    "You become what you repeatedly give your attention to.",
+    "Effort compounds; keep showing up for yourself.",
+    "Clarity comes from action, not endless thinking."
+  ];
+  return Q[pickDaily(dayISO, Q.length, 4)];
+}
+function renderTopQuote(){
+  const el=document.getElementById('topQuote'); if(!el) return; const day=todayISO();
+  const cached=data.aiCache[day] && data.aiCache[day].quote;
+  el.textContent = `“${cached || fallbackQuote(day)}”`;
+  if(!cached && !aiInFlight['q'+day]){ aiInFlight['q'+day]=true; generateDailyQuote(day); }
+}
+async function generateDailyQuote(day){
+  const prompt = `Write ONE short original quote (max 16 words) about productivity, personal growth, or a positive daily mantra. Respond with ONLY the quote text — no quotation marks, no author, no preamble.`;
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:80,messages:[{role:'user',content:prompt}]})});
+    if(!r.ok) throw 0;
+    const j=await r.json();
+    let t=(j.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('').trim().replace(/^["“']|["”']$/g,'').trim();
+    if(t){ data.aiCache[day]={...(data.aiCache[day]||{}), quote:t}; if(todayISO()===day){ const el=document.getElementById('topQuote'); if(el) el.textContent=`“${t}”`; } }
+  }catch(e){} finally{ aiInFlight['q'+day]=false; }
+}
+
+/* ---- On This Day (Wikipedia REST; inspiring science/tech/people, no politics) ---- */
+function fallbackHistory(){
+  const H=[
+    {year:1969,text:"Apollo 11 astronauts became the first humans to walk on the Moon."},
+    {year:1990,text:"The Hubble Space Telescope was deployed into orbit, transforming astronomy."},
+    {year:1989,text:"Tim Berners-Lee's proposal laid the groundwork for the World Wide Web."},
+    {year:1928,text:"Alexander Fleming discovered penicillin, launching the antibiotic era."},
+    {year:2012,text:"NASA's Curiosity rover successfully landed on Mars."}
+  ];
+  return H[new Date().getDate() % H.length];
+}
+function pickInspiringEvent(events){
+  const bad=/\b(war|battle|invasion|coup|assassinat|massacre|riot|election|senate|parliament|president|treaty|bomb|attack|terror|killed|kills|dies|died|death|execution|slaver|colon|rebellion|dictator|nazi|troops|army|military|siege|genocide|uprising)\b/i;
+  const good=/\b(discover|invent|launch|space|nasa|telescope|physics|chemistry|biolog|mathemat|comput|internet|algorithm|patent|vaccine|medicine|robot|satellite|spacecraft|probe|genome|award|nobel|premier|founded|opens|opened|published|first|record|expedition|climb|marathon|olympic)\b/i;
+  const timed=(events||[]).filter(e=>e.year && e.text);
+  let pool=timed.filter(e=>good.test(e.text)&&!bad.test(e.text));
+  if(!pool.length) pool=timed.filter(e=>!bad.test(e.text));
+  if(!pool.length) pool=timed;
+  if(!pool.length) return null;
+  return pool[pickDaily(todayISO(), pool.length, 5)];
+}
+async function renderHistory(){
+  const el=document.getElementById('cardHist'); const now=new Date();
+  const mm=String(now.getMonth()+1).padStart(2,'0'), dd=String(now.getDate()).padStart(2,'0');
+  const key='hist_'+mm+dd;
+  const wikiLink=`https://en.wikipedia.org/wiki/Wikipedia:On_this_day/${MONTHS[now.getMonth()]}_${now.getDate()}`;
+  if(dailyCache[key]){ el.innerHTML=dailyCache[key]; return; }
+  try{
+    const r=await fetch(`https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${mm}/${dd}`);
+    if(!r.ok) throw 0;
+    const j=await r.json();
+    const ev=pickInspiringEvent(j.events);
+    if(!ev) throw 0;
+    const pg=ev.pages&&ev.pages[0];
+    const page=(pg&&pg.content_urls&&pg.content_urls.desktop&&pg.content_urls.desktop.page)||wikiLink;
+    const thumb=pg&&pg.thumbnail&&pg.thumbnail.source;
+    const extract=(pg&&pg.extract)?(' '+pg.extract):'';
+    const img=thumb?`<img class="alm-thumb" src="${esc(thumb)}" alt="" loading="lazy" onerror="this.remove()">`:'';
+    const html=`${img}<div class="alm-clamp"><span class="alm-year">${ev.year}</span>${esc(ev.text)}${esc(extract)}</div><a class="alm-src" href="${esc(page)}" target="_blank" rel="noopener">Wikipedia ↗</a>`;
+    dailyCache[key]=html; el.innerHTML=html;
+  }catch(e){
+    const fb=fallbackHistory();
+    el.innerHTML=`<div class="alm-clamp"><span class="alm-year">${fb.year}</span>${esc(fb.text)}</div><a class="alm-src" href="${wikiLink}" target="_blank" rel="noopener">Wikipedia ↗</a>`;
+  }
+}
+
+
+/* ---- Weather (Open-Meteo + geolocation; one-liner) ---- */
+function wmo(code){
+  const m={0:['☀️','Clear'],1:['🌤️','Mainly clear'],2:['⛅','Partly cloudy'],3:['☁️','Overcast'],
+    45:['🌫️','Fog'],48:['🌫️','Rime fog'],51:['🌦️','Light drizzle'],53:['🌦️','Drizzle'],55:['🌦️','Dense drizzle'],
+    56:['🌧️','Freezing drizzle'],57:['🌧️','Freezing drizzle'],61:['🌧️','Light rain'],63:['🌧️','Rain'],65:['🌧️','Heavy rain'],
+    66:['🌧️','Freezing rain'],67:['🌧️','Freezing rain'],71:['🌨️','Light snow'],73:['🌨️','Snow'],75:['🌨️','Heavy snow'],77:['🌨️','Snow grains'],
+    80:['🌦️','Rain showers'],81:['🌦️','Rain showers'],82:['⛈️','Violent showers'],85:['🌨️','Snow showers'],86:['🌨️','Snow showers'],
+    95:['⛈️','Thunderstorm'],96:['⛈️','Thunderstorm'],99:['⛈️','Thunderstorm']};
+  return m[code] ? {emoji:m[code][0],label:m[code][1]} : {emoji:'🌡️',label:''};
+}
+// category drives the widget color: sun=yellow, cloud=blue, rain=gray, snow=light
+function wmoCategory(code){
+  if(code===0 || code===1) return 'sun';
+  if([71,73,75,77,85,86].indexOf(code)>=0) return 'snow';
+  if([51,53,55,56,57,61,63,65,66,67,80,81,82,95,96,99].indexOf(code)>=0) return 'rain';
+  return 'cloud'; // 2,3,45,48 and anything else
+}
+function loadWeather(){
+  const el=document.getElementById('weather');
+  const setCat=(cat)=>{ el.classList.remove('wx-sun','wx-cloud','wx-rain','wx-snow'); if(cat) el.classList.add('wx-'+cat); };
+  const fetchAt=async(lat,lon)=>{
+    try{
+      const u=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&timezone=auto&forecast_days=1`;
+      const r=await fetch(u); if(!r.ok) throw 0; const j=await r.json();
+      const t=j.current?Math.round(j.current.temperature_2m):null;
+      const code=j.current?j.current.weather_code:0;
+      const hi=j.daily?Math.round(j.daily.temperature_2m_max[0]):null;
+      const lo=j.daily?Math.round(j.daily.temperature_2m_min[0]):null;
+      const w=wmo(code);
+      setCat(wmoCategory(code));
+      el.textContent = `${w.emoji} ${t!=null?t+'°C':''} ${w.label}${hi!=null?`  H:${hi}° L:${lo}°`:''}`.replace(/\s+/g,' ').trim();
+    }catch(e){ setCat(null); el.textContent='🌤️ Weather unavailable'; }
+  };
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      pos=>fetchAt(pos.coords.latitude.toFixed(3),pos.coords.longitude.toFixed(3)),
+      ()=>fetchAt(14.60,120.98),   // fallback location if permission denied
+      {timeout:6000, maximumAge:600000});
+  } else { fetchAt(14.60,120.98); }
+}
+
+/* ============================================================
+   Theme
+============================================================ */
+let lastAutoTheme = null;
+// Dark from 07:00PM (19:00) up to 07:00AM; light otherwise
+function themeForTime(d){
+  const h = (d||new Date()).getHours();
+  return (h>=19 || h<7) ? 'dark' : 'light';
+}
+function applyAutoTheme(){
+  const auto = themeForTime();
+  // only switch at a boundary crossing (so a manual toggle survives until 7AM/7PM)
+  if(auto !== lastAutoTheme){
+    lastAutoTheme = auto;
+    setTheme(auto);
+  }
+}
+function setTheme(t){
+  document.documentElement.dataset.theme=t;
+  store.set('cal_theme',t);
+  const icon=document.getElementById('themeIcon');
+  icon.innerHTML = t==='dark'
+    ? '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4l1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>'
+    : '<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>';
+  render(); // chip colors depend on theme
+}
+
+/* ============================================================
+   Modal helpers + toast
+============================================================ */
+function show(id){ document.getElementById(id).classList.add('show'); }
+function hide(id){ document.getElementById(id).classList.remove('show'); }
+function toast(msg, ms){
+  const w=document.getElementById('toastWrap');
+  const t=document.createElement('div'); t.className='toast'; t.textContent=msg;
+  if(ms && ms>=6000) t.classList.add('long');
+  w.appendChild(t);
+  setTimeout(()=>{ t.style.opacity='0'; t.style.transition='opacity .3s'; setTimeout(()=>t.remove(),300); }, ms||2600);
+}
+
+/* ============================================================
+   Wire up
+============================================================ */
+function init(){
+  loadSettings();
+  lastAutoTheme = themeForTime();
+  setTheme(lastAutoTheme);
+  setInterval(applyAutoTheme, 60000); // auto flip at 7AM / 7PM
+  buildPickers();
+  buildCatColorPop();
+  buildWeekdayBoxes();
+  buildRecSelects();
+  updateConnDot();
+
+  document.getElementById('prevMonth').onclick=()=>{ view.m--; if(view.m<0){view.m=11;view.y--;} render(); };
+  document.getElementById('nextMonth').onclick=()=>{ view.m++; if(view.m>11){view.m=0;view.y++;} render(); };
+
+  document.getElementById('btnLoad').onclick=ghLoad;
+  document.getElementById('btnSave').onclick=ghSave;
+  document.getElementById('btnUndo').onclick=doUndo;
+  document.getElementById('btnSync').onclick=openSync;
+  document.getElementById('btnTheme').onclick=()=> setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+
+  document.getElementById('btnTest').onclick=ghTest;
+  document.getElementById('btnSaveSettings').onclick=saveSettings;
+
+  document.getElementById('fAllDay').onchange=toggleTimeRow;
+  document.getElementById('btnSaveEntry').onclick=saveEntry;
+  document.getElementById('btnDelete').onclick=deleteEntry;
+
+  // Recurrence dialog
+  document.getElementById('btnRecur').onclick=openRecurrenceDialog;
+  document.querySelectorAll('input[name="recType"]').forEach(r=> r.addEventListener('change', ()=> setRecType(r.value)));
+  document.getElementById('rStart').addEventListener('input', recDurationUpdate);
+  document.getElementById('rEnd').addEventListener('input', recDurationUpdate);
+  document.getElementById('btnRecurOK').onclick=recurrenceOK;
+  document.getElementById('btnRemoveRecur').onclick=removeRecurrenceAction;
+
+  // Delete occurrence vs series
+  document.getElementById('btnDelOccurrence').onclick=()=>commitDelete('occurrence');
+  document.getElementById('btnDelSeries').onclick=()=>commitDelete('series');
+
+  // Edit occurrence vs series (Outlook-style)
+  document.getElementById('btnEditScopeOK').onclick=editScopeOK;
+
+  // Categories
+  document.getElementById('btnCats').onclick=()=> openCatManager('manage');
+  document.getElementById('btnPickCats').onclick=()=> openCatManager('assign');
+  document.getElementById('btnCatNew').onclick=newCategory;
+  document.getElementById('btnCatRename').onclick=()=> startRename(true);
+  document.getElementById('btnCatDelete').onclick=deleteCategory;
+  document.getElementById('btnCatColor').onclick=e=>{ e.stopPropagation(); if(!getCat(catManager.selId)) return; document.getElementById('catColorPop').classList.toggle('show'); };
+  document.getElementById('catColorPop').addEventListener('click',e=>e.stopPropagation());
+  document.addEventListener('click',()=> document.getElementById('catColorPop').classList.remove('show'));
+  document.getElementById('catMgrApply').onclick=()=>{ hide('catOverlay'); renderCatChosen(); };
+
+  document.getElementById('almanacHead').onclick=()=> document.getElementById('almanac').classList.toggle('collapsed');
+
+  document.querySelectorAll('[data-close]').forEach(b=> b.onclick=()=> hide(b.dataset.close));
+  document.querySelectorAll('.overlay').forEach(o=> o.addEventListener('mousedown', e=>{ if(e.target===o) hide(o.id); }));
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') document.querySelectorAll('.overlay.show').forEach(o=>hide(o.id)); });
+
+  // Reliably open native date/time pickers on click/focus (some browsers only open on the tiny icon)
+  document.querySelectorAll('input[type="date"], input[type="time"]').forEach(inp=>{
+    const open=()=>{ try{ if(typeof inp.showPicker==='function') inp.showPicker(); }catch(e){} };
+    inp.addEventListener('click', open);
+    inp.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); } });
+  });
+
+  render();
+  loadWeather();
+}
+init();
+</script>
+</body>
+</html>
