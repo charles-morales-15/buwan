@@ -1,6 +1,6 @@
 {
-  "version": "1.0.30",
-  "lastSaved": "2026-08-20T06:45:13.595Z",
+  "version": "1.0.31",
+  "lastSaved": "2026-08-23T08:05:18.865Z",
   "events": [
     {
       "title": "Upper",
@@ -35,7 +35,8 @@
       "emoji": "💪",
       "id": "xms3gzdknkdbd",
       "exceptions": [
-        "2026-08-17"
+        "2026-08-17",
+        "2026-08-24"
       ],
       "overrides": {
         "2026-08-10": {
@@ -97,7 +98,8 @@
         "2026-08-15",
         "2026-08-16",
         "2026-08-18",
-        "2026-08-21"
+        "2026-08-21",
+        "2026-08-22"
       ],
       "overrides": {
         "2026-08-07": {
@@ -130,6 +132,18 @@
           "allDay": false,
           "startTime": "14:00",
           "endTime": "15:00",
+          "categoryIds": [
+            "xms3gxu6gr9xk"
+          ],
+          "color": "#9C6B4A",
+          "emoji": "🤸"
+        },
+        "2026-08-23": {
+          "title": "Mobility",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "12:00",
+          "endTime": "13:00",
           "categoryIds": [
             "xms3gxu6gr9xk"
           ],
@@ -268,6 +282,30 @@
           "allDay": false,
           "startTime": "08:00",
           "endTime": "09:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-08-22": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "10:00",
+          "endTime": "11:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-08-23": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:00",
+          "endTime": "14:00",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -420,7 +458,8 @@
       "id": "xms3iagdpb95m",
       "exceptions": [
         "2026-08-06",
-        "2026-08-08"
+        "2026-08-08",
+        "2026-08-22"
       ],
       "overrides": {
         "2026-08-13": {
@@ -896,6 +935,30 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-08-22": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "22:00",
+          "endTime": "23:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-08-23": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "23:00",
+          "endTime": "00:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -1027,6 +1090,18 @@
           "allDay": false,
           "startTime": "13:30",
           "endTime": "14:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-08-22": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:00",
+          "endTime": "15:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -2600,6 +2675,96 @@
       "color": "#3F5FD6",
       "emoji": "🏖️",
       "id": "xmsylboknwtu7",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Pool Party",
+      "location": "Pansol",
+      "startDate": "2026-08-22",
+      "endDate": "2026-08-22",
+      "categoryIds": [
+        "xms3gxu6g57al"
+      ],
+      "allDay": false,
+      "startTime": "00:00",
+      "endTime": "13:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 22,
+        "weekOrdinal": 4,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-22",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3F5FD6",
+      "emoji": "🏖️",
+      "id": "xmt5im11ekt58",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "id": "xmt5is6l2ji0n",
+      "title": "Pull",
+      "location": "Anytime Fitness",
+      "allDay": false,
+      "startTime": "21:00",
+      "endTime": "23:00",
+      "categoryIds": [
+        "xms3gxu6gl0zn"
+      ],
+      "color": "#8E54D6",
+      "emoji": "💪",
+      "startDate": "2026-08-23",
+      "endDate": "2026-08-23",
+      "recurrence": {
+        "type": "none"
+      },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Cleaning",
+      "location": "Condo",
+      "startDate": "2026-08-23",
+      "endDate": "2026-08-23",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "00:00",
+      "endTime": "01:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 23,
+        "weekOrdinal": 4,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-23",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "🧹",
+      "id": "xmt5iuy7ru0pq",
       "exceptions": [],
       "overrides": {}
     }
