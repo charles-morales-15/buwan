@@ -1,6 +1,6 @@
 {
-  "version": "1.0.32",
-  "lastSaved": "2026-08-23T08:08:36.957Z",
+  "version": "1.0.33",
+  "lastSaved": "2026-08-23T08:22:21.297Z",
   "events": [
     {
       "title": "Upper",
@@ -2718,7 +2718,7 @@
       "title": "Pull",
       "location": "Anytime Fitness",
       "allDay": false,
-      "startTime": "21:00",
+      "startTime": "20:00",
       "endTime": "23:00",
       "categoryIds": [
         "xms3gxu6gl0zn"
@@ -2728,7 +2728,22 @@
       "startDate": "2026-08-23",
       "endDate": "2026-08-23",
       "recurrence": {
-        "type": "none"
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 23,
+        "weekOrdinal": 4,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-23",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
       },
       "exceptions": [],
       "overrides": {}
