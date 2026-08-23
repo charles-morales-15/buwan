@@ -1,6 +1,6 @@
 {
-  "version": "1.0.33",
-  "lastSaved": "2026-08-23T08:22:21.297Z",
+  "version": "1.0.34",
+  "lastSaved": "2026-08-23T13:10:29.403Z",
   "events": [
     {
       "title": "Upper",
@@ -2714,41 +2714,6 @@
       "overrides": {}
     },
     {
-      "id": "xmt5is6l2ji0n",
-      "title": "Pull",
-      "location": "Anytime Fitness",
-      "allDay": false,
-      "startTime": "20:00",
-      "endTime": "23:00",
-      "categoryIds": [
-        "xms3gxu6gl0zn"
-      ],
-      "color": "#8E54D6",
-      "emoji": "💪",
-      "startDate": "2026-08-23",
-      "endDate": "2026-08-23",
-      "recurrence": {
-        "type": "none",
-        "interval": 1,
-        "weekdays": [
-          0
-        ],
-        "dailyMode": "every",
-        "monthlyMode": "dayOfMonth",
-        "dayOfMonth": 23,
-        "weekOrdinal": 4,
-        "weekday": 0,
-        "yearlyMode": "dayOfMonth",
-        "month": 7,
-        "rangeStart": "2026-08-23",
-        "endMode": "never",
-        "endDate": "",
-        "count": 10
-      },
-      "exceptions": [],
-      "overrides": {}
-    },
-    {
       "title": "Cleaning",
       "location": "Condo",
       "startDate": "2026-08-23",
@@ -2857,5 +2822,15 @@
     "repoName": "buwan",
     "filePath": "buwan.json"
   },
-  "aiCache": {}
+  "aiCache": {
+    "2026-08-23": {
+      "trivia": {
+        "fact": "The pairs' figure skating competition at the 2002 Winter Olympics was held on February 9 and 11 at the Salt Lake Ice Center in Salt Lake City, Utah, in the United States. Originally, Elena Berezhnaya and Anton Sikharulidze of Russia won the gold medals, while Jamie Salé and David Pelletier of Canada won the silver, and Shen Xue and Zhao Hongbo of China won the bronze. However, after the event concluded, allegations of vote swapping led to one judge's scores being discarded; Salé and Pelletier were also awarded gold medals, while Berezhnaya and Sikharulidze were allowed to keep theirs. In a joint press conference on February 15, the International Skating Union (ISU) and the International Olympic Committee announced that Marie-Reine Le Gougne, the French judge implicated in collusion, was guilty of misconduct and was suspended effective immediately. In 2004, the ISU voted to change the 6.0 judging system because it was considered too subjective. As a result, the ISU Judging System was created, whereby skaters and teams were scored based on a technical grade of execution of the required elements.",
+        "topic": "Figure skating at the 2002 Winter Olympics – Pair skating",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/5/53/Belarus_stamp_no._449_-_2002_Winter_Olympics.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Figure_skating_at_the_2002_Winter_Olympics_%E2%80%93_Pair_skating"
+      }
+    }
+  }
 }
