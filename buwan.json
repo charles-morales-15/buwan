@@ -1,6 +1,6 @@
 {
-  "version": "1.0.36",
-  "lastSaved": "2026-08-30T09:07:00.653Z",
+  "version": "1.0.37",
+  "lastSaved": "2026-08-30T09:12:07.128Z",
   "events": [
     {
       "title": "Upper",
@@ -3291,11 +3291,18 @@
     "2026-08-30": {
       "trivia": {
         "fact": "During the 1980–81 English football season, Ipswich Town F.C. competed in the Football League First Division. In one of the most successful seasons in the club's history, they finished as runners-up in the league championship, were semi-finalists in the FA Cup and won the UEFA Cup. In all, Ipswich played a total of 66 competitive games during the season, winning 37, drawing 13 and losing 16.",
+        "v": 3,
         "topic": "1980–81 Ipswich Town F.C. season",
         "img": null,
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/1980%E2%80%9381_Ipswich_Town_F.C._season"
       }
     }
+  },
+  "feedSeen": {
+    "psycheTerms": [],
+    "psyche": [],
+    "mentalTerms": [],
+    "mental": []
   }
 }
