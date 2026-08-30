@@ -1,6 +1,6 @@
 {
-  "version": "1.0.35",
-  "lastSaved": "2026-08-25T12:47:42.685Z",
+  "version": "1.0.36",
+  "lastSaved": "2026-08-30T09:07:00.653Z",
   "events": [
     {
       "title": "Upper",
@@ -99,7 +99,9 @@
         "2026-08-16",
         "2026-08-18",
         "2026-08-21",
-        "2026-08-22"
+        "2026-08-22",
+        "2026-08-29",
+        "2026-08-30"
       ],
       "overrides": {
         "2026-08-07": {
@@ -163,6 +165,18 @@
           "emoji": "🤸"
         },
         "2026-08-25": {
+          "title": "Mobility",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:00",
+          "endTime": "14:00",
+          "categoryIds": [
+            "xms3gxu6gr9xk"
+          ],
+          "color": "#9C6B4A",
+          "emoji": "🤸"
+        },
+        "2026-08-28": {
           "title": "Mobility",
           "location": "Home",
           "allDay": false,
@@ -359,6 +373,42 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-08-29": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "18:00",
+          "endTime": "19:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-08-28": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-08-30": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "17:30",
+          "endTime": "18:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -405,7 +455,12 @@
         "2026-08-13",
         "2026-08-14",
         "2026-08-12",
-        "2026-08-21"
+        "2026-08-21",
+        "2026-08-28",
+        "2026-08-24",
+        "2026-08-25",
+        "2026-08-26",
+        "2026-08-27"
       ],
       "overrides": {
         "2026-08-10": {
@@ -508,7 +563,8 @@
         "2026-08-06",
         "2026-08-08",
         "2026-08-22",
-        "2026-08-25"
+        "2026-08-25",
+        "2026-08-29"
       ],
       "overrides": {
         "2026-08-13": {
@@ -565,6 +621,18 @@
           "allDay": false,
           "startTime": "16:00",
           "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🏃"
+        },
+        "2026-08-27": {
+          "title": "Cardio",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "19:00",
+          "endTime": "20:00",
           "categoryIds": [
             "xms3gxu6gl0zn"
           ],
@@ -796,7 +864,8 @@
       "exceptions": [
         "2026-08-07",
         "2026-08-14",
-        "2026-08-21"
+        "2026-08-21",
+        "2026-08-28"
       ],
       "overrides": {}
     },
@@ -848,6 +917,18 @@
           ],
           "color": "#3A4250",
           "emoji": "🧰"
+        },
+        "2026-08-28": {
+          "title": "RTO",
+          "location": "CG2",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "16:30",
+          "categoryIds": [
+            "xms4wp6k79qsc"
+          ],
+          "color": "#3A4250",
+          "emoji": "🧰"
         }
       }
     },
@@ -886,7 +967,8 @@
       "exceptions": [
         "2026-08-09",
         "2026-08-14",
-        "2026-08-21"
+        "2026-08-21",
+        "2026-08-29"
       ],
       "overrides": {
         "2026-08-06": {
@@ -1015,6 +1097,18 @@
           "allDay": false,
           "startTime": "19:00",
           "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-08-27": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "20:00",
+          "endTime": "21:00",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -1180,6 +1274,42 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-08-29": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-08-28": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:00",
+          "endTime": "16:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-08-30": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "16:30",
+          "endTime": "17:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -1222,7 +1352,11 @@
         "2026-08-14",
         "2026-08-16",
         "2026-08-21",
-        "2026-08-24"
+        "2026-08-24",
+        "2026-08-29",
+        "2026-08-28",
+        "2026-08-27",
+        "2026-08-30"
       ],
       "overrides": {
         "2026-08-08": {
@@ -2841,6 +2975,216 @@
       },
       "exceptions": [],
       "overrides": {}
+    },
+    {
+      "title": "Lex's Birthday Lunch",
+      "location": "Steak PH",
+      "startDate": "2026-08-29",
+      "endDate": "2026-08-29",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": false,
+      "startTime": "12:00",
+      "endTime": "17:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 29,
+        "weekOrdinal": 5,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-29",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmtfjxitc6e54",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Chinito Night",
+      "location": "Y2",
+      "startDate": "2026-08-29",
+      "endDate": "2026-08-29",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "19:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 29,
+        "weekOrdinal": 5,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-29",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmtfjysfwzvcz",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Dinner",
+      "location": "Home",
+      "startDate": "2026-08-27",
+      "endDate": "2026-08-27",
+      "categoryIds": [
+        "xms3gxu6gebeu"
+      ],
+      "allDay": false,
+      "startTime": "21:00",
+      "endTime": "21:30",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-27",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#4FA45B",
+      "emoji": "🍽️",
+      "id": "xmtfkaf1opmtw",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Dinner",
+      "location": "Home",
+      "startDate": "2026-08-28",
+      "endDate": "2026-08-28",
+      "categoryIds": [
+        "xms3gxu6gebeu"
+      ],
+      "allDay": false,
+      "startTime": "21:00",
+      "endTime": "21:30",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 28,
+        "weekOrdinal": 4,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-28",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#4FA45B",
+      "emoji": "🍽️",
+      "id": "xmtfkdcxrwezm",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Laundry",
+      "location": "Home",
+      "startDate": "2026-08-28",
+      "endDate": "2026-08-28",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "22:00",
+      "endTime": "23:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 28,
+        "weekOrdinal": 4,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-28",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "🧼",
+      "id": "xmtfkl4o6309z",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Pull",
+      "location": "Anytime Fitness",
+      "startDate": "2026-08-30",
+      "endDate": "2026-08-30",
+      "categoryIds": [
+        "xms3gxu6gl0zn"
+      ],
+      "allDay": false,
+      "startTime": "18:30",
+      "endTime": "20:00",
+      "recurrence": {
+        "type": "weekly",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 30,
+        "weekOrdinal": 5,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 7,
+        "rangeStart": "2026-08-30",
+        "endMode": "byDate",
+        "endDate": "2027-06-27",
+        "count": 10
+      },
+      "color": "#8E54D6",
+      "emoji": "💪",
+      "id": "xmtfkp2ncq710",
+      "exceptions": [],
+      "overrides": {}
     }
   ],
   "categories": [
@@ -2942,6 +3286,15 @@
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Village_Kids_from_Nigeria.jpg/960px-Village_Kids_from_Nigeria.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Well-being"
+      }
+    },
+    "2026-08-30": {
+      "trivia": {
+        "fact": "During the 1980–81 English football season, Ipswich Town F.C. competed in the Football League First Division. In one of the most successful seasons in the club's history, they finished as runners-up in the league championship, were semi-finalists in the FA Cup and won the UEFA Cup. In all, Ipswich played a total of 66 competitive games during the season, winning 37, drawing 13 and losing 16.",
+        "topic": "1980–81 Ipswich Town F.C. season",
+        "img": null,
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/1980%E2%80%9381_Ipswich_Town_F.C._season"
       }
     }
   }
