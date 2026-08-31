@@ -1,6 +1,6 @@
 {
-  "version": "1.0.38",
-  "lastSaved": "2026-08-31T04:09:20.390Z",
+  "version": "1.0.39",
+  "lastSaved": "2026-08-31T16:10:48.273Z",
   "events": [
     {
       "title": "Upper",
@@ -17,7 +17,7 @@
         "type": "weekly",
         "interval": 1,
         "weekdays": [
-          1
+          2
         ],
         "dailyMode": "every",
         "monthlyMode": "dayOfMonth",
@@ -101,7 +101,8 @@
         "2026-08-21",
         "2026-08-22",
         "2026-08-29",
-        "2026-08-30"
+        "2026-08-30",
+        "2026-08-31"
       ],
       "overrides": {
         "2026-08-07": {
@@ -460,7 +461,8 @@
         "2026-08-24",
         "2026-08-25",
         "2026-08-26",
-        "2026-08-27"
+        "2026-08-27",
+        "2026-08-31"
       ],
       "overrides": {
         "2026-08-10": {
@@ -540,7 +542,7 @@
         "type": "weekly",
         "interval": 1,
         "weekdays": [
-          2,
+          1,
           4,
           6
         ],
@@ -3306,6 +3308,16 @@
         "img": "https://upload.wikimedia.org/wikipedia/en/7/75/Music_Box_Mariah_Carey.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Music_Box_(album)"
+      }
+    },
+    "2026-09-01": {
+      "trivia": {
+        "fact": "Anfield is a football stadium in the area of Anfield, Liverpool, England, which has been the home of Liverpool Football Club since their formation in 1892. The stadium has a seating capacity of 61,276, making it the fifth-largest football stadium in England. It was originally the home of Everton from 1884 to 1891 before they moved to Goodison Park after a dispute with the club president.",
+        "v": 3,
+        "topic": "Anfield",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg/960px-Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Anfield"
       }
     }
   },
