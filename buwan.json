@@ -1,6 +1,6 @@
 {
-  "version": "1.0.37",
-  "lastSaved": "2026-08-30T09:12:07.128Z",
+  "version": "1.0.38",
+  "lastSaved": "2026-08-31T04:09:20.390Z",
   "events": [
     {
       "title": "Upper",
@@ -27,8 +27,8 @@
         "yearlyMode": "dayOfMonth",
         "month": 6,
         "rangeStart": "2026-07-27",
-        "endMode": "byDate",
-        "endDate": "2026-12-28",
+        "endMode": "never",
+        "endDate": "",
         "count": 10
       },
       "color": "#8E54D6",
@@ -552,7 +552,7 @@
         "yearlyMode": "dayOfMonth",
         "month": 6,
         "rangeStart": "2026-07-28",
-        "endMode": "byDate",
+        "endMode": "never",
         "endDate": "2026-12-31",
         "count": 10
       },
@@ -769,7 +769,7 @@
         "yearlyMode": "dayOfMonth",
         "month": 6,
         "rangeStart": "2026-07-29",
-        "endMode": "byDate",
+        "endMode": "never",
         "endDate": "2026-12-31",
         "count": 10
       },
@@ -854,7 +854,7 @@
         "yearlyMode": "dayOfMonth",
         "month": 6,
         "rangeStart": "2026-07-31",
-        "endMode": "byDate",
+        "endMode": "never",
         "endDate": "2027-01-01",
         "count": 10
       },
@@ -1471,14 +1471,14 @@
     {
       "title": "CCAO-F Exam",
       "location": "Online",
-      "startDate": "2026-08-31",
-      "endDate": "2026-08-31",
+      "startDate": "2026-09-22",
+      "endDate": "2026-09-22",
       "categoryIds": [
         "xms3gxu6g1cca"
       ],
       "allDay": false,
-      "startTime": "00:00",
-      "endTime": "03:00",
+      "startTime": "10:30",
+      "endTime": "14:00",
       "recurrence": {
         "type": "none",
         "interval": 1,
@@ -3176,7 +3176,7 @@
         "yearlyMode": "dayOfMonth",
         "month": 7,
         "rangeStart": "2026-08-30",
-        "endMode": "byDate",
+        "endMode": "never",
         "endDate": "2027-06-27",
         "count": 10
       },
@@ -3296,6 +3296,16 @@
         "img": null,
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/1980%E2%80%9381_Ipswich_Town_F.C._season"
+      }
+    },
+    "2026-08-31": {
+      "trivia": {
+        "fact": "Music Box is the third studio album by American singer-songwriter Mariah Carey. It was released on August 31, 1993, by Columbia Records. In an attempt to appeal to a wider audience, Carey sought a radio-friendly approach for Music Box.",
+        "v": 3,
+        "topic": "Music Box (album)",
+        "img": "https://upload.wikimedia.org/wikipedia/en/7/75/Music_Box_Mariah_Carey.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Music_Box_(album)"
       }
     }
   },
