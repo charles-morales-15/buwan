@@ -1,6 +1,6 @@
 {
-  "version": "1.0.39",
-  "lastSaved": "2026-08-31T16:10:48.273Z",
+  "version": "1.0.40",
+  "lastSaved": "2026-09-01T06:16:59.519Z",
   "events": [
     {
       "title": "Upper",
@@ -635,6 +635,18 @@
           "allDay": false,
           "startTime": "19:00",
           "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🏃"
+        },
+        "2026-08-31": {
+          "title": "Cardio",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "18:00",
+          "endTime": "19:00",
           "categoryIds": [
             "xms3gxu6gl0zn"
           ],
