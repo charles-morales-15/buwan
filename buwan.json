@@ -1,6 +1,6 @@
 {
-  "version": "1.0.40",
-  "lastSaved": "2026-09-01T06:16:59.519Z",
+  "version": "1.0.41",
+  "lastSaved": "2026-09-02T07:18:06.384Z",
   "events": [
     {
       "title": "Upper",
@@ -183,6 +183,18 @@
           "allDay": false,
           "startTime": "13:00",
           "endTime": "14:00",
+          "categoryIds": [
+            "xms3gxu6gr9xk"
+          ],
+          "color": "#9C6B4A",
+          "emoji": "🤸"
+        },
+        "2026-09-02": {
+          "title": "Mobility",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "12:00",
+          "endTime": "13:00",
           "categoryIds": [
             "xms3gxu6gr9xk"
           ],
@@ -410,6 +422,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-02": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:00",
+          "endTime": "14:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -524,6 +548,18 @@
           ],
           "color": "#EE7A30",
           "emoji": "📚"
+        },
+        "2026-09-02": {
+          "title": "Learn Thai",
+          "location": "Online",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "19:00",
+          "categoryIds": [
+            "xms3gxu6g1cca"
+          ],
+          "color": "#EE7A30",
+          "emoji": "📚"
         }
       }
     },
@@ -566,7 +602,8 @@
         "2026-08-08",
         "2026-08-22",
         "2026-08-25",
-        "2026-08-29"
+        "2026-08-29",
+        "2026-09-03"
       ],
       "overrides": {
         "2026-08-13": {
@@ -791,7 +828,8 @@
       "emoji": "🦵",
       "id": "xms4w8hmhctps",
       "exceptions": [
-        "2026-08-19"
+        "2026-08-19",
+        "2026-09-02"
       ],
       "overrides": {
         "2026-08-12": {
@@ -1128,6 +1166,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-02": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "20:00",
+          "endTime": "21:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -1324,6 +1374,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-09-02": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "14:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -1439,6 +1501,18 @@
           "allDay": false,
           "startTime": "16:00",
           "endTime": "16:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-09-02": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "21:00",
+          "endTime": "21:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -3199,6 +3273,81 @@
       "id": "xmtfkp2ncq710",
       "exceptions": [],
       "overrides": {}
+    },
+    {
+      "id": "xmtjribm5r3ej",
+      "title": "Lower",
+      "location": "Anytime Fitness",
+      "allDay": false,
+      "startTime": "16:00",
+      "endTime": "18:00",
+      "categoryIds": [
+        "xms3gxu6gl0zn"
+      ],
+      "color": "#8E54D6",
+      "emoji": "🦵",
+      "startDate": "2026-09-03",
+      "endDate": "2026-09-03",
+      "recurrence": {
+        "type": "none"
+      },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "id": "xmtjrioiyldi9",
+      "title": "Cardio",
+      "location": "Anytime Fitness",
+      "allDay": false,
+      "startTime": "19:00",
+      "endTime": "20:00",
+      "categoryIds": [
+        "xms3gxu6gl0zn"
+      ],
+      "color": "#8E54D6",
+      "emoji": "🏃",
+      "startDate": "2026-09-02",
+      "endDate": "2026-09-02",
+      "recurrence": {
+        "type": "none"
+      },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Perf Review",
+      "location": "Online",
+      "startDate": "2026-09-02",
+      "endDate": "2026-09-02",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "allDay": false,
+      "startTime": "15:30",
+      "endTime": "16:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          3
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 2,
+        "weekOrdinal": 1,
+        "weekday": 3,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-02",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3A4250",
+      "emoji": "📊",
+      "id": "xmtjrkv49xy9d",
+      "exceptions": [],
+      "overrides": {}
     }
   ],
   "categories": [
@@ -3330,6 +3479,16 @@
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg/960px-Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Anfield"
+      }
+    },
+    "2026-09-02": {
+      "trivia": {
+        "fact": "Laguna Miscanti is a brackish lake in the Altiplano of the Antofagasta Region in northern Chile. It has an area of about 13 square kilometres (5 sq mi) and the shape of an arrowhead. The lake has no permanent surface inflows or outflows apart from several springs, and is primarily fed and drained by groundwater. Laguna Miscanti is located among the volcanoes of the Central Andes. The smaller Laguna Miñiques lies immediately south, separated from Miscanti by a lava flow.",
+        "v": 3,
+        "topic": "Laguna Miscanti",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Laguna_Miscanti_%28Antofagasta%2C_Chile%29_03.jpg/960px-Laguna_Miscanti_%28Antofagasta%2C_Chile%29_03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Laguna_Miscanti"
       }
     }
   },
