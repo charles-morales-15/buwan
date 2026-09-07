@@ -1,6 +1,6 @@
 {
-  "version": "1.0.43",
-  "lastSaved": "2026-09-07T06:00:18.439Z",
+  "version": "1.0.44",
+  "lastSaved": "2026-09-07T19:11:45.040Z",
   "events": [
     {
       "title": "Upper",
@@ -513,7 +513,8 @@
         "2026-08-25",
         "2026-08-26",
         "2026-08-27",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-07"
       ],
       "overrides": {
         "2026-08-10": {
@@ -722,8 +723,8 @@
           "title": "Cardio",
           "location": "Anytime Fitness",
           "allDay": false,
-          "startTime": "19:00",
-          "endTime": "20:00",
+          "startTime": "18:00",
+          "endTime": "19:00",
           "categoryIds": [
             "xms3gxu6gl0zn"
           ],
@@ -1231,6 +1232,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-07": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "19:30",
+          "endTime": "20:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -1603,6 +1616,18 @@
           "allDay": false,
           "startTime": "19:30",
           "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-09-07": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "19:00",
+          "endTime": "19:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -3485,7 +3510,20 @@
       "emoji": "🍽️",
       "id": "xmtqt5514m2pc",
       "exceptions": [],
-      "overrides": {}
+      "overrides": {
+        "2026-09-07": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "20:30",
+          "endTime": "21:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        }
+      }
     },
     {
       "title": "Haircut",
@@ -3554,6 +3592,251 @@
       "color": "#64748B",
       "emoji": "🍾",
       "id": "xmtqthxkc7blw",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "APE",
+      "location": "Hi Precision",
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-08",
+      "categoryIds": [
+        "xms4wersa2l3w"
+      ],
+      "allDay": false,
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 8,
+        "weekOrdinal": 2,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-08",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E24A4A",
+      "emoji": "🩺",
+      "id": "xmtqwi86tomdh",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Microsoft Interview",
+      "location": "Online",
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-08",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "allDay": false,
+      "startTime": "15:00",
+      "endTime": "16:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 8,
+        "weekOrdinal": 2,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-08",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3A4250",
+      "emoji": "🎤",
+      "id": "xmtqwkpcbcnu1",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "BMW RFI",
+      "location": "Claude",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-07",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "allDay": false,
+      "startTime": "15:00",
+      "endTime": "18:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 7,
+        "weekOrdinal": 1,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-07",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3A4250",
+      "emoji": "✏️",
+      "id": "xmtqwmbxtfjr0",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "BMW RFI",
+      "location": "Claude",
+      "startDate": "2026-09-07",
+      "endDate": "2026-09-07",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "allDay": false,
+      "startTime": "21:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 7,
+        "weekOrdinal": 1,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-07",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3A4250",
+      "emoji": "✏️",
+      "id": "xmtqwoydw2bhh",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Game Night",
+      "location": "Maven",
+      "startDate": "2026-09-04",
+      "endDate": "2026-09-04",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "19:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 4,
+        "weekOrdinal": 1,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-04",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🎛️",
+      "id": "xmtqwt6kacv4p",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "PCC Presentation",
+      "location": "",
+      "startDate": "2026-09-14",
+      "endDate": "2026-09-14",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": false,
+      "startTime": "14:00",
+      "endTime": "14:30",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 14,
+        "weekOrdinal": 2,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-14",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🗒️",
+      "id": "xmtqwvun8flzs",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "GFExclusives",
+      "location": "",
+      "startDate": "2026-09-19",
+      "endDate": "2026-09-19",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "19:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 19,
+        "weekOrdinal": 3,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-19",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmtqwyg8qmjzn",
       "exceptions": [],
       "overrides": {}
     }
