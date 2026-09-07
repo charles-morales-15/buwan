@@ -1,6 +1,6 @@
 {
-  "version": "1.0.42",
-  "lastSaved": "2026-09-07T05:38:12.612Z",
+  "version": "1.0.43",
+  "lastSaved": "2026-09-07T06:00:18.439Z",
   "events": [
     {
       "title": "Upper",
@@ -104,7 +104,8 @@
         "2026-08-30",
         "2026-08-31",
         "2026-09-06",
-        "2026-09-07"
+        "2026-09-07",
+        "2026-09-05"
       ],
       "overrides": {
         "2026-08-07": {
@@ -448,6 +449,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-06": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "17:00",
+          "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -617,7 +630,8 @@
         "2026-08-22",
         "2026-08-25",
         "2026-08-29",
-        "2026-09-03"
+        "2026-09-03",
+        "2026-09-05"
       ],
       "overrides": {
         "2026-08-13": {
@@ -1046,7 +1060,8 @@
         "2026-08-09",
         "2026-08-14",
         "2026-08-21",
-        "2026-08-29"
+        "2026-08-29",
+        "2026-09-05"
       ],
       "overrides": {
         "2026-08-06": {
@@ -1436,6 +1451,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-09-05": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -1482,7 +1509,8 @@
         "2026-08-29",
         "2026-08-28",
         "2026-08-27",
-        "2026-08-30"
+        "2026-08-30",
+        "2026-09-05"
       ],
       "overrides": {
         "2026-08-08": {
@@ -3456,6 +3484,76 @@
       "color": "#4FA45B",
       "emoji": "🍽️",
       "id": "xmtqt5514m2pc",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Haircut",
+      "location": "Mancave",
+      "startDate": "2026-09-06",
+      "endDate": "2026-09-06",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 6,
+        "weekOrdinal": 1,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-06",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "💇",
+      "id": "xmtqtbduvely6",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "HS Reunion",
+      "location": "Festival Mall",
+      "startDate": "2026-09-05",
+      "endDate": "2026-09-05",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "12:00",
+      "endTime": "18:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 5,
+        "weekOrdinal": 1,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-05",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍾",
+      "id": "xmtqthxkc7blw",
       "exceptions": [],
       "overrides": {}
     }
