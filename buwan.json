@@ -1,6 +1,6 @@
 {
-  "version": "1.0.41",
-  "lastSaved": "2026-09-02T07:18:06.384Z",
+  "version": "1.0.42",
+  "lastSaved": "2026-09-07T05:38:12.612Z",
   "events": [
     {
       "title": "Upper",
@@ -102,7 +102,9 @@
         "2026-08-22",
         "2026-08-29",
         "2026-08-30",
-        "2026-08-31"
+        "2026-08-31",
+        "2026-09-06",
+        "2026-09-07"
       ],
       "overrides": {
         "2026-08-07": {
@@ -434,6 +436,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-07": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -684,6 +698,18 @@
           "allDay": false,
           "startTime": "18:00",
           "endTime": "19:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🏃"
+        },
+        "2026-09-07": {
+          "title": "Cardio",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "19:00",
+          "endTime": "20:00",
           "categoryIds": [
             "xms3gxu6gl0zn"
           ],
@@ -1178,6 +1204,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-06": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "20:00",
+          "endTime": "21:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -1386,6 +1424,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-09-07": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:30",
+          "endTime": "14:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -1513,6 +1563,18 @@
           "allDay": false,
           "startTime": "21:00",
           "endTime": "21:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-09-06": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "19:30",
+          "endTime": "20:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -3272,7 +3334,20 @@
       "emoji": "💪",
       "id": "xmtfkp2ncq710",
       "exceptions": [],
-      "overrides": {}
+      "overrides": {
+        "2026-09-06": {
+          "title": "Pull",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "18:00",
+          "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "💪"
+        }
+      }
     },
     {
       "id": "xmtjribm5r3ej",
@@ -3346,6 +3421,41 @@
       "color": "#3A4250",
       "emoji": "📊",
       "id": "xmtjrkv49xy9d",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Dinner",
+      "location": "Home",
+      "startDate": "2026-09-06",
+      "endDate": "2026-09-06",
+      "categoryIds": [
+        "xms3gxu6gebeu"
+      ],
+      "allDay": false,
+      "startTime": "21:00",
+      "endTime": "21:30",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 6,
+        "weekOrdinal": 1,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-06",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#4FA45B",
+      "emoji": "🍽️",
+      "id": "xmtqt5514m2pc",
       "exceptions": [],
       "overrides": {}
     }
@@ -3489,6 +3599,16 @@
         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Laguna_Miscanti_%28Antofagasta%2C_Chile%29_03.jpg/960px-Laguna_Miscanti_%28Antofagasta%2C_Chile%29_03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Laguna_Miscanti"
+      }
+    },
+    "2026-09-07": {
+      "trivia": {
+        "fact": "George Edward Albert Krugers was a filmmaker active in the Dutch East Indies during the early 20th century. Born in Banda Neira, he migrated to Java in the 1920s and spent time in Surabaya before moving to Bandung. There, he worked with L. Heuveldorp on the colony's first feature film, Loetoeng Kasaroeng, before making his directorial debut in 1927 with Eulis Atjih. The following year, he established the Krugers Film Company; under this banner, he joined the Hajj in 1928 to produce Het Groote Mekka-Feest, considered the first documentary film about the pilgrimage.",
+        "v": 3,
+        "topic": "George Krugers",
+        "img": "https://upload.wikimedia.org/wikipedia/en/thumb/6/63/G_Krugers.jpg/960px-G_Krugers.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/George_Krugers"
       }
     }
   },
