@@ -1,6 +1,6 @@
 {
-  "version": "1.0.45",
-  "lastSaved": "2026-09-12T05:27:56.825Z",
+  "version": "1.0.46",
+  "lastSaved": "2026-09-12T05:30:05.494Z",
   "events": [
     {
       "title": "Upper",
@@ -647,7 +647,8 @@
         "2026-08-25",
         "2026-08-29",
         "2026-09-03",
-        "2026-09-05"
+        "2026-09-05",
+        "2026-09-10"
       ],
       "overrides": {
         "2026-08-13": {
@@ -897,7 +898,8 @@
       "id": "xms4w8hmhctps",
       "exceptions": [
         "2026-08-19",
-        "2026-09-02"
+        "2026-09-02",
+        "2026-09-09"
       ],
       "overrides": {
         "2026-08-12": {
@@ -3757,14 +3759,14 @@
     {
       "title": "Microsoft Interview",
       "location": "Online",
-      "startDate": "2026-09-08",
-      "endDate": "2026-09-08",
+      "startDate": "2026-09-15",
+      "endDate": "2026-09-15",
       "categoryIds": [
         "xms4wp6k79qsc"
       ],
       "allDay": false,
-      "startTime": "15:00",
-      "endTime": "16:00",
+      "startTime": "08:30",
+      "endTime": "09:30",
       "recurrence": {
         "type": "none",
         "interval": 1,
@@ -3897,8 +3899,8 @@
     {
       "title": "PCC Presentation",
       "location": "",
-      "startDate": "2026-09-14",
-      "endDate": "2026-09-14",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-12",
       "categoryIds": [
         "xms3gxu6gnm4j"
       ],
