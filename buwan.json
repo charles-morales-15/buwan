@@ -1,6 +1,6 @@
 {
-  "version": "1.0.50",
-  "lastSaved": "2026-09-12T06:55:10.429Z",
+  "version": "1.0.51",
+  "lastSaved": "2026-09-13T08:46:21.417Z",
   "events": [
     {
       "title": "Upper",
@@ -108,7 +108,8 @@
         "2026-09-05",
         "2026-09-11",
         "2026-09-12",
-        "2026-09-16"
+        "2026-09-16",
+        "2026-09-13"
       ],
       "overrides": {
         "2026-08-07": {
@@ -507,6 +508,18 @@
           "allDay": false,
           "startTime": "10:30",
           "endTime": "11:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-09-13": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:30",
+          "endTime": "16:30",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -1701,6 +1714,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-09-13": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "16:30",
+          "endTime": "17:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -1889,6 +1914,18 @@
           "allDay": false,
           "startTime": "12:30",
           "endTime": "13:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-09-13": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "17:00",
+          "endTime": "17:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -4162,8 +4199,8 @@
       "overrides": {}
     },
     {
-      "title": "Borta Night",
-      "location": "BSA",
+      "title": "Game Night",
+      "location": "Maven",
       "startDate": "2026-09-12",
       "endDate": "2026-09-12",
       "categoryIds": [
@@ -4191,7 +4228,7 @@
         "count": 10
       },
       "color": "#64748B",
-      "emoji": "🍆",
+      "emoji": "🎛️",
       "id": "xmtxxxbo65cx0",
       "exceptions": [],
       "overrides": {}
@@ -4318,6 +4355,41 @@
       "color": "#64748B",
       "emoji": "🍆",
       "id": "xmtxyjwydf6h6",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Laundry",
+      "location": "Home",
+      "startDate": "2026-09-13",
+      "endDate": "2026-09-13",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 13,
+        "weekOrdinal": 2,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-13",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "🧹",
+      "id": "xmtzkkmo8r0es",
       "exceptions": [],
       "overrides": {}
     }
@@ -4481,6 +4553,16 @@
         "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/District_of_Columbia_Court_of_Appeals_Seal.svg/960px-District_of_Columbia_Court_of_Appeals_Seal.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/United_States_v._Moore_(1973)"
+      }
+    },
+    "2026-09-13": {
+      "trivia": {
+        "fact": "Rear-Admiral Sir Thomas Hardy was a British Royal Navy officer and politician. Having joined the navy sometime before 1688, Hardy was supported in his career by George Churchill, whom he served as first lieutenant during the Battle of Barfleur in 1692. Promoted to captain in 1693, Hardy served in the Channel Islands and off the coast of England until 1702, when he was given command of HMS Pembroke off the coast of Spain. He fought at the Battle of Cádiz, and subsequently discovered the location of the Franco-Spanish fleet through the intervention of his chaplain, which resulted in the Battle of Vigo Bay. Hardy was knighted for his services.",
+        "v": 3,
+        "topic": "Thomas Hardy (Royal Navy officer, died 1732)",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Sir_Thomas_Hardy_%28cropped%29.jpg/960px-Sir_Thomas_Hardy_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Thomas_Hardy_(Royal_Navy_officer%2C_died_1732)"
       }
     }
   },
