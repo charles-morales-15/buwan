@@ -1,6 +1,6 @@
 {
-  "version": "1.0.51",
-  "lastSaved": "2026-09-13T08:46:21.417Z",
+  "version": "1.0.52",
+  "lastSaved": "2026-09-13T18:23:10.888Z",
   "events": [
     {
       "title": "Upper",
@@ -1429,6 +1429,18 @@
           "allDay": false,
           "startTime": "17:00",
           "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-09-13": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "23:00",
+          "endTime": "00:00",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -3702,8 +3714,8 @@
           "title": "Pull",
           "location": "Anytime Fitness",
           "allDay": false,
-          "startTime": "19:00",
-          "endTime": "21:00",
+          "startTime": "21:00",
+          "endTime": "23:00",
           "categoryIds": [
             "xms3gxu6gl0zn"
           ],
@@ -3875,6 +3887,18 @@
           "allDay": false,
           "startTime": "18:00",
           "endTime": "18:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-09-13": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "23:30",
+          "endTime": "00:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -4392,6 +4416,41 @@
       "id": "xmtzkkmo8r0es",
       "exceptions": [],
       "overrides": {}
+    },
+    {
+      "title": "Learn Anthropic",
+      "location": "Online",
+      "startDate": "2026-09-13",
+      "endDate": "2026-09-13",
+      "categoryIds": [
+        "xms3gxu6g1cca"
+      ],
+      "allDay": false,
+      "startTime": "17:00",
+      "endTime": "21:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 13,
+        "weekOrdinal": 2,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-13",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#EE7A30",
+      "emoji": "✏️",
+      "id": "xmu00ubbun75d",
+      "exceptions": [],
+      "overrides": {}
     }
   ],
   "categories": [
@@ -4563,6 +4622,16 @@
         "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Sir_Thomas_Hardy_%28cropped%29.jpg/960px-Sir_Thomas_Hardy_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Thomas_Hardy_(Royal_Navy_officer%2C_died_1732)"
+      }
+    },
+    "2026-09-14": {
+      "trivia": {
+        "fact": "Melisende was the queen of Jerusalem from 1131 to 1152. She was the first female ruler of the Kingdom of Jerusalem and the first woman to hold a public office in the crusader kingdom. Her fame grew in her lifetime for her generous support of the various Christian communities in her kingdom. Contemporary chronicler William of Tyre praised her wisdom and abilities, while modern historians differ in their assessment.",
+        "v": 3,
+        "topic": "Melisende of Jerusalem",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Coronation_of_Melisende.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Melisende_of_Jerusalem"
       }
     }
   },
