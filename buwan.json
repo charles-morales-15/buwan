@@ -1,6 +1,6 @@
 {
-  "version": "1.0.54",
-  "lastSaved": "2026-09-14T17:34:19.231Z",
+  "version": "1.0.55",
+  "lastSaved": "2026-09-15T16:45:15.208Z",
   "events": [
     {
       "title": "Upper",
@@ -109,7 +109,9 @@
         "2026-09-11",
         "2026-09-12",
         "2026-09-16",
-        "2026-09-13"
+        "2026-09-13",
+        "2026-09-14",
+        "2026-09-15"
       ],
       "overrides": {
         "2026-08-07": {
@@ -202,18 +204,6 @@
           "allDay": false,
           "startTime": "12:00",
           "endTime": "13:00",
-          "categoryIds": [
-            "xms3gxu6gr9xk"
-          ],
-          "color": "#9C6B4A",
-          "emoji": "🤸"
-        },
-        "2026-09-15": {
-          "title": "Mobility",
-          "location": "Home",
-          "allDay": false,
-          "startTime": "09:30",
-          "endTime": "10:30",
           "categoryIds": [
             "xms3gxu6gr9xk"
           ],
@@ -506,8 +496,8 @@
           "title": "Bath AM",
           "location": "Home",
           "allDay": false,
-          "startTime": "10:30",
-          "endTime": "11:30",
+          "startTime": "14:00",
+          "endTime": "15:00",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -520,6 +510,18 @@
           "allDay": false,
           "startTime": "15:30",
           "endTime": "16:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-09-14": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:30",
+          "endTime": "15:30",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -580,7 +582,8 @@
         "2026-08-31",
         "2026-09-07",
         "2026-09-11",
-        "2026-09-16"
+        "2026-09-16",
+        "2026-09-15"
       ],
       "overrides": {
         "2026-08-10": {
@@ -654,18 +657,6 @@
           ],
           "color": "#EE7A30",
           "emoji": "📚"
-        },
-        "2026-09-15": {
-          "title": "RTO",
-          "location": "UT2",
-          "allDay": false,
-          "startTime": "12:00",
-          "endTime": "15:00",
-          "categoryIds": [
-            "xms4wp6k79qsc"
-          ],
-          "color": "#3A4250",
-          "emoji": "🧰"
         },
         "2026-09-14": {
           "title": "Intellicare",
@@ -1204,7 +1195,8 @@
         "2026-08-14",
         "2026-08-21",
         "2026-08-29",
-        "2026-09-05"
+        "2026-09-05",
+        "2026-09-14"
       ],
       "overrides": {
         "2026-08-06": {
@@ -1417,18 +1409,6 @@
           "allDay": false,
           "startTime": "21:00",
           "endTime": "22:00",
-          "categoryIds": [
-            "xms3gxu6gv3u6"
-          ],
-          "color": "#3E8FE0",
-          "emoji": "🚿"
-        },
-        "2026-09-14": {
-          "title": "Bath PM",
-          "location": "Home",
-          "allDay": false,
-          "startTime": "17:00",
-          "endTime": "18:00",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -1707,8 +1687,8 @@
           "title": "Lunch",
           "location": "Home",
           "allDay": false,
-          "startTime": "11:30",
-          "endTime": "12:00",
+          "startTime": "13:30",
+          "endTime": "14:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -1924,8 +1904,8 @@
           "title": "Protein",
           "location": "Home",
           "allDay": false,
-          "startTime": "12:30",
-          "endTime": "13:00",
+          "startTime": "20:30",
+          "endTime": "21:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -3885,8 +3865,8 @@
           "title": "Dinner",
           "location": "Home",
           "allDay": false,
-          "startTime": "18:00",
-          "endTime": "18:30",
+          "startTime": "20:00",
+          "endTime": "20:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -4451,6 +4431,41 @@
       "id": "xmu00ubbun75d",
       "exceptions": [],
       "overrides": {}
+    },
+    {
+      "title": "Learn Anthropic",
+      "location": "Online",
+      "startDate": "2026-09-15",
+      "endDate": "2026-09-15",
+      "categoryIds": [
+        "xms3gxu6g1cca"
+      ],
+      "allDay": false,
+      "startTime": "15:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 15,
+        "weekOrdinal": 3,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-15",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#EE7A30",
+      "emoji": "✏️",
+      "id": "xmu2nzgchf3ns",
+      "exceptions": [],
+      "overrides": {}
     }
   ],
   "categories": [
@@ -4632,6 +4647,16 @@
         "img": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Coronation_of_Melisende.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Melisende_of_Jerusalem"
+      }
+    },
+    "2026-09-15": {
+      "trivia": {
+        "fact": "Menches was an ancient Egyptian official who served as the village scribe of Kerkeosiris from before 119 until 110 BC. He lived during the Ptolemaic period, when a Greek dynasty ruled Egypt. He was also known by the Greek name Asclepiades and may have been descended from Greek settlers, although little is known of his personal life.",
+        "v": 3,
+        "topic": "Menches",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Application_by_Menches_for_the_post_of_Komogrammateus.jpg/960px-Application_by_Menches_for_the_post_of_Komogrammateus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Menches"
       }
     }
   },
