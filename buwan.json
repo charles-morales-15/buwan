@@ -1,6 +1,6 @@
 {
-  "version": "1.0.55",
-  "lastSaved": "2026-09-15T16:45:15.208Z",
+  "version": "1.0.56",
+  "lastSaved": "2026-09-16T13:56:21.975Z",
   "events": [
     {
       "title": "Upper",
@@ -484,8 +484,8 @@
           "title": "Bath AM",
           "location": "Home",
           "allDay": false,
-          "startTime": "07:00",
-          "endTime": "08:00",
+          "startTime": "19:30",
+          "endTime": "20:30",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -984,8 +984,8 @@
           "title": "Lower",
           "location": "Anytime Fitness",
           "allDay": false,
-          "startTime": "19:00",
-          "endTime": "21:00",
+          "startTime": "23:00",
+          "endTime": "01:00",
           "categoryIds": [
             "xms3gxu6gl0zn"
           ],
@@ -1196,7 +1196,8 @@
         "2026-08-21",
         "2026-08-29",
         "2026-09-05",
-        "2026-09-14"
+        "2026-09-14",
+        "2026-09-16"
       ],
       "overrides": {
         "2026-08-06": {
@@ -1397,18 +1398,6 @@
           "allDay": false,
           "startTime": "18:00",
           "endTime": "19:00",
-          "categoryIds": [
-            "xms3gxu6gv3u6"
-          ],
-          "color": "#3E8FE0",
-          "emoji": "🚿"
-        },
-        "2026-09-16": {
-          "title": "Bath PM",
-          "location": "Home",
-          "allDay": false,
-          "startTime": "21:00",
-          "endTime": "22:00",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -1675,8 +1664,8 @@
           "title": "Lunch",
           "location": "Home",
           "allDay": false,
-          "startTime": "11:00",
-          "endTime": "12:00",
+          "startTime": "13:30",
+          "endTime": "14:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -1892,8 +1881,8 @@
           "title": "Protein",
           "location": "Home",
           "allDay": false,
-          "startTime": "21:00",
-          "endTime": "21:30",
+          "startTime": "21:30",
+          "endTime": "22:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -3853,8 +3842,8 @@
           "title": "Dinner",
           "location": "Home",
           "allDay": false,
-          "startTime": "22:00",
-          "endTime": "22:30",
+          "startTime": "21:00",
+          "endTime": "21:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -4238,7 +4227,7 @@
       "overrides": {}
     },
     {
-      "title": "Viral Load",
+      "title": "VL Refill",
       "location": "PGH",
       "startDate": "2026-09-16",
       "endDate": "2026-09-16",
@@ -4247,7 +4236,7 @@
       ],
       "allDay": false,
       "startTime": "08:00",
-      "endTime": "10:00",
+      "endTime": "13:00",
       "recurrence": {
         "type": "none",
         "interval": 1,
@@ -4269,41 +4258,6 @@
       "color": "#E24A4A",
       "emoji": "🌡️",
       "id": "xmtxy7cbl8umw",
-      "exceptions": [],
-      "overrides": {}
-    },
-    {
-      "title": "Check-up",
-      "location": "PGH",
-      "startDate": "2026-09-16",
-      "endDate": "2026-09-16",
-      "categoryIds": [
-        "xms4wersa2l3w"
-      ],
-      "allDay": false,
-      "startTime": "13:00",
-      "endTime": "17:00",
-      "recurrence": {
-        "type": "none",
-        "interval": 1,
-        "weekdays": [
-          3
-        ],
-        "dailyMode": "every",
-        "monthlyMode": "dayOfMonth",
-        "dayOfMonth": 16,
-        "weekOrdinal": 3,
-        "weekday": 3,
-        "yearlyMode": "dayOfMonth",
-        "month": 8,
-        "rangeStart": "2026-09-16",
-        "endMode": "never",
-        "endDate": "",
-        "count": 10
-      },
-      "color": "#E24A4A",
-      "emoji": "🩺",
-      "id": "xmtxy93aromp7",
       "exceptions": [],
       "overrides": {}
     },
@@ -4330,8 +4284,8 @@
     {
       "title": "Catch-up",
       "location": "Lyndon",
-      "startDate": "2026-09-16",
-      "endDate": "2026-09-16",
+      "startDate": "2026-09-23",
+      "endDate": "2026-09-23",
       "categoryIds": [
         "xms3gxu6gsrto"
       ],
@@ -4464,6 +4418,61 @@
       "color": "#EE7A30",
       "emoji": "✏️",
       "id": "xmu2nzgchf3ns",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "id": "xmu45xpn1hvbi",
+      "title": "Bath PM",
+      "location": "Home",
+      "allDay": false,
+      "startTime": "01:00",
+      "endTime": "02:00",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "color": "#3E8FE0",
+      "emoji": "🚿",
+      "startDate": "2026-09-17",
+      "endDate": "2026-09-17",
+      "recurrence": {
+        "type": "none"
+      },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Cleaning",
+      "location": "Bathroom",
+      "startDate": "2026-09-16",
+      "endDate": "2026-09-16",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "20:30",
+      "endTime": "21:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          3
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 16,
+        "weekOrdinal": 3,
+        "weekday": 3,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-16",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "🧼",
+      "id": "xmu45yso2d31c",
       "exceptions": [],
       "overrides": {}
     }
@@ -4657,6 +4666,16 @@
         "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Application_by_Menches_for_the_post_of_Komogrammateus.jpg/960px-Application_by_Menches_for_the_post_of_Komogrammateus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Menches"
+      }
+    },
+    "2026-09-16": {
+      "trivia": {
+        "fact": "Grace Anna Coolidge was first lady of the United States from 1923 to 1929 as the wife of the 30th president of the United States, Calvin Coolidge. She was previously the second lady of the United States from 1921 to 1923 and the first lady of Massachusetts from 1919 to 1921.",
+        "v": 3,
+        "topic": "Grace Coolidge",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Mrs._Coolidge_LOC_%28crop2%29.jpg/960px-Mrs._Coolidge_LOC_%28crop2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Grace_Coolidge"
       }
     }
   },
