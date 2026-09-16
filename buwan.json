@@ -1,6 +1,6 @@
 {
-  "version": "1.0.57",
-  "lastSaved": "2026-09-16T19:09:02.964Z",
+  "version": "1.0.58",
+  "lastSaved": "2026-09-16T19:35:20.744Z",
   "events": [
     {
       "title": "Upper",
@@ -111,7 +111,8 @@
         "2026-09-16",
         "2026-09-13",
         "2026-09-14",
-        "2026-09-15"
+        "2026-09-15",
+        "2026-09-17"
       ],
       "overrides": {
         "2026-08-07": {
@@ -527,6 +528,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-17": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -583,7 +596,8 @@
         "2026-09-07",
         "2026-09-11",
         "2026-09-16",
-        "2026-09-15"
+        "2026-09-15",
+        "2026-09-17"
       ],
       "overrides": {
         "2026-08-10": {
@@ -824,6 +838,18 @@
           ],
           "color": "#8E54D6",
           "emoji": "🏃"
+        },
+        "2026-09-17": {
+          "title": "Lower",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🦵"
         }
       }
     },
@@ -981,11 +1007,11 @@
           "emoji": "🦵"
         },
         "2026-09-16": {
-          "title": "Lower",
+          "title": "Upper",
           "location": "Anytime Fitness",
           "allDay": false,
-          "startTime": "23:00",
-          "endTime": "01:00",
+          "startTime": "22:00",
+          "endTime": "00:30",
           "categoryIds": [
             "xms3gxu6gl0zn"
           ],
@@ -1415,6 +1441,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-17": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "17:30",
+          "endTime": "18:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -1707,6 +1745,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-09-17": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:00",
+          "endTime": "13:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -1902,6 +1952,18 @@
           "emoji": "🥤"
         },
         "2026-09-13": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "17:00",
+          "endTime": "17:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-09-17": {
           "title": "Protein",
           "location": "Home",
           "allDay": false,
@@ -3873,6 +3935,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-09-17": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "18:30",
+          "endTime": "19:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -4475,6 +4549,76 @@
       "id": "xmu45yso2d31c",
       "exceptions": [],
       "overrides": {}
+    },
+    {
+      "title": "Renz Bday Party",
+      "location": "Maven",
+      "startDate": "2026-09-18",
+      "endDate": "2026-09-18",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": false,
+      "startTime": "19:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 18,
+        "weekOrdinal": 3,
+        "weekday": 5,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-18",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "🎉",
+      "id": "xmu4hgcjvjzcy",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Massage",
+      "location": "B",
+      "startDate": "2026-09-17",
+      "endDate": "2026-09-17",
+      "categoryIds": [
+        "xms3gxu6g1tht"
+      ],
+      "allDay": false,
+      "startTime": "20:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 17,
+        "weekOrdinal": 3,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-17",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E85C97",
+      "emoji": "💆",
+      "id": "xmu4hkmpu6mjt",
+      "exceptions": [],
+      "overrides": {}
     }
   ],
   "categories": [
@@ -4676,6 +4820,16 @@
         "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Mrs._Coolidge_LOC_%28crop2%29.jpg/960px-Mrs._Coolidge_LOC_%28crop2%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Grace_Coolidge"
+      }
+    },
+    "2026-09-17": {
+      "trivia": {
+        "fact": "Eternal Blue is the debut studio album by the Canadian heavy metal band Spiritbox. It was released on September 17, 2021, through the band's label Pale Chord Records in partnership with Rise Records. Vocalist Courtney LaPlante and guitarist Mike Stringer formed Spiritbox in 2016 following their departure from Iwrestledabearonce. After revealing the project and releasing an extended play (EP) in 2017, Spiritbox began development on Eternal Blue in 2018. In the meantime, the band recorded several other singles that were compiled into a second EP in 2019. Their first full-length record was scheduled for an April 2020 release but development and promotion were initially halted due to the COVID-19 pandemic.",
+        "v": 3,
+        "topic": "Eternal Blue (album)",
+        "img": "https://upload.wikimedia.org/wikipedia/en/9/94/Spiritbox_EternalBlue.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Eternal_Blue_(album)"
       }
     }
   },
