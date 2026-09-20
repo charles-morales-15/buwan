@@ -1,6 +1,6 @@
 {
-  "version": "1.0.60",
-  "lastSaved": "2026-09-17T07:30:39.894Z",
+  "version": "1.0.61",
+  "lastSaved": "2026-09-20T11:32:25.312Z",
   "events": [
     {
       "title": "Upper",
@@ -112,7 +112,10 @@
         "2026-09-13",
         "2026-09-14",
         "2026-09-15",
-        "2026-09-17"
+        "2026-09-17",
+        "2026-09-19",
+        "2026-09-18",
+        "2026-09-20"
       ],
       "overrides": {
         "2026-08-07": {
@@ -250,7 +253,8 @@
         "2026-08-08",
         "2026-08-10",
         "2026-08-11",
-        "2026-08-15"
+        "2026-08-15",
+        "2026-09-20"
       ],
       "overrides": {
         "2026-08-07": {
@@ -597,7 +601,8 @@
         "2026-09-11",
         "2026-09-16",
         "2026-09-15",
-        "2026-09-17"
+        "2026-09-17",
+        "2026-09-18"
       ],
       "overrides": {
         "2026-08-10": {
@@ -850,6 +855,18 @@
           ],
           "color": "#8E54D6",
           "emoji": "🦵"
+        },
+        "2026-09-19": {
+          "title": "Push",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "💪"
         }
       }
     },
@@ -1091,7 +1108,8 @@
         "2026-08-07",
         "2026-08-14",
         "2026-08-21",
-        "2026-08-28"
+        "2026-08-28",
+        "2026-09-18"
       ],
       "overrides": {
         "2026-09-11": {
@@ -1453,6 +1471,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-20": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "21:00",
+          "endTime": "22:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -1757,6 +1787,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-09-20": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "19:30",
+          "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -1969,6 +2011,30 @@
           "allDay": false,
           "startTime": "17:00",
           "endTime": "17:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-09-19": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:30",
+          "endTime": "16:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-09-20": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "20:00",
+          "endTime": "20:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -3727,7 +3793,9 @@
       "color": "#8E54D6",
       "emoji": "💪",
       "id": "xmtfkp2ncq710",
-      "exceptions": [],
+      "exceptions": [
+        "2026-09-20"
+      ],
       "overrides": {
         "2026-09-06": {
           "title": "Pull",
@@ -3942,6 +4010,30 @@
           "allDay": false,
           "startTime": "18:30",
           "endTime": "19:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-09-19": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "22:00",
+          "endTime": "22:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-09-18": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "23:00",
+          "endTime": "23:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -4232,14 +4324,14 @@
     },
     {
       "title": "GFExclusives",
-      "location": "",
+      "location": "Melbourne Residences",
       "startDate": "2026-09-19",
       "endDate": "2026-09-19",
       "categoryIds": [
         "xms3gxu6gsrto"
       ],
       "allDay": false,
-      "startTime": "19:00",
+      "startTime": "20:00",
       "endTime": "00:00",
       "recurrence": {
         "type": "none",
@@ -4559,7 +4651,7 @@
         "xms3gxu6gnm4j"
       ],
       "allDay": false,
-      "startTime": "19:00",
+      "startTime": "20:00",
       "endTime": "00:00",
       "recurrence": {
         "type": "none",
@@ -4617,6 +4709,41 @@
       "color": "#E85C97",
       "emoji": "💆",
       "id": "xmu4hkmpu6mjt",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "GFExclusives",
+      "location": "Melbourne Residences",
+      "startDate": "2026-09-20",
+      "endDate": "2026-09-20",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "00:00",
+      "endTime": "06:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 20,
+        "weekOrdinal": 3,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-20",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmu9qj9e05reg",
       "exceptions": [],
       "overrides": {}
     }
@@ -4830,6 +4957,16 @@
         "img": "https://upload.wikimedia.org/wikipedia/en/9/94/Spiritbox_EternalBlue.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Eternal_Blue_(album)"
+      }
+    },
+    "2026-09-20": {
+      "trivia": {
+        "fact": "Misti is a volcano in the southern Peruvian Andes, rising above Arequipa, Peru's second-largest city. It has a steep conical profile and two nested summit craters. The inner crater contains an active lava plug or dome, pierced by vents that emit volcanic gases. The summit reaches 5822 m above sea level, on the rim of the outer crater. Snow covers the summit but does not persist, and there are no glaciers. The upper slopes are largely barren, while lower elevations support scrub and other bushy vegetation.",
+        "v": 3,
+        "topic": "Misti",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Volcano_Misti%2C_Peru.jpg/960px-Volcano_Misti%2C_Peru.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Misti"
       }
     }
   },
