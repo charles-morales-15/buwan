@@ -1,6 +1,6 @@
 {
-  "version": "1.0.61",
-  "lastSaved": "2026-09-20T11:32:25.312Z",
+  "version": "1.0.62",
+  "lastSaved": "2026-09-21T05:15:48.586Z",
   "events": [
     {
       "title": "Upper",
@@ -115,7 +115,8 @@
         "2026-09-17",
         "2026-09-19",
         "2026-09-18",
-        "2026-09-20"
+        "2026-09-20",
+        "2026-09-21"
       ],
       "overrides": {
         "2026-08-07": {
@@ -867,6 +868,18 @@
           ],
           "color": "#8E54D6",
           "emoji": "💪"
+        },
+        "2026-09-21": {
+          "title": "Pull",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🏃"
         }
       }
     },
@@ -1483,6 +1496,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-21": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "18:00",
+          "endTime": "19:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -1799,6 +1824,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-09-21": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:00",
+          "endTime": "13:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -2035,6 +2072,18 @@
           "allDay": false,
           "startTime": "20:00",
           "endTime": "20:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-09-21": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:30",
+          "endTime": "14:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -3930,7 +3979,9 @@
       "color": "#4FA45B",
       "emoji": "🍽️",
       "id": "xmtqt5514m2pc",
-      "exceptions": [],
+      "exceptions": [
+        "2026-09-20"
+      ],
       "overrides": {
         "2026-09-07": {
           "title": "Dinner",
@@ -4034,6 +4085,18 @@
           "allDay": false,
           "startTime": "23:00",
           "endTime": "23:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-09-21": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "19:00",
+          "endTime": "19:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -4746,6 +4809,96 @@
       "id": "xmu9qj9e05reg",
       "exceptions": [],
       "overrides": {}
+    },
+    {
+      "id": "xmuasdjkv72d8",
+      "title": "Dinner",
+      "location": "Home",
+      "allDay": false,
+      "startTime": "02:30",
+      "endTime": "03:00",
+      "categoryIds": [
+        "xms3gxu6gebeu"
+      ],
+      "color": "#4FA45B",
+      "emoji": "🍽️",
+      "startDate": "2026-09-21",
+      "endDate": "2026-09-21",
+      "recurrence": {
+        "type": "none"
+      },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "William Ronigan",
+      "location": "Sheridan",
+      "startDate": "2026-09-20",
+      "endDate": "2026-09-20",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "23:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 20,
+        "weekOrdinal": 3,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-20",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmuaseg0d6ggx",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "William Ronigan",
+      "location": "Sheridan",
+      "startDate": "2026-09-21",
+      "endDate": "2026-09-21",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "00:00",
+      "endTime": "11:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 21,
+        "weekOrdinal": 3,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-21",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmuasf3nnesv9",
+      "exceptions": [],
+      "overrides": {}
     }
   ],
   "categories": [
@@ -4967,6 +5120,16 @@
         "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Volcano_Misti%2C_Peru.jpg/960px-Volcano_Misti%2C_Peru.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Misti"
+      }
+    },
+    "2026-09-21": {
+      "trivia": {
+        "fact": "Early Netherlandish painting is the body of work by artists active in the Burgundian and Habsburg Netherlands during the 15th- and 16th-century Northern Renaissance period, once known as the Flemish Primitives. It flourished especially in the cities of Bruges, Ghent, Mechelen, Leuven, Tournai and Brussels, all in present-day Belgium. The period begins approximately with Robert Campin and Jan van Eyck in the 1420s and lasts at least until the death of Gerard David in 1523, although many scholars extend it to the beginning of the Dutch Revolt in 1566 or 1568 – Max J. Friedländer's acclaimed surveys run through Pieter Bruegel the Elder. Early Netherlandish painting coincides with the Early and High Italian Renaissance, but the early period is seen as an independent artistic evolution, separate from the Renaissance humanism that characterised developments in Italy. Beginning in the 1490s, as increasing numbers of Netherlandish and other Northern painters traveled to Italy, Renaissance ideals and painting styles were incorporated into northern painting. As a result, Early Netherlandish painters are often categorised as belonging to both the Northern Renaissance and the Late or International Gothic.",
+        "v": 3,
+        "topic": "Early Netherlandish painting",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Van_Eyck_-_Arnolfini_Portrait.jpg/960px-Van_Eyck_-_Arnolfini_Portrait.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Early_Netherlandish_painting"
       }
     }
   },
