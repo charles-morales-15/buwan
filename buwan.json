@@ -1,6 +1,6 @@
 {
-  "version": "1.0.64",
-  "lastSaved": "2026-09-21T19:24:15.470Z",
+  "version": "1.0.65",
+  "lastSaved": "2026-09-22T14:21:55.622Z",
   "events": [
     {
       "title": "Upper",
@@ -5130,6 +5130,16 @@
         "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Van_Eyck_-_Arnolfini_Portrait.jpg/960px-Van_Eyck_-_Arnolfini_Portrait.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Early_Netherlandish_painting"
+      }
+    },
+    "2026-09-22": {
+      "trivia": {
+        "fact": "Mary Alison Frantz was an American archaeological photographer and Byzantine scholar. She was the official photographer of the excavations of the Agora of Athens, and a prolific photographer of ancient Greek sculpture, including the Parthenon frieze and works from the Temple of Zeus at Olympia.",
+        "v": 3,
+        "topic": "Alison Frantz",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/9/95/Mary_Alison_Frantz%2C_Smith_College%2C_class_of_1924.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Alison_Frantz"
       }
     }
   },
