@@ -1,6 +1,6 @@
 {
-  "version": "1.0.65",
-  "lastSaved": "2026-09-22T14:21:55.622Z",
+  "version": "1.0.66",
+  "lastSaved": "2026-09-25T16:31:01.411Z",
   "events": [
     {
       "title": "Upper",
@@ -5140,6 +5140,16 @@
         "img": "https://upload.wikimedia.org/wikipedia/commons/9/95/Mary_Alison_Frantz%2C_Smith_College%2C_class_of_1924.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Alison_Frantz"
+      }
+    },
+    "2026-09-26": {
+      "trivia": {
+        "fact": "Kevin O'Halloran was an Australian freestyle swimmer of the 1950s who won a gold medal in the 4×200-metre freestyle relay at the 1956 Summer Olympics in Melbourne. The first Western Australian to win Olympic gold, O'Halloran learnt to swim in his home town of Katanning. He moved to Perth to attend secondary schooling at Guildford Grammar School, where he became more committed to swimming.",
+        "v": 3,
+        "topic": "Kevin O'Halloran",
+        "img": "https://upload.wikimedia.org/wikipedia/en/b/b5/Kevin_O%27Halloran.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Kevin_O'Halloran"
       }
     }
   },
