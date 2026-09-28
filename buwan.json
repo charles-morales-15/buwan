@@ -1,6 +1,6 @@
 {
-  "version": "1.0.66",
-  "lastSaved": "2026-09-25T16:31:01.411Z",
+  "version": "1.0.67",
+  "lastSaved": "2026-09-28T07:38:06.585Z",
   "events": [
     {
       "title": "Upper",
@@ -116,7 +116,8 @@
         "2026-09-19",
         "2026-09-18",
         "2026-09-20",
-        "2026-09-21"
+        "2026-09-21",
+        "2026-09-27"
       ],
       "overrides": {
         "2026-08-07": {
@@ -204,6 +205,18 @@
           "emoji": "🤸"
         },
         "2026-09-02": {
+          "title": "Mobility",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "12:00",
+          "endTime": "13:00",
+          "categoryIds": [
+            "xms3gxu6gr9xk"
+          ],
+          "color": "#9C6B4A",
+          "emoji": "🤸"
+        },
+        "2026-09-28": {
           "title": "Mobility",
           "location": "Home",
           "allDay": false,
@@ -540,6 +553,18 @@
           "allDay": false,
           "startTime": "15:30",
           "endTime": "16:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-09-28": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:00",
+          "endTime": "14:00",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -1831,6 +1856,18 @@
           "allDay": false,
           "startTime": "13:00",
           "endTime": "13:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-09-28": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:00",
+          "endTime": "15:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -5150,6 +5187,16 @@
         "img": "https://upload.wikimedia.org/wikipedia/en/b/b5/Kevin_O%27Halloran.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Kevin_O'Halloran"
+      }
+    },
+    "2026-09-28": {
+      "trivia": {
+        "fact": "Genshin Impact is a 2020 action role-playing video game developed and published by miHoYo. It is distributed outside China by miHoYo's international subsidiary Cognosphere, also known as HoYoverse. At its core, the game features an anime-style open-world environment, an action-focused battle system consisting of elemental magic with character-switching, and a mythical main story. Genshin Impact is a free-to-play game monetized through gacha mechanics, which is updated regularly using the games as a service model. It was originally released for Android, iOS, PlayStation 4, and Windows, followed by the PlayStation 5 in 2021, and Xbox Series X/S in 2024. In China, a native port for HarmonyOS NEXT was released on September 2025. Support from PlayStation 4 was removed on April 2026.",
+        "v": 3,
+        "topic": "Genshin Impact",
+        "img": "https://thumb.wikimedia.org/wikipedia/en/thumb/5/5d/Genshin_Impact_logo.svg/960px-Genshin_Impact_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Genshin_Impact"
       }
     }
   },
