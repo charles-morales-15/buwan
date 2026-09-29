@@ -1,6 +1,6 @@
 {
-  "version": "1.0.67",
-  "lastSaved": "2026-09-28T07:38:06.585Z",
+  "version": "1.0.68",
+  "lastSaved": "2026-09-29T15:52:24.065Z",
   "events": [
     {
       "title": "Upper",
@@ -45,6 +45,18 @@
           "allDay": false,
           "startTime": "15:00",
           "endTime": "16:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "💪"
+        },
+        "2026-09-29": {
+          "title": "Upper",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "18:00",
           "categoryIds": [
             "xms3gxu6gl0zn"
           ],
@@ -117,7 +129,8 @@
         "2026-09-18",
         "2026-09-20",
         "2026-09-21",
-        "2026-09-27"
+        "2026-09-27",
+        "2026-09-29"
       ],
       "overrides": {
         "2026-08-07": {
@@ -570,6 +583,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-29": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "12:00",
+          "endTime": "13:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -628,7 +653,8 @@
         "2026-09-16",
         "2026-09-15",
         "2026-09-17",
-        "2026-09-18"
+        "2026-09-18",
+        "2026-09-29"
       ],
       "overrides": {
         "2026-08-10": {
@@ -1533,6 +1559,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-29": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "19:00",
+          "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -2167,8 +2205,8 @@
     {
       "title": "CCAO-F Exam",
       "location": "Online",
-      "startDate": "2026-09-29",
-      "endDate": "2026-09-29",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-12",
       "categoryIds": [
         "xms3gxu6g1cca"
       ],
@@ -4936,6 +4974,76 @@
       "id": "xmuasf3nnesv9",
       "exceptions": [],
       "overrides": {}
+    },
+    {
+      "title": "Buy Medicines",
+      "location": "Mercury Drug",
+      "startDate": "2026-09-29",
+      "endDate": "2026-09-29",
+      "categoryIds": [
+        "xms4wersa2l3w"
+      ],
+      "allDay": false,
+      "startTime": "18:30",
+      "endTime": "19:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 29,
+        "weekOrdinal": 5,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-29",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E24A4A",
+      "emoji": "💊",
+      "id": "xmumus27eqkyx",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Laundry",
+      "location": "Home",
+      "startDate": "2026-09-29",
+      "endDate": "2026-09-29",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "allDay": false,
+      "startTime": "13:00",
+      "endTime": "14:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 29,
+        "weekOrdinal": 5,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 8,
+        "rangeStart": "2026-09-29",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3E8FE0",
+      "emoji": "🪣",
+      "id": "xmumuu7rp4xze",
+      "exceptions": [],
+      "overrides": {}
     }
   ],
   "categories": [
@@ -5197,6 +5305,16 @@
         "img": "https://thumb.wikimedia.org/wikipedia/en/thumb/5/5d/Genshin_Impact_logo.svg/960px-Genshin_Impact_logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Genshin_Impact"
+      }
+    },
+    "2026-09-29": {
+      "trivia": {
+        "fact": "\"The Long and Winding Road\" is a song by the English rock band the Beatles from their 1970 album Let It Be. A piano ballad that reflected the Beatles' increasing bitterness towards each other, it was composed by Paul McCartney at his Scottish farm in 1968. As he was writing it, he \"imagined it was going to be done by someone like Ray Charles\".",
+        "v": 3,
+        "topic": "The Long and Winding Road",
+        "img": "https://upload.wikimedia.org/wikipedia/en/b/bf/The_long_and_winding_road.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/The_Long_and_Winding_Road"
       }
     }
   },
