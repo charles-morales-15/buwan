@@ -1,6 +1,6 @@
 {
-  "version": "1.0.68",
-  "lastSaved": "2026-09-29T15:52:24.065Z",
+  "version": "1.0.69",
+  "lastSaved": "2026-09-30T08:52:01.224Z",
   "events": [
     {
       "title": "Upper",
@@ -5315,6 +5315,16 @@
         "img": "https://upload.wikimedia.org/wikipedia/en/b/bf/The_long_and_winding_road.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/The_Long_and_Winding_Road"
+      }
+    },
+    "2026-09-30": {
+      "trivia": {
+        "fact": "A dam is a structure that impounds water or restricts its flow. Dams are classified into four basic types: gravity dams are massive structures made of concrete or masonry that rely on their weight to resist the force of impounded water; embankment dams are large earthworks consisting of rocks, clay, sand, soil, or gravel; buttress dams consist of a sloped, concrete face supported on the downstream side by a series of triangular buttresses; and arch dams use a curved concrete wall to transfer the weight of the water to the surrounding valley walls.",
+        "v": 3,
+        "topic": "Dam",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Takato_Dam.jpg/960px-Takato_Dam.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Dam"
       }
     }
   },
