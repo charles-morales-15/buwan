@@ -1,6 +1,6 @@
 {
-  "version": "1.0.69",
-  "lastSaved": "2026-09-30T08:52:01.224Z",
+  "version": "1.0.70",
+  "lastSaved": "2026-09-30T17:29:40.988Z",
   "events": [
     {
       "title": "Upper",
@@ -130,7 +130,8 @@
         "2026-09-20",
         "2026-09-21",
         "2026-09-27",
-        "2026-09-29"
+        "2026-09-29",
+        "2026-09-30"
       ],
       "overrides": {
         "2026-08-07": {
@@ -595,6 +596,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-09-30": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "12:00",
+          "endTime": "13:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -740,6 +753,18 @@
           ],
           "color": "#E24A4A",
           "emoji": "🧪"
+        },
+        "2026-09-30": {
+          "title": "Watch Training Videos",
+          "location": "Online",
+          "allDay": false,
+          "startTime": "20:00",
+          "endTime": "00:00",
+          "categoryIds": [
+            "xms4wp6k79qsc"
+          ],
+          "color": "#3A4250",
+          "emoji": "📚"
         }
       }
     },
@@ -1305,7 +1330,8 @@
         "2026-08-29",
         "2026-09-05",
         "2026-09-14",
-        "2026-09-16"
+        "2026-09-16",
+        "2026-09-30"
       ],
       "overrides": {
         "2026-08-06": {
@@ -2159,6 +2185,18 @@
           "allDay": false,
           "startTime": "13:30",
           "endTime": "14:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-09-30": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:30",
+          "endTime": "16:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -4177,6 +4215,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-09-30": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "21:30",
+          "endTime": "22:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -4588,8 +4638,8 @@
     {
       "title": "Catch-up",
       "location": "Lyndon",
-      "startDate": "2026-09-23",
-      "endDate": "2026-09-23",
+      "startDate": "2023-10-21",
+      "endDate": "2023-10-21",
       "categoryIds": [
         "xms3gxu6gsrto"
       ],
@@ -5042,6 +5092,61 @@
       "color": "#3E8FE0",
       "emoji": "🪣",
       "id": "xmumuu7rp4xze",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "id": "xmuo9293uobva",
+      "title": "Bath PM",
+      "location": "Home",
+      "allDay": false,
+      "startTime": "01:30",
+      "endTime": "02:30",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "color": "#3E8FE0",
+      "emoji": "🚿",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-01",
+      "recurrence": {
+        "type": "none"
+      },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Learn AWS",
+      "location": "",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-01",
+      "categoryIds": [
+        "xms3gxu6g1cca"
+      ],
+      "allDay": false,
+      "startTime": "00:00",
+      "endTime": "01:30",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 1,
+        "weekOrdinal": 1,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-01",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#EE7A30",
+      "emoji": "📙",
+      "id": "xmuo937fn59t8",
       "exceptions": [],
       "overrides": {}
     }
