@@ -1,6 +1,6 @@
 {
-  "version": "1.0.71",
-  "lastSaved": "2026-10-21T05:07:43.800Z",
+  "version": "1.0.72",
+  "lastSaved": "2026-10-21T06:02:05.971Z",
   "events": [
     {
       "title": "Upper",
@@ -132,7 +132,10 @@
         "2026-09-21",
         "2026-09-27",
         "2026-09-29",
-        "2026-09-30"
+        "2026-09-30",
+        "2026-10-17",
+        "2026-10-18",
+        "2026-10-20"
       ],
       "overrides": {
         "2026-08-07": {
@@ -800,6 +803,18 @@
           ],
           "color": "#8E54D6",
           "emoji": "🏃"
+        },
+        "2026-10-17": {
+          "title": "Push",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "💪"
         }
       }
     },
@@ -1436,6 +1451,18 @@
           "allDay": false,
           "startTime": "19:00",
           "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-10-17": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "18:00",
+          "endTime": "19:00",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -4071,6 +4098,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-10-17": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "19:00",
+          "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -4991,6 +5030,76 @@
       "color": "#EE7A30",
       "emoji": "📙",
       "id": "xmuo937fn59t8",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "John Krair Villanueva",
+      "location": "CGS",
+      "startDate": "2026-10-17",
+      "endDate": "2026-10-17",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "20:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 17,
+        "weekOrdinal": 3,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-17",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmvhow6946eo6",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "John Krair Villanueva",
+      "location": "CGS",
+      "startDate": "2026-10-18",
+      "endDate": "2026-10-18",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "00:00",
+      "endTime": "10:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 18,
+        "weekOrdinal": 3,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-18",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmvhp4uoaaeja",
       "exceptions": [],
       "overrides": {}
     }
