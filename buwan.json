@@ -1,6 +1,6 @@
 {
-  "version": "1.0.70",
-  "lastSaved": "2026-09-30T17:29:40.988Z",
+  "version": "1.0.71",
+  "lastSaved": "2026-10-21T05:07:43.800Z",
   "events": [
     {
       "title": "Upper",
@@ -36,7 +36,8 @@
       "id": "xms3gzdknkdbd",
       "exceptions": [
         "2026-08-17",
-        "2026-08-24"
+        "2026-08-24",
+        "2026-10-27"
       ],
       "overrides": {
         "2026-08-10": {
@@ -608,163 +609,6 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
-        }
-      }
-    },
-    {
-      "title": "Learn Thai",
-      "location": "Online",
-      "startDate": "2026-07-27",
-      "endDate": "2026-07-27",
-      "categoryIds": [
-        "xms3gxu6g1cca"
-      ],
-      "allDay": false,
-      "startTime": "13:00",
-      "endTime": "16:00",
-      "recurrence": {
-        "type": "weekly",
-        "interval": 1,
-        "weekdays": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "dailyMode": "every",
-        "monthlyMode": "dayOfMonth",
-        "dayOfMonth": 27,
-        "weekOrdinal": 4,
-        "weekday": 1,
-        "yearlyMode": "dayOfMonth",
-        "month": 6,
-        "rangeStart": "2026-07-27",
-        "endMode": "byDate",
-        "endDate": "2026-12-28",
-        "count": 10
-      },
-      "color": "#EE7A30",
-      "emoji": "📚",
-      "id": "xms3i1riyr701",
-      "exceptions": [
-        "2026-08-06",
-        "2026-08-05",
-        "2026-08-07",
-        "2026-08-13",
-        "2026-08-14",
-        "2026-08-12",
-        "2026-08-21",
-        "2026-08-28",
-        "2026-08-24",
-        "2026-08-25",
-        "2026-08-26",
-        "2026-08-27",
-        "2026-08-31",
-        "2026-09-07",
-        "2026-09-11",
-        "2026-09-16",
-        "2026-09-15",
-        "2026-09-17",
-        "2026-09-18",
-        "2026-09-29"
-      ],
-      "overrides": {
-        "2026-08-10": {
-          "title": "Learn Anthropic",
-          "location": "Online",
-          "allDay": false,
-          "startTime": "16:00",
-          "endTime": "20:00",
-          "categoryIds": [
-            "xms3gxu6g1cca"
-          ],
-          "color": "#EE7A30",
-          "emoji": "📚"
-        },
-        "2026-08-11": {
-          "title": "Learn Thai",
-          "location": "Online",
-          "allDay": false,
-          "startTime": "14:00",
-          "endTime": "15:30",
-          "categoryIds": [
-            "xms3gxu6g1cca"
-          ],
-          "color": "#EE7A30",
-          "emoji": "📚"
-        },
-        "2026-08-17": {
-          "title": "Learn Anthropic",
-          "location": "Online",
-          "allDay": false,
-          "startTime": "22:00",
-          "endTime": "00:00",
-          "categoryIds": [
-            "xms3gxu6g1cca"
-          ],
-          "color": "#EE7A30",
-          "emoji": "📚"
-        },
-        "2026-08-18": {
-          "title": "Learn Thai",
-          "location": "Online",
-          "allDay": false,
-          "startTime": "20:00",
-          "endTime": "00:00",
-          "categoryIds": [
-            "xms3gxu6g1cca"
-          ],
-          "color": "#EE7A30",
-          "emoji": "📚"
-        },
-        "2026-08-19": {
-          "title": "Learn Thai",
-          "location": "Online",
-          "allDay": false,
-          "startTime": "18:00",
-          "endTime": "22:00",
-          "categoryIds": [
-            "xms3gxu6g1cca"
-          ],
-          "color": "#EE7A30",
-          "emoji": "📚"
-        },
-        "2026-09-02": {
-          "title": "Learn Thai",
-          "location": "Online",
-          "allDay": false,
-          "startTime": "16:00",
-          "endTime": "19:00",
-          "categoryIds": [
-            "xms3gxu6g1cca"
-          ],
-          "color": "#EE7A30",
-          "emoji": "📚"
-        },
-        "2026-09-14": {
-          "title": "Intellicare",
-          "location": "Online",
-          "allDay": false,
-          "startTime": "13:00",
-          "endTime": "14:30",
-          "categoryIds": [
-            "xms4wersa2l3w"
-          ],
-          "color": "#E24A4A",
-          "emoji": "🧪"
-        },
-        "2026-09-30": {
-          "title": "Watch Training Videos",
-          "location": "Online",
-          "allDay": false,
-          "startTime": "20:00",
-          "endTime": "00:00",
-          "categoryIds": [
-            "xms4wp6k79qsc"
-          ],
-          "color": "#3A4250",
-          "emoji": "📚"
         }
       }
     },
@@ -5430,6 +5274,16 @@
         "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Takato_Dam.jpg/960px-Takato_Dam.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Dam"
+      }
+    },
+    "2026-10-21": {
+      "trivia": {
+        "fact": "The Hongwu Emperor, personal name Zhu Yuanzhang, was the founding emperor of the Ming dynasty of China, reigning from 1368 to 1398.",
+        "v": 3,
+        "topic": "Hongwu Emperor",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Portrait_assis_de_l%27empereur_Ming_Taizu.jpg/960px-Portrait_assis_de_l%27empereur_Ming_Taizu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Hongwu_Emperor"
       }
     }
   },
