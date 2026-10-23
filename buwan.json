@@ -1,6 +1,6 @@
 {
-  "version": "1.0.72",
-  "lastSaved": "2026-10-21T06:02:05.971Z",
+  "version": "1.0.73",
+  "lastSaved": "2026-10-23T05:48:42.476Z",
   "events": [
     {
       "title": "Upper",
@@ -5178,15 +5178,6 @@
     "filePath": "buwan.json"
   },
   "aiCache": {
-    "2026-08-23": {
-      "trivia": {
-        "fact": "The pairs' figure skating competition at the 2002 Winter Olympics was held on February 9 and 11 at the Salt Lake Ice Center in Salt Lake City, Utah, in the United States. Originally, Elena Berezhnaya and Anton Sikharulidze of Russia won the gold medals, while Jamie Salé and David Pelletier of Canada won the silver, and Shen Xue and Zhao Hongbo of China won the bronze. However, after the event concluded, allegations of vote swapping led to one judge's scores being discarded; Salé and Pelletier were also awarded gold medals, while Berezhnaya and Sikharulidze were allowed to keep theirs. In a joint press conference on February 15, the International Skating Union (ISU) and the International Olympic Committee announced that Marie-Reine Le Gougne, the French judge implicated in collusion, was guilty of misconduct and was suspended effective immediately. In 2004, the ISU voted to change the 6.0 judging system because it was considered too subjective. As a result, the ISU Judging System was created, whereby skaters and teams were scored based on a technical grade of execution of the required elements.",
-        "topic": "Figure skating at the 2002 Winter Olympics – Pair skating",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/5/53/Belarus_stamp_no._449_-_2002_Winter_Olympics.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "source": "Wikipedia",
-        "link": "https://en.wikipedia.org/wiki/Figure_skating_at_the_2002_Winter_Olympics_%E2%80%93_Pair_skating"
-      }
-    },
     "2026-08-24": {
       "trivia": {
         "fact": "Brochfael ap Meurig was king of Gwent in south-east Wales. He ruled jointly with his brother, Ffernfael ap Meurig. Gwent and Glywysing, the neighbouring territory to the west, were ruled as a single kingdom in some periods; at other times they were separate and the king of Glywysing had the higher status. Brochfael's father, Meurig ab Arthfael, ruled both territories with the title King of Glywysing, but Brochfael and Ffernfael were only kings of Gwent, and had a lower status than their cousin Hywel ap Rhys, King of Glywysing.",
@@ -5393,6 +5384,26 @@
         "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Portrait_assis_de_l%27empereur_Ming_Taizu.jpg/960px-Portrait_assis_de_l%27empereur_Ming_Taizu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Hongwu_Emperor"
+      }
+    },
+    "2026-10-22": {
+      "trivia": {
+        "fact": "During the 1986–87 English football season, Gillingham F.C. competed in the Football League Third Division. It was the 55th season in which the club competed in the Football League, and the 37th since the club was voted back into the league in 1950. Gillingham began the season strongly and were top of the Third Division table shortly before the mid-point of the season. The team's form declined in the second half of the season; to qualify for the play-offs for promotion to the Football League Second Division, the team needed to win their final game and both Bristol City and Notts County had to fail to win theirs. A victory over Bolton Wanderers, combined with both the other teams being held to draws, meant that Gillingham finished in fifth place and qualified for the play-offs. After beating Sunderland in the semi-finals, Gillingham faced Swindon Town in the final. The two teams drew 2–2 on aggregate, necessitating a replay at a neutral venue, which Swindon won 2–0 to claim a place in the Second Division.",
+        "v": 3,
+        "topic": "1986–87 Gillingham F.C. season",
+        "img": null,
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/1986%E2%80%9387_Gillingham_F.C._season"
+      }
+    },
+    "2026-10-23": {
+      "trivia": {
+        "fact": "Thuggee was a phenomenon of highway robbery in the Indian subcontinent that saw gangs of Thugs murder and rob travellers, often by strangling. During the British colonial era, thuggee was represented and popularised as a secret pan-Indian fraternity of ritual stranglers with ancient origins, motivated by fanaticism and bloodlust. This portrayal has come under intense scholarly criticism beginning in the 1950s, with historical reinterpretations generally contesting the significance of religion to thuggee and viewing the Thugs as more or less ordinary criminals, or thuggee as a type of banditry. There is a general consensus among contemporary historians against the colonial-era representation.",
+        "v": 3,
+        "topic": "Thuggee",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Thugs_About_To_Strangle_Traveller.jpg/960px-Thugs_About_To_Strangle_Traveller.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Thuggee"
       }
     }
   },
