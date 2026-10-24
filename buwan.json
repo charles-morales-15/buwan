@@ -1,6 +1,6 @@
 {
-  "version": "1.0.74",
-  "lastSaved": "2026-10-24T18:25:53.824Z",
+  "version": "1.0.75",
+  "lastSaved": "2026-10-24T18:30:06.411Z",
   "events": [
     {
       "title": "Upper",
@@ -135,7 +135,8 @@
         "2026-09-30",
         "2026-10-17",
         "2026-10-18",
-        "2026-10-20"
+        "2026-10-20",
+        "2026-10-24"
       ],
       "overrides": {
         "2026-08-07": {
@@ -805,6 +806,18 @@
           "emoji": "🏃"
         },
         "2026-10-17": {
+          "title": "Push",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "18:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "💪"
+        },
+        "2026-10-24": {
           "title": "Push",
           "location": "Anytime Fitness",
           "allDay": false,
@@ -5100,6 +5113,41 @@
       "color": "#64748B",
       "emoji": "🍆",
       "id": "xmvhp4uoaaeja",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Carlos Maravillas",
+      "location": "Home",
+      "startDate": "2026-10-24",
+      "endDate": "2026-10-24",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "19:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          6
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 24,
+        "weekOrdinal": 4,
+        "weekday": 6,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-24",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍆",
+      "id": "xmvmqe3vkusaw",
       "exceptions": [],
       "overrides": {}
     }
