@@ -1,6 +1,6 @@
 {
-  "version": "1.0.73",
-  "lastSaved": "2026-10-23T05:48:42.476Z",
+  "version": "1.0.74",
+  "lastSaved": "2026-10-24T18:25:53.824Z",
   "events": [
     {
       "title": "Upper",
@@ -5178,24 +5178,6 @@
     "filePath": "buwan.json"
   },
   "aiCache": {
-    "2026-08-24": {
-      "trivia": {
-        "fact": "Brochfael ap Meurig was king of Gwent in south-east Wales. He ruled jointly with his brother, Ffernfael ap Meurig. Gwent and Glywysing, the neighbouring territory to the west, were ruled as a single kingdom in some periods; at other times they were separate and the king of Glywysing had the higher status. Brochfael's father, Meurig ab Arthfael, ruled both territories with the title King of Glywysing, but Brochfael and Ffernfael were only kings of Gwent, and had a lower status than their cousin Hywel ap Rhys, King of Glywysing.",
-        "topic": "Brochfael ap Meurig",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Medieval_south-east_Wales_map_Lloyd.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "source": "Wikipedia",
-        "link": "https://en.wikipedia.org/wiki/Brochfael_ap_Meurig"
-      }
-    },
-    "2026-08-25": {
-      "trivia": {
-        "fact": "Well-being is what is non-instrumentally good for a person. Also called welfare and quality of life, it is a measure of how well life is going for someone. In the broadest sense, it covers the balance of all positive and negative aspects of a person's life. More narrowly, it refers only to positive degrees and contrasts with ill-being, which denotes negative ones. In this sense, well-being is what egoists typically seek for themselves and altruists aim to enhance in others, serving as a central goal of many individual and societal endeavors.",
-        "topic": "Well-being",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Village_Kids_from_Nigeria.jpg/960px-Village_Kids_from_Nigeria.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-        "source": "Wikipedia",
-        "link": "https://en.wikipedia.org/wiki/Well-being"
-      }
-    },
     "2026-08-30": {
       "trivia": {
         "fact": "During the 1980–81 English football season, Ipswich Town F.C. competed in the Football League First Division. In one of the most successful seasons in the club's history, they finished as runners-up in the league championship, were semi-finalists in the FA Cup and won the UEFA Cup. In all, Ipswich played a total of 66 competitive games during the season, winning 37, drawing 13 and losing 16.",
@@ -5404,6 +5386,16 @@
         "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Thugs_About_To_Strangle_Traveller.jpg/960px-Thugs_About_To_Strangle_Traveller.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Thuggee"
+      }
+    },
+    "2026-10-25": {
+      "trivia": {
+        "fact": "The Kinks were an English rock band formed in London in 1962. The band's classic line-up comprised brothers Ray Davies and Dave Davies, Pete Quaife (bass), and Mick Avory. Emerging during the height of British rhythm and blues and Merseybeat, their breakthrough third single, the Ray Davies-penned \"You Really Got Me\" (1964), became an international hit, topping the charts in the United Kingdom and reaching the Top 10 in the United States. Other early hits included \"All Day and All of the Night\" (1964), \"Tired of Waiting for You\", \"Set Me Free\", \"See My Friends\", and \"Till the End of the Day\". They were part of the British Invasion of America until several problems during their 1965 American tour led to them being banned from touring there for several years.",
+        "v": 3,
+        "topic": "The Kinks",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/8/88/Helmfrid-sofa4_Touched.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/The_Kinks"
       }
     }
   },
