@@ -1,6 +1,6 @@
 {
-  "version": "1.0.75",
-  "lastSaved": "2026-10-24T18:30:06.411Z",
+  "version": "1.0.76",
+  "lastSaved": "2026-10-24T18:31:02.447Z",
   "events": [
     {
       "title": "Upper",
@@ -608,6 +608,18 @@
           "allDay": false,
           "startTime": "12:00",
           "endTime": "13:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-10-24": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "12:00",
+          "endTime": "12:30",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
