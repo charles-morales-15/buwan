@@ -1,6 +1,6 @@
 {
-  "version": "1.0.81",
-  "lastSaved": "2026-10-25T15:25:49.420Z",
+  "version": "1.0.82",
+  "lastSaved": "2026-10-25T15:49:41.459Z",
   "events": [
     {
       "title": "Upper",
@@ -69,14 +69,14 @@
     {
       "title": "Mobility",
       "location": "Home",
-      "startDate": "2026-07-27",
-      "endDate": "2026-07-27",
+      "startDate": "2026-10-25",
+      "endDate": "2026-10-25",
       "categoryIds": [
         "xms3gxu6gr9xk"
       ],
       "allDay": false,
-      "startTime": "10:00",
-      "endTime": "11:00",
+      "startTime": "11:00",
+      "endTime": "12:00",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -85,13 +85,13 @@
         ],
         "dailyMode": "every",
         "monthlyMode": "dayOfMonth",
-        "dayOfMonth": 27,
+        "dayOfMonth": 26,
         "weekOrdinal": 4,
         "weekday": 1,
         "yearlyMode": "dayOfMonth",
-        "month": 6,
-        "rangeStart": "2026-07-27",
-        "endMode": "byDate",
+        "month": 9,
+        "rangeStart": "2026-10-26",
+        "endMode": "never",
         "endDate": "2026-12-31",
         "count": 10
       },
@@ -252,8 +252,8 @@
           "title": "Mobility",
           "location": "Home",
           "allDay": false,
-          "startTime": "12:00",
-          "endTime": "13:00",
+          "startTime": "11:00",
+          "endTime": "12:00",
           "categoryIds": [
             "xms3gxu6gr9xk"
           ],
@@ -265,28 +265,28 @@
     {
       "title": "Bath AM",
       "location": "Home",
-      "startDate": "2026-07-27",
-      "endDate": "2026-07-27",
+      "startDate": "2026-10-25",
+      "endDate": "2026-10-25",
       "categoryIds": [
         "xms3gxu6gv3u6"
       ],
       "allDay": false,
-      "startTime": "11:00",
-      "endTime": "12:00",
+      "startTime": "12:00",
+      "endTime": "13:00",
       "recurrence": {
         "type": "daily",
         "interval": 1,
         "weekdays": [
-          1
+          0
         ],
         "dailyMode": "every",
         "monthlyMode": "dayOfMonth",
-        "dayOfMonth": 27,
+        "dayOfMonth": 25,
         "weekOrdinal": 4,
-        "weekday": 1,
+        "weekday": 0,
         "yearlyMode": "dayOfMonth",
-        "month": 6,
-        "rangeStart": "2026-07-27",
+        "month": 9,
+        "rangeStart": "2026-10-25",
         "endMode": "never",
         "endDate": "",
         "count": 10
@@ -644,8 +644,8 @@
           "title": "Bath AM",
           "location": "Home",
           "allDay": false,
-          "startTime": "13:00",
-          "endTime": "14:00",
+          "startTime": "12:00",
+          "endTime": "13:00",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -1547,7 +1547,7 @@
       }
     },
     {
-      "title": "Lunch",
+      "title": "1st Meal",
       "location": "Home",
       "startDate": "2026-07-27",
       "endDate": "2026-07-27",
@@ -1897,11 +1897,11 @@
           "emoji": "🍽️"
         },
         "2026-10-26": {
-          "title": "Breakfast",
+          "title": "1st Meal",
           "location": "Home",
           "allDay": false,
-          "startTime": "14:00",
-          "endTime": "15:00",
+          "startTime": "13:00",
+          "endTime": "13:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -4067,7 +4067,7 @@
       "overrides": {}
     },
     {
-      "title": "Dinner",
+      "title": "2nd Meal",
       "location": "Home",
       "startDate": "2026-09-06",
       "endDate": "2026-09-06",
@@ -4075,8 +4075,8 @@
         "xms3gxu6gebeu"
       ],
       "allDay": false,
-      "startTime": "21:00",
-      "endTime": "21:30",
+      "startTime": "19:00",
+      "endTime": "19:30",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -4264,6 +4264,18 @@
           "allDay": false,
           "startTime": "18:00",
           "endTime": "18:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-10-18": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "21:00",
+          "endTime": "22:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -5329,6 +5341,146 @@
       "color": "#E24A4A",
       "emoji": "🩺",
       "id": "xmvnqe30t7hoj",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "TLD",
+      "location": "Home",
+      "startDate": "2026-10-18",
+      "endDate": "2026-10-18",
+      "categoryIds": [
+        "xms4wersa2l3w"
+      ],
+      "allDay": false,
+      "startTime": "21:00",
+      "endTime": "21:00",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 18,
+        "weekOrdinal": 3,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-18",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E24A4A",
+      "emoji": "💊",
+      "id": "xmvnzecp3wq77",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Magnesium",
+      "location": "Home",
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-19",
+      "categoryIds": [
+        "xms4wersa2l3w"
+      ],
+      "allDay": false,
+      "startTime": "02:00",
+      "endTime": "02:00",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 19,
+        "weekOrdinal": 3,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-19",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E24A4A",
+      "emoji": "💊",
+      "id": "xmvnzfd5m3ryp",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Vit D + Omega-3",
+      "location": "Home",
+      "startDate": "2026-10-19",
+      "endDate": "2026-10-19",
+      "categoryIds": [
+        "xms4wersa2l3w"
+      ],
+      "allDay": false,
+      "startTime": "13:30",
+      "endTime": "13:30",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 19,
+        "weekOrdinal": 3,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-19",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E24A4A",
+      "emoji": "💊",
+      "id": "xmvnzgmvcv2y0",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Creatine",
+      "location": "Home",
+      "startDate": "2026-10-26",
+      "endDate": "2026-10-26",
+      "categoryIds": [
+        "xms3gxu6gebeu"
+      ],
+      "allDay": false,
+      "startTime": "13:30",
+      "endTime": "14:00",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 26,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-26",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#4FA45B",
+      "emoji": "🥛",
+      "id": "xmvo01o4wlhtl",
       "exceptions": [],
       "overrides": {}
     }
