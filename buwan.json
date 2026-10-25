@@ -1,6 +1,6 @@
 {
-  "version": "1.0.89",
-  "lastSaved": "2026-10-25T17:55:10.153Z",
+  "version": "1.0.90",
+  "lastSaved": "2026-10-25T17:58:39.507Z",
   "events": [
     {
       "title": "Upper",
@@ -3950,7 +3950,8 @@
       "emoji": "💪",
       "id": "xmtfkp2ncq710",
       "exceptions": [
-        "2026-09-20"
+        "2026-09-20",
+        "2026-10-25"
       ],
       "overrides": {
         "2026-09-06": {
@@ -3971,18 +3972,6 @@
           "allDay": false,
           "startTime": "21:00",
           "endTime": "23:00",
-          "categoryIds": [
-            "xms3gxu6gl0zn"
-          ],
-          "color": "#8E54D6",
-          "emoji": "💪"
-        },
-        "2026-10-25": {
-          "title": "Pull",
-          "location": "Anytime Fitness",
-          "allDay": false,
-          "startTime": "23:00",
-          "endTime": "00:00",
           "categoryIds": [
             "xms3gxu6gl0zn"
           ],
@@ -5699,6 +5688,41 @@
       "color": "#3A4250",
       "emoji": "💻",
       "id": "xmvo4f57ea8gm",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Dinner with Josh",
+      "location": "Yabu Megamall",
+      "startDate": "2026-10-25",
+      "endDate": "2026-10-25",
+      "categoryIds": [
+        "xms3gxu6gsrto"
+      ],
+      "allDay": false,
+      "startTime": "20:00",
+      "endTime": "22:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          0
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 25,
+        "weekOrdinal": 4,
+        "weekday": 0,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-25",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#64748B",
+      "emoji": "🍽️",
+      "id": "xmvo4sfmdqmfr",
       "exceptions": [],
       "overrides": {}
     }
