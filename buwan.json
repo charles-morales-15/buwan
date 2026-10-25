@@ -1,6 +1,6 @@
 {
-  "version": "1.0.88",
-  "lastSaved": "2026-10-25T17:48:53.246Z",
+  "version": "1.0.89",
+  "lastSaved": "2026-10-25T17:55:10.153Z",
   "events": [
     {
       "title": "Upper",
@@ -6005,13 +6005,35 @@
         "img": "https://upload.wikimedia.org/wikipedia/commons/1/14/Meiyu_Issue_One.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Eyebrow_Talk"
+      },
+      "hist": {
+        "v": 3,
+        "year": 1968,
+        "text": "Space Race: The Soyuz 3 mission achieves the first Soviet space rendezvous.",
+        "extract": "The Space Race was a 20th-century competition between the Cold War rivals, the United States and the Soviet Union, to achieve superior spaceflight capability. It had its origins in the ballistic missile-based nuclear arms race between the two nations that followed World War II and the onset of the Cold War. The technological advantage demonstrated by spaceflight achievement was seen as necessary for national security, particularly in regard to intercontinental ballistic missile and satellite reconnaissance capability, but also became part of the cultural symbolism and ideology of the time. The Space Race brought pioneering launches of artificial satellites, robotic landers to the Moon, Venus, and Mars, and human spaceflight in low Earth orbit and ultimately to the Moon.",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Sputnik_asm.jpg/330px-Sputnik_asm.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "link": "https://en.wikipedia.org/wiki/Space_Race"
+      },
+      "mental": {
+        "name": "Post-Traumatic Growth",
+        "topic": "Posttraumatic growth",
+        "v": 3,
+        "snippet": "In psychology, post-traumatic growth (PTG) is positive psychological change experienced as a result of struggling with highly challenging, highly stressful life circumstances. These circumstances represent significant challenges to the adaptive resources of the individual, and pose significant challenges to the individual's way of understanding the world and their place in it. Post-traumatic growth involves \"life-changing\" psychological shifts in thinking and relating to the world and the self, that contribute to a personal process of change, that is deeply meaningful.",
+        "img": null,
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Post-traumatic_growth"
       }
     }
   },
   "feedSeen": {
     "psycheTerms": [],
     "psyche": [],
-    "mentalTerms": [],
-    "mental": []
+    "mentalTerms": [
+      "Post-Traumatic Growth"
+    ],
+    "mental": [],
+    "histSeen": [
+      "Space_Race"
+    ]
   }
 }
