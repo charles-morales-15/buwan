@@ -1,6 +1,6 @@
 {
-  "version": "1.0.85",
-  "lastSaved": "2026-10-25T17:28:01.978Z",
+  "version": "1.0.86",
+  "lastSaved": "2026-10-25T17:43:31.428Z",
   "events": [
     {
       "title": "Upper",
@@ -1919,8 +1919,8 @@
         "xms3gxu6gebeu"
       ],
       "allDay": false,
-      "startTime": "23:30",
-      "endTime": "00:00",
+      "startTime": "20:30",
+      "endTime": "21:00",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -5347,14 +5347,14 @@
     {
       "title": "TLD",
       "location": "Home",
-      "startDate": "2026-10-18",
-      "endDate": "2026-10-18",
+      "startDate": "2026-10-26",
+      "endDate": "2026-10-26",
       "categoryIds": [
         "xms4wersa2l3w"
       ],
       "allDay": false,
-      "startTime": "21:00",
-      "endTime": "21:00",
+      "startTime": "20:00",
+      "endTime": "20:00",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -5380,7 +5380,7 @@
       "overrides": {}
     },
     {
-      "title": "Magnesium",
+      "title": "Asahi + Magnesium",
       "location": "Home",
       "startDate": "2026-10-19",
       "endDate": "2026-10-19",
