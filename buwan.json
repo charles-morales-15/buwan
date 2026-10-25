@@ -1,6 +1,6 @@
 {
-  "version": "1.0.79",
-  "lastSaved": "2026-10-25T11:16:05.906Z",
+  "version": "1.0.80",
+  "lastSaved": "2026-10-25T11:23:46.180Z",
   "events": [
     {
       "title": "Upper",
@@ -866,6 +866,18 @@
           ],
           "color": "#8E54D6",
           "emoji": "💪"
+        },
+        "2026-10-26": {
+          "title": "Cardio",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "20:00",
+          "endTime": "21:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🏃"
         }
       }
     },
@@ -1883,6 +1895,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-10-26": {
+          "title": "Breakfast",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -2150,6 +2174,18 @@
           "emoji": "🥤"
         },
         "2026-10-25": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:00",
+          "endTime": "15:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-10-26": {
           "title": "Protein",
           "location": "Home",
           "allDay": false,
@@ -4216,6 +4252,18 @@
           "allDay": false,
           "startTime": "20:00",
           "endTime": "21:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-10-26": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "18:00",
+          "endTime": "18:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
