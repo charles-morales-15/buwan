@@ -1,12 +1,12 @@
 {
-  "version": "1.0.82",
-  "lastSaved": "2026-10-25T15:49:41.459Z",
+  "version": "1.0.83",
+  "lastSaved": "2026-10-25T16:01:03.387Z",
   "events": [
     {
       "title": "Upper",
       "location": "Anytime Fitness",
-      "startDate": "2026-07-27",
-      "endDate": "2026-07-27",
+      "startDate": "2026-10-27",
+      "endDate": "2026-10-27",
       "categoryIds": [
         "xms3gxu6gl0zn"
       ],
@@ -657,8 +657,8 @@
     {
       "title": "Cardio",
       "location": "Anytime Fitness",
-      "startDate": "2026-07-28",
-      "endDate": "2026-07-28",
+      "startDate": "2026-10-25",
+      "endDate": "2026-10-25",
       "categoryIds": [
         "xms3gxu6gl0zn"
       ],
@@ -1555,8 +1555,8 @@
         "xms3gxu6gebeu"
       ],
       "allDay": false,
-      "startTime": "15:00",
-      "endTime": "15:30",
+      "startTime": "13:00",
+      "endTime": "13:30",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -5458,8 +5458,8 @@
         "xms3gxu6gebeu"
       ],
       "allDay": false,
-      "startTime": "13:30",
-      "endTime": "14:00",
+      "startTime": "15:00",
+      "endTime": "15:30",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -5481,6 +5481,41 @@
       "color": "#4FA45B",
       "emoji": "🥛",
       "id": "xmvo01o4wlhtl",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Sleep Time",
+      "location": "Home",
+      "startDate": "2026-10-26",
+      "endDate": "2026-10-26",
+      "categoryIds": [
+        "xms3gxu6g1tht"
+      ],
+      "allDay": false,
+      "startTime": "03:00",
+      "endTime": "11:00",
+      "recurrence": {
+        "type": "daily",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 26,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-26",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E85C97",
+      "emoji": "😀",
+      "id": "xmvo0lfj0vbiv",
       "exceptions": [],
       "overrides": {}
     }
@@ -5777,6 +5812,16 @@
         "img": "https://upload.wikimedia.org/wikipedia/commons/8/88/Helmfrid-sofa4_Touched.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/The_Kinks"
+      }
+    },
+    "2026-10-26": {
+      "trivia": {
+        "fact": "Eyebrow Talk was a Chinese monthly literary magazine published in 18 issues from November 1914 to around April or May 1916. It was among the first literary magazines in China to be marketed towards women and the first to be primarily edited by women. Its founder and editor-in-chief was Gao Jianhua, who worked closely with Xu Xiaotian and a staff of mainly female assistant editors. At least ten different women are confirmed to have written for the magazine, alongside some men who wrote under female pen names. Reaching a claimed circulation of 10,000 by 1915, the magazine was published by the New Learning Society, which mostly published school textbooks.",
+        "v": 3,
+        "topic": "Eyebrow Talk",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/1/14/Meiyu_Issue_One.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Eyebrow_Talk"
       }
     }
   },
