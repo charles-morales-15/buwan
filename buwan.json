@@ -1,6 +1,6 @@
 {
-  "version": "1.0.77",
-  "lastSaved": "2026-10-24T18:34:46.105Z",
+  "version": "1.0.78",
+  "lastSaved": "2026-10-25T11:15:53.822Z",
   "events": [
     {
       "title": "Upper",
@@ -136,7 +136,8 @@
         "2026-10-17",
         "2026-10-18",
         "2026-10-20",
-        "2026-10-24"
+        "2026-10-24",
+        "2026-10-25"
       ],
       "overrides": {
         "2026-08-07": {
@@ -246,6 +247,18 @@
           ],
           "color": "#9C6B4A",
           "emoji": "🤸"
+        },
+        "2026-10-26": {
+          "title": "Mobility",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "12:00",
+          "endTime": "13:00",
+          "categoryIds": [
+            "xms3gxu6gr9xk"
+          ],
+          "color": "#9C6B4A",
+          "emoji": "🤸"
         }
       }
     },
@@ -287,7 +300,8 @@
         "2026-08-10",
         "2026-08-11",
         "2026-08-15",
-        "2026-09-20"
+        "2026-09-20",
+        "2026-10-25"
       ],
       "overrides": {
         "2026-08-07": {
@@ -620,6 +634,18 @@
           "allDay": false,
           "startTime": "12:00",
           "endTime": "12:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
+        },
+        "2026-10-26": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "13:00",
+          "endTime": "14:00",
           "categoryIds": [
             "xms3gxu6gv3u6"
           ],
@@ -1493,6 +1519,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-10-25": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "17:30",
+          "endTime": "18:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -1833,6 +1871,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-10-25": {
+          "title": "Lunch",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "15:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -2093,6 +2143,18 @@
           "allDay": false,
           "startTime": "15:30",
           "endTime": "16:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-10-25": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:00",
+          "endTime": "15:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -3878,6 +3940,18 @@
           ],
           "color": "#8E54D6",
           "emoji": "💪"
+        },
+        "2026-10-25": {
+          "title": "Pull",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "23:00",
+          "endTime": "00:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "💪"
         }
       }
     },
@@ -4130,6 +4204,18 @@
           "allDay": false,
           "startTime": "19:00",
           "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-10-25": {
+          "title": "Dinner",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "20:00",
+          "endTime": "21:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -5160,6 +5246,41 @@
       "color": "#64748B",
       "emoji": "🍆",
       "id": "xmvmqe3vkusaw",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Derma Check-up",
+      "location": "Makati Medical City",
+      "startDate": "2026-10-26",
+      "endDate": "2026-10-26",
+      "categoryIds": [
+        "xms4wersa2l3w"
+      ],
+      "allDay": false,
+      "startTime": "09:00",
+      "endTime": "12:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 26,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-26",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#E24A4A",
+      "emoji": "🩺",
+      "id": "xmvnqe30t7hoj",
       "exceptions": [],
       "overrides": {}
     }
