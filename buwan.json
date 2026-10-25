@@ -1,6 +1,6 @@
 {
-  "version": "1.0.83",
-  "lastSaved": "2026-10-25T16:01:03.387Z",
+  "version": "1.0.84",
+  "lastSaved": "2026-10-25T16:57:52.903Z",
   "events": [
     {
       "title": "Upper",
@@ -4247,8 +4247,8 @@
           "emoji": "🍽️"
         },
         "2026-10-25": {
-          "title": "Dinner",
-          "location": "Home",
+          "title": "Dinner with Josh De Dios",
+          "location": "Yabu Megamall",
           "allDay": false,
           "startTime": "20:00",
           "endTime": "21:30",
@@ -5388,8 +5388,8 @@
         "xms4wersa2l3w"
       ],
       "allDay": false,
-      "startTime": "02:00",
-      "endTime": "02:00",
+      "startTime": "03:00",
+      "endTime": "03:00",
       "recurrence": {
         "type": "daily",
         "interval": 1,
@@ -5514,8 +5514,82 @@
         "count": 10
       },
       "color": "#E85C97",
-      "emoji": "😀",
+      "emoji": "🛌",
       "id": "xmvo0lfj0vbiv",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "RTO",
+      "location": "UT2 18",
+      "startDate": "2026-10-27",
+      "endDate": "2026-10-27",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "allDay": false,
+      "startTime": "13:30",
+      "endTime": "16:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-27",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3A4250",
+      "emoji": "💻",
+      "id": "xmvo0ok496ata",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Certification Review",
+      "location": "Online",
+      "startDate": "2026-10-27",
+      "endDate": "2026-10-27",
+      "categoryIds": [
+        "xms3gxu6g1cca"
+      ],
+      "allDay": false,
+      "startTime": "14:00",
+      "endTime": "16:00",
+      "recurrence": {
+        "type": "weekly",
+        "interval": 1,
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-27",
+        "endMode": "byDate",
+        "endDate": "2027-03-31",
+        "count": 10
+      },
+      "color": "#EE7A30",
+      "emoji": "📕",
+      "id": "xmvo10k6fvrw0",
       "exceptions": [],
       "overrides": {}
     }
