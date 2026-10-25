@@ -1,6 +1,6 @@
 {
-  "version": "1.0.86",
-  "lastSaved": "2026-10-25T17:43:31.428Z",
+  "version": "1.0.87",
+  "lastSaved": "2026-10-25T17:48:08.042Z",
   "events": [
     {
       "title": "Upper",
@@ -5660,6 +5660,45 @@
       "color": "#4FA45B",
       "emoji": "🍽️",
       "id": "xmvo3mnjx3evk",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Work",
+      "location": "Online",
+      "startDate": "2026-10-26",
+      "endDate": "2026-10-26",
+      "categoryIds": [
+        "xms4wp6k79qsc"
+      ],
+      "allDay": false,
+      "startTime": "21:00",
+      "endTime": "00:00",
+      "recurrence": {
+        "type": "weekly",
+        "interval": 1,
+        "weekdays": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 26,
+        "weekOrdinal": 4,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-26",
+        "endMode": "byDate",
+        "endDate": "2027-03-31",
+        "count": 10
+      },
+      "color": "#3A4250",
+      "emoji": "💻",
+      "id": "xmvo4f57ea8gm",
       "exceptions": [],
       "overrides": {}
     }
