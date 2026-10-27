@@ -1,6 +1,6 @@
 {
-  "version": "1.0.97",
-  "lastSaved": "2026-10-27T15:45:03.544Z",
+  "version": "1.0.98",
+  "lastSaved": "2026-10-27T19:52:00.191Z",
   "events": [
     {
       "title": "Upper",
@@ -1556,6 +1556,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-10-27": {
+          "title": "Bath PM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "22:30",
+          "endTime": "23:00",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -2204,6 +2216,18 @@
           "allDay": false,
           "startTime": "15:00",
           "endTime": "15:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥤"
+        },
+        "2026-10-27": {
+          "title": "Protein",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "22:00",
+          "endTime": "22:00",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -4283,6 +4307,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-10-27": {
+          "title": "2nd Meal",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "21:30",
+          "endTime": "22:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -5379,7 +5415,20 @@
       "emoji": "💊",
       "id": "xmvnzecp3wq77",
       "exceptions": [],
-      "overrides": {}
+      "overrides": {
+        "2026-10-27": {
+          "title": "TLD",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "21:30",
+          "endTime": "21:30",
+          "categoryIds": [
+            "xms4wersa2l3w"
+          ],
+          "color": "#E24A4A",
+          "emoji": "💊"
+        }
+      }
     },
     {
       "title": "Asahi + Magnesium",
@@ -5519,7 +5568,20 @@
       "emoji": "🛌",
       "id": "xmvo0lfj0vbiv",
       "exceptions": [],
-      "overrides": {}
+      "overrides": {
+        "2026-10-28": {
+          "title": "Sleep Time",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "04:00",
+          "endTime": "11:00",
+          "categoryIds": [
+            "xms3gxu6g1tht"
+          ],
+          "color": "#E85C97",
+          "emoji": "🛌"
+        }
+      }
     },
     {
       "title": "RTO",
@@ -5592,7 +5654,9 @@
       "color": "#EE7A30",
       "emoji": "📕",
       "id": "xmvo10k6fvrw0",
-      "exceptions": [],
+      "exceptions": [
+        "2026-10-27"
+      ],
       "overrides": {}
     },
     {
@@ -5628,7 +5692,20 @@
       "emoji": "🍗",
       "id": "xmvo2zzdfoe9s",
       "exceptions": [],
-      "overrides": {}
+      "overrides": {
+        "2026-10-27": {
+          "title": "Stuffed Burrito",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "16:00",
+          "endTime": "16:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍗"
+        }
+      }
     },
     {
       "title": "4th Meal",
@@ -5663,7 +5740,20 @@
       "emoji": "🍽️",
       "id": "xmvo3mnjx3evk",
       "exceptions": [],
-      "overrides": {}
+      "overrides": {
+        "2026-10-28": {
+          "title": "4th Meal",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "03:00",
+          "endTime": "03:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        }
+      }
     },
     {
       "title": "Work",
@@ -5702,7 +5792,20 @@
       "emoji": "💻",
       "id": "xmvo4f57ea8gm",
       "exceptions": [],
-      "overrides": {}
+      "overrides": {
+        "2026-10-27": {
+          "title": "Work",
+          "location": "Online",
+          "allDay": false,
+          "startTime": "22:00",
+          "endTime": "00:00",
+          "categoryIds": [
+            "xms4wp6k79qsc"
+          ],
+          "color": "#3A4250",
+          "emoji": "💻"
+        }
+      }
     },
     {
       "title": "Dinner with Josh",
@@ -5841,6 +5944,41 @@
       "color": "#4FA45B",
       "emoji": "🍽️",
       "id": "xmvp9cwk2x732",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Cardio",
+      "location": "",
+      "startDate": "2026-10-27",
+      "endDate": "2026-10-27",
+      "categoryIds": [
+        "xms3gxu6gl0zn"
+      ],
+      "allDay": false,
+      "startTime": "20:00",
+      "endTime": "21:30",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          2
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 27,
+        "weekOrdinal": 4,
+        "weekday": 2,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-27",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#8E54D6",
+      "emoji": "🏃",
+      "id": "xmvr3muy11skj",
       "exceptions": [],
       "overrides": {}
     }
@@ -6201,21 +6339,63 @@
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Seasonal_affective_disorder"
       }
+    },
+    "2026-10-28": {
+      "hist": {
+        "v": 3,
+        "year": 2023,
+        "text": "The 2023 Rugby World Cup final is held at the Stade de France in Saint-Denis, France. It saw South Africa defeat New Zealand 12 to 11, claiming their fourth Webb Ellis Cup, becoming the first nation to do so.",
+        "extract": "The 2023 Rugby World Cup final was a rugby union match played on 28 October 2023 at the Stade de France in Saint-Denis, France. It marked the culmination of the 2023 Rugby World Cup and was played between New Zealand and the defending champions, South Africa. This was the first time that both finalists had already lost a game during the tournament.",
+        "topic": "2023_Rugby_World_Cup_final",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/StadeFranceNationsLeague2018.jpg/330px-StadeFranceNationsLeague2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      },
+      "trivia": {
+        "v": 3,
+        "fact": "A steam engine is a heat engine that performs mechanical work using steam as its working fluid. The steam engine uses the force produced by steam pressure to push a piston back and forth inside a cylinder. This pushing force can be transformed by a connecting rod and crank into rotational force for work. The term \"steam engine\" is normally applied to reciprocating engines, although some authorities have also referred to the steam turbine and devices such as Hero's aeolipile as \"steam engines\". The essential feature of steam engines is that they are external combustion engines, where the working fluid is separated from the combustion products. The ideal thermodynamic cycle used to analyze this process is called the Rankine cycle. In general usage, the term \"steam engine\" can refer to either complete steam plants, such as railway steam locomotives and portable engines, or may refer to the piston or turbine machinery alone, as in the beam engine and stationary steam engine.",
+        "topic": "the steam engine",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Steam_locomotive_gear_%28J%C5%BD_06-018%3B_Slovenia%29.jpg/330px-Steam_locomotive_gear_%28J%C5%BD_06-018%3B_Slovenia%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Smithsonian",
+        "link": "https://www.smithsonianmag.com/search/?q=the%20steam%20engine"
+      },
+      "mental": {
+        "name": "Social Anxiety",
+        "topic": "Social anxiety",
+        "v": 3,
+        "snippet": "Social anxiety is the anxiety and fear specifically linked to being in social settings. Some categories of disorders associated with social anxiety include anxiety disorders, mood disorders, autism spectrum disorders, eating disorders, and substance use disorders. Individuals with higher levels of social anxiety often avert their gazes, show fewer facial expressions, and show difficulty with initiating and maintaining a conversation. The tendency for individuals with high social anxiety to avert their attention toward neutral stimuli is termed attention bias. Social anxiety commonly manifests itself in the teenage years and can be persistent throughout life; however, people who experience problems in their daily functioning for an extended period of time may develop social anxiety disorder. Trait social anxiety, the stable tendency to experience this anxiety, can be distinguished from state anxiety, the momentary response to a particular social stimulus. Half of the individuals with any social fears meet the criteria for social anxiety disorder. Age, culture, and gender impact the severity of this disorder. The function of social anxiety is to increase arousal and attention to social interactions, inhibit unwanted social behavior, and motivate preparation for future social situations. Social anxiety can be observed by both physiological and cognitive symptoms. Cognitive symptoms that arise from social anxiety can impair quality of life, interpersonal relationships and satisfaction in social life.",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Greek_uc_psi_icon.svg/330px-Greek_uc_psi_icon.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Social_anxiety"
+      },
+      "psyche": {
+        "term": "learned helplessness",
+        "topic": "learned helplessness",
+        "v": 3,
+        "snippet": "Learned helplessness is the behavior exhibited by a subject after enduring repeated aversive stimuli beyond their control. In humans, learned helplessness is related to the concept of self-efficacy, the individual's belief in their innate ability to achieve goals.",
+        "img": null,
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Learned_helplessness"
+      }
     }
   },
   "feedSeen": {
     "psycheTerms": [
-      "self-compassion"
+      "self-compassion",
+      "learned helplessness"
     ],
     "psyche": [],
     "mentalTerms": [
       "Post-Traumatic Growth",
-      "Seasonal Affective (MDD, seasonal pattern)"
+      "Seasonal Affective (MDD, seasonal pattern)",
+      "Social Anxiety"
     ],
     "mental": [],
     "histSeen": [
       "Space_Race",
-      "Pittsburgh_synagogue_shooting"
+      "Pittsburgh_synagogue_shooting",
+      "2023_Rugby_World_Cup_final"
+    ],
+    "triviaTerms": [
+      "the steam engine"
     ]
   }
 }
