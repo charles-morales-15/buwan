@@ -1,6 +1,6 @@
 {
-  "version": "1.0.94",
-  "lastSaved": "2026-10-26T18:21:00.766Z",
+  "version": "1.0.95",
+  "lastSaved": "2026-10-27T04:37:09.563Z",
   "events": [
     {
       "title": "Upper",
@@ -6164,6 +6164,24 @@
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Post-traumatic_growth"
       }
+    },
+    "2026-10-27": {
+      "trivia": {
+        "fact": "The 1986 New York Mets season was the 25th season for the New York Mets as a franchise of Major League Baseball, and their 22nd season playing at Shea Stadium in Queens. The team was managed by Davey Johnson, with their general manager being Frank Cashen.",
+        "v": 3,
+        "topic": "1986 New York Mets season",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/1986_Mets_in_the_Citi_Field_infield.jpg/960px-1986_Mets_in_the_Citi_Field_infield.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/1986_New_York_Mets_season"
+      },
+      "hist": {
+        "v": 3,
+        "year": 2018,
+        "text": "A gunman opens fire on a Pittsburgh synagogue killing eleven and injuring six, including four police officers.",
+        "extract": "On October 27, 2018, an antisemitic mass shooting occurred at the Tree of Life – Or L'Simcha Congregation synagogue in the Squirrel Hill neighborhood of Pittsburgh, Pennsylvania, United States. The congregation, along with New Light Congregation and Congregation Dor Hadash, which also worshiped in the building, was attacked during Shabbat morning services. The perpetrator, 46-year-old Robert Gregory Bowers, killed eleven people and wounded six, in the deadliest attack on a local Jewish community in American history.",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Tree_of_Life_%E2%80%93_Or_L%27Simcha_synagogue_facade.jpg/330px-Tree_of_Life_%E2%80%93_Or_L%27Simcha_synagogue_facade.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "link": "https://en.wikipedia.org/wiki/Pittsburgh_synagogue_shooting"
+      }
     }
   },
   "feedSeen": {
@@ -6174,7 +6192,8 @@
     ],
     "mental": [],
     "histSeen": [
-      "Space_Race"
+      "Space_Race",
+      "Pittsburgh_synagogue_shooting"
     ]
   }
 }
