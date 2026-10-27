@@ -1,6 +1,6 @@
 {
-  "version": "1.0.95",
-  "lastSaved": "2026-10-27T04:37:09.563Z",
+  "version": "1.0.96",
+  "lastSaved": "2026-10-27T05:37:01.750Z",
   "events": [
     {
       "title": "Upper",
@@ -137,7 +137,8 @@
         "2026-10-18",
         "2026-10-20",
         "2026-10-24",
-        "2026-10-25"
+        "2026-10-25",
+        "2026-10-27"
       ],
       "overrides": {
         "2026-08-07": {
@@ -6181,14 +6182,35 @@
         "extract": "On October 27, 2018, an antisemitic mass shooting occurred at the Tree of Life – Or L'Simcha Congregation synagogue in the Squirrel Hill neighborhood of Pittsburgh, Pennsylvania, United States. The congregation, along with New Light Congregation and Congregation Dor Hadash, which also worshiped in the building, was attacked during Shabbat morning services. The perpetrator, 46-year-old Robert Gregory Bowers, killed eleven people and wounded six, in the deadliest attack on a local Jewish community in American history.",
         "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Tree_of_Life_%E2%80%93_Or_L%27Simcha_synagogue_facade.jpg/330px-Tree_of_Life_%E2%80%93_Or_L%27Simcha_synagogue_facade.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
         "link": "https://en.wikipedia.org/wiki/Pittsburgh_synagogue_shooting"
+      },
+      "psyche": {
+        "term": "self-compassion",
+        "topic": "self-compassion",
+        "v": 3,
+        "snippet": "In psychology, self-compassion is extending compassion to one's self in instances of perceived inadequacy, failure, or general suffering. American psychologist Kristin Neff has defined self-compassion as being composed of three main elements – self-kindness, common humanity, and mindfulness.Self-kindness: Self-compassion entails being warm towards oneself when encountering pain and personal shortcomings, rather than ignoring them or hurting oneself with self-criticism. Common humanity: Self-compassion also involves recognizing that suffering and personal failure is part of the shared human experience rather than isolating. Mindfulness: Self-compassion requires taking a balanced approach to one's negative emotions so that feelings are neither suppressed nor exaggerated. Negative thoughts and emotions are observed with openness, so that they are held in mindful awareness. Mindfulness is a non-judgmental, receptive mind state in which individuals observe their thoughts and feelings as they are, without trying to suppress or deny them. Conversely, mindfulness requires that one not be \"over-identified\" with mental or emotional phenomena, so that one suffers aversive reactions. This latter type of response involves narrowly focusing and ruminating on one's negative emotions.",
+        "img": null,
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Self-compassion"
+      },
+      "mental": {
+        "name": "Seasonal Affective (MDD, seasonal pattern)",
+        "topic": "Seasonal affective disorder",
+        "v": 3,
+        "snippet": "Seasonal affective disorder is a mood disorder subset in which people who typically have normal mental health throughout most of the year exhibit depressive symptoms at the same time each year. It is commonly, but not always, associated with the reductions or increases in total daily sunlight hours that occur during the winter or summer.",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Light_Therapy_for_SAD.jpg/330px-Light_Therapy_for_SAD.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Seasonal_affective_disorder"
       }
     }
   },
   "feedSeen": {
-    "psycheTerms": [],
+    "psycheTerms": [
+      "self-compassion"
+    ],
     "psyche": [],
     "mentalTerms": [
-      "Post-Traumatic Growth"
+      "Post-Traumatic Growth",
+      "Seasonal Affective (MDD, seasonal pattern)"
     ],
     "mental": [],
     "histSeen": [
