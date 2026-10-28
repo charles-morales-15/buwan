@@ -1,6 +1,6 @@
 {
-  "version": "1.0.100",
-  "lastSaved": "2026-10-28T06:17:10.967Z",
+  "version": "1.0.101",
+  "lastSaved": "2026-10-28T06:22:05.870Z",
   "events": [
     {
       "title": "Upper",
@@ -892,6 +892,18 @@
           ],
           "color": "#8E54D6",
           "emoji": "🏃"
+        },
+        "2026-10-29": {
+          "title": "Lower",
+          "location": "Anytime Fitness",
+          "allDay": false,
+          "startTime": "23:00",
+          "endTime": "00:00",
+          "categoryIds": [
+            "xms3gxu6gl0zn"
+          ],
+          "color": "#8E54D6",
+          "emoji": "🦵"
         }
       }
     },
@@ -1280,7 +1292,8 @@
         "2026-09-14",
         "2026-09-16",
         "2026-09-30",
-        "2026-10-28"
+        "2026-10-28",
+        "2026-10-29"
       ],
       "overrides": {
         "2026-08-06": {
@@ -2018,7 +2031,8 @@
         "2026-08-27",
         "2026-08-30",
         "2026-09-05",
-        "2026-10-28"
+        "2026-10-28",
+        "2026-10-29"
       ],
       "overrides": {
         "2026-08-08": {
@@ -5708,7 +5722,8 @@
       "id": "xmvo10k6fvrw0",
       "exceptions": [
         "2026-10-27",
-        "2026-10-28"
+        "2026-10-28",
+        "2026-10-29"
       ],
       "overrides": {}
     },
@@ -5807,6 +5822,18 @@
           "emoji": "🍽️"
         },
         "2026-10-29": {
+          "title": "4th Meal",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "02:00",
+          "endTime": "02:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-10-30": {
           "title": "4th Meal",
           "location": "Home",
           "allDay": false,
@@ -6081,6 +6108,81 @@
       "emoji": "🥤",
       "startDate": "2026-10-29",
       "endDate": "2026-10-29",
+      "recurrence": {
+        "type": "none"
+      },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Buy Laptop",
+      "location": "Megamall",
+      "startDate": "2026-10-29",
+      "endDate": "2026-10-29",
+      "categoryIds": [
+        "xms3gxu6g57al"
+      ],
+      "allDay": false,
+      "startTime": "18:00",
+      "endTime": "21:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 29,
+        "weekOrdinal": 5,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-29",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3F5FD6",
+      "emoji": "💻",
+      "id": "xmvrq6csczvpd",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "id": "xmvrq7fn2k4yx",
+      "title": "Bath PM",
+      "location": "Home",
+      "allDay": false,
+      "startTime": "01:00",
+      "endTime": "02:00",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "color": "#3E8FE0",
+      "emoji": "🚿",
+      "startDate": "2026-10-30",
+      "endDate": "2026-10-30",
+      "recurrence": {
+        "type": "none"
+      },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "id": "xmvrq86pc4jep",
+      "title": "Protein",
+      "location": "Home",
+      "allDay": false,
+      "startTime": "02:00",
+      "endTime": "02:30",
+      "categoryIds": [
+        "xms3gxu6gebeu"
+      ],
+      "color": "#4FA45B",
+      "emoji": "🥤",
+      "startDate": "2026-10-30",
+      "endDate": "2026-10-30",
       "recurrence": {
         "type": "none"
       },
