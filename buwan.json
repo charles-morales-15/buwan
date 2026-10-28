@@ -1,6 +1,6 @@
 {
-  "version": "1.0.104",
-  "lastSaved": "2026-10-28T13:56:31.740Z",
+  "version": "1.0.105",
+  "lastSaved": "2026-10-28T18:58:49.298Z",
   "events": [
     {
       "title": "Upper",
@@ -1076,7 +1076,7 @@
           "title": "Upper",
           "location": "Anytime Fitness",
           "allDay": false,
-          "startTime": "23:00",
+          "startTime": "23:30",
           "endTime": "00:00",
           "categoryIds": [
             "xms3gxu6gl0zn"
@@ -5516,7 +5516,20 @@
       "emoji": "💊",
       "id": "xmvnzfd5m3ryp",
       "exceptions": [],
-      "overrides": {}
+      "overrides": {
+        "2026-10-29": {
+          "title": "Asahi + Magnesium",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "03:30",
+          "endTime": "03:30",
+          "categoryIds": [
+            "xms4wersa2l3w"
+          ],
+          "color": "#E24A4A",
+          "emoji": "💊"
+        }
+      }
     },
     {
       "title": "Vit D + Omega-3",
@@ -5654,6 +5667,18 @@
           "allDay": false,
           "startTime": "05:00",
           "endTime": "12:00",
+          "categoryIds": [
+            "xms3gxu6g1tht"
+          ],
+          "color": "#E85C97",
+          "emoji": "🛌"
+        },
+        "2026-10-29": {
+          "title": "Sleep Time",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "04:30",
+          "endTime": "11:30",
           "categoryIds": [
             "xms3gxu6g1tht"
           ],
@@ -5838,8 +5863,8 @@
           "title": "4th Meal",
           "location": "Home",
           "allDay": false,
-          "startTime": "02:00",
-          "endTime": "02:30",
+          "startTime": "03:00",
+          "endTime": "03:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -6092,8 +6117,8 @@
       "title": "Bath PM",
       "location": "Home",
       "allDay": false,
-      "startTime": "01:00",
-      "endTime": "02:00",
+      "startTime": "02:00",
+      "endTime": "03:00",
       "categoryIds": [
         "xms3gxu6gv3u6"
       ],
@@ -6102,7 +6127,22 @@
       "startDate": "2026-10-29",
       "endDate": "2026-10-29",
       "recurrence": {
-        "type": "none"
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 29,
+        "weekOrdinal": 5,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-29",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
       },
       "exceptions": [],
       "overrides": {}
@@ -6112,17 +6152,32 @@
       "title": "Protein",
       "location": "Home",
       "allDay": false,
-      "startTime": "02:00",
-      "endTime": "02:30",
+      "startTime": "21:30",
+      "endTime": "21:30",
       "categoryIds": [
         "xms3gxu6gebeu"
       ],
       "color": "#4FA45B",
       "emoji": "🥤",
-      "startDate": "2026-10-29",
-      "endDate": "2026-10-29",
+      "startDate": "2026-10-28",
+      "endDate": "2026-10-28",
       "recurrence": {
-        "type": "none"
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 29,
+        "weekOrdinal": 5,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-29",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
       },
       "exceptions": [],
       "overrides": {}
@@ -6199,6 +6254,41 @@
       "recurrence": {
         "type": "none"
       },
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Upper",
+      "location": "Anytime Fitness",
+      "startDate": "2026-10-29",
+      "endDate": "2026-10-29",
+      "categoryIds": [
+        "xms3gxu6gl0zn"
+      ],
+      "allDay": false,
+      "startTime": "00:00",
+      "endTime": "01:30",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          4
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 29,
+        "weekOrdinal": 5,
+        "weekday": 4,
+        "yearlyMode": "dayOfMonth",
+        "month": 9,
+        "rangeStart": "2026-10-29",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#8E54D6",
+      "emoji": "💪",
+      "id": "xmvsh8yqujig1",
       "exceptions": [],
       "overrides": {}
     }
@@ -6595,27 +6685,67 @@
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Learned_helplessness"
       }
+    },
+    "2026-10-29": {
+      "hist": {
+        "v": 3,
+        "year": 2018,
+        "text": "Lion Air Flight 610, a Boeing 737 MAX, crashes after taking off from Jakarta, Indonesia killing 189 people on board.  This is the first of two crashes that will lead to the plane being grounded worldwide.",
+        "extract": "Lion Air Flight 610 was a scheduled domestic passenger flight from Soekarno–Hatta International Airport, Tangerang, to Depati Amir Airport, Pangkal Pinang, in Indonesia. On 29 October 2018, the Boeing 737 MAX 8 operating the route, carrying 181 passengers and 8 crew members, crashed into the Java Sea 11 minutes after takeoff, killing all 189 occupants on board. It was the first major accident and hull loss of a 737 MAX, a then recently introduced aircraft.",
+        "topic": "Lion_Air_Flight_610",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Lion_Air_Boeing_737-MAX8_PK-LQP.jpg/330px-Lion_Air_Boeing_737-MAX8_PK-LQP.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      },
+      "trivia": {
+        "v": 3,
+        "fact": "Penicillins are a group of β-lactam antibiotics originally obtained from Penicillium moulds, principally P. chrysogenum and P. rubens. Eight species of Penicillium, in the section Chrysogena, produce penicillins. Most penicillins in clinical use are synthesised by P. chrysogenum using deep tank fermentation and then purified. A number of natural penicillins have been discovered, but only two purified compounds are in clinical use: penicillin G and penicillin V. Penicillins were among the first medications to be effective against many bacterial infections caused by staphylococci and streptococci. They are still widely used today for various bacterial infections, though many types of bacteria have developed resistance following extensive use.",
+        "topic": "penicillin",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Penicillin_core.svg/330px-Penicillin_core.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Scientific American",
+        "link": "https://www.scientificamerican.com/search/?q=penicillin"
+      },
+      "mental": {
+        "name": "Narcolepsy",
+        "topic": "Narcolepsy",
+        "v": 3,
+        "snippet": "Narcolepsy is a chronic neurological disorder that impairs the ability to regulate sleep–wake cycles, and specifically impacts REM sleep. The symptoms of narcolepsy include excessive daytime sleepiness (EDS), sleep-related hallucinations, sleep paralysis, disturbed nocturnal sleep (DNS), and cataplexy. People with narcolepsy typically have poor quality of sleep.",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/1R02_crystallography.png/330px-1R02_crystallography.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Narcolepsy"
+      },
+      "psyche": {
+        "term": "psychological reactance",
+        "topic": "psychological reactance",
+        "v": 3,
+        "snippet": "In psychology, reactance is an unpleasant motivational reaction to offers, persons, rules, regulations, advice, recommendations, information, and messages that are perceived to threaten or eliminate specific behavioral freedoms. Reactance occurs when an individual feels that an agent is attempting to limit their choice of response or range of alternatives.",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Greek_uc_psi_icon.svg/330px-Greek_uc_psi_icon.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Reactance_(psychology)"
+      }
     }
   },
   "feedSeen": {
     "psycheTerms": [
       "self-compassion",
-      "learned helplessness"
+      "learned helplessness",
+      "psychological reactance"
     ],
     "psyche": [],
     "mentalTerms": [
       "Post-Traumatic Growth",
       "Seasonal Affective (MDD, seasonal pattern)",
-      "Social Anxiety"
+      "Social Anxiety",
+      "Narcolepsy"
     ],
     "mental": [],
     "histSeen": [
       "Space_Race",
       "Pittsburgh_synagogue_shooting",
-      "2023_Rugby_World_Cup_final"
+      "2023_Rugby_World_Cup_final",
+      "Lion_Air_Flight_610"
     ],
     "triviaTerms": [
-      "the steam engine"
+      "the steam engine",
+      "penicillin"
     ]
   }
 }
