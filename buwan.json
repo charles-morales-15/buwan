@@ -1,6 +1,6 @@
 {
-  "version": "1.0.98",
-  "lastSaved": "2026-10-27T19:52:00.191Z",
+  "version": "1.0.99",
+  "lastSaved": "2026-10-28T06:09:30.068Z",
   "events": [
     {
       "title": "Upper",
@@ -138,7 +138,8 @@
         "2026-10-20",
         "2026-10-24",
         "2026-10-25",
-        "2026-10-27"
+        "2026-10-27",
+        "2026-10-28"
       ],
       "overrides": {
         "2026-08-07": {
@@ -1927,6 +1928,18 @@
           "allDay": false,
           "startTime": "13:00",
           "endTime": "13:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-10-28": {
+          "title": "1st Meal",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:00",
+          "endTime": "14:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -5498,7 +5511,20 @@
       "emoji": "💊",
       "id": "xmvnzgmvcv2y0",
       "exceptions": [],
-      "overrides": {}
+      "overrides": {
+        "2026-10-28": {
+          "title": "Vit D + Omega-3",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "14:30",
+          "endTime": "14:30",
+          "categoryIds": [
+            "xms4wersa2l3w"
+          ],
+          "color": "#E24A4A",
+          "emoji": "💊"
+        }
+      }
     },
     {
       "title": "Creatine",
@@ -5573,8 +5599,8 @@
           "title": "Sleep Time",
           "location": "Home",
           "allDay": false,
-          "startTime": "04:00",
-          "endTime": "11:00",
+          "startTime": "05:00",
+          "endTime": "12:00",
           "categoryIds": [
             "xms3gxu6g1tht"
           ],
@@ -5655,7 +5681,8 @@
       "emoji": "📕",
       "id": "xmvo10k6fvrw0",
       "exceptions": [
-        "2026-10-27"
+        "2026-10-27",
+        "2026-10-28"
       ],
       "overrides": {}
     },
