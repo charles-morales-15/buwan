@@ -1,6 +1,6 @@
 {
-  "version": "1.0.106",
-  "lastSaved": "2026-10-28T18:59:21.867Z",
+  "version": "1.0.107",
+  "lastSaved": "2026-11-02T17:59:24.269Z",
   "events": [
     {
       "title": "Upper",
@@ -139,7 +139,8 @@
         "2026-10-24",
         "2026-10-25",
         "2026-10-27",
-        "2026-10-28"
+        "2026-10-28",
+        "2026-11-02"
       ],
       "overrides": {
         "2026-08-07": {
@@ -665,6 +666,18 @@
           ],
           "color": "#3E8FE0",
           "emoji": "🚿"
+        },
+        "2026-11-02": {
+          "title": "Bath AM",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "15:30",
+          "endTime": "16:30",
+          "categoryIds": [
+            "xms3gxu6gv3u6"
+          ],
+          "color": "#3E8FE0",
+          "emoji": "🚿"
         }
       }
     },
@@ -710,7 +723,8 @@
         "2026-08-29",
         "2026-09-03",
         "2026-09-05",
-        "2026-09-10"
+        "2026-09-10",
+        "2026-11-02"
       ],
       "overrides": {
         "2026-08-13": {
@@ -1293,7 +1307,8 @@
         "2026-09-16",
         "2026-09-30",
         "2026-10-28",
-        "2026-10-29"
+        "2026-10-29",
+        "2026-11-02"
       ],
       "overrides": {
         "2026-08-06": {
@@ -1978,6 +1993,18 @@
           "allDay": false,
           "startTime": "14:00",
           "endTime": "14:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
+        },
+        "2026-11-02": {
+          "title": "1st Meal",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "08:00",
+          "endTime": "08:30",
           "categoryIds": [
             "xms3gxu6gebeu"
           ],
@@ -4372,6 +4399,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-11-02": {
+          "title": "2nd Meal",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "19:30",
+          "endTime": "20:00",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -5480,6 +5519,18 @@
           ],
           "color": "#E24A4A",
           "emoji": "💊"
+        },
+        "2026-11-02": {
+          "title": "TLD",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "21:30",
+          "endTime": "21:30",
+          "categoryIds": [
+            "xms4wersa2l3w"
+          ],
+          "color": "#E24A4A",
+          "emoji": "💊"
         }
       }
     },
@@ -5563,7 +5614,9 @@
       "color": "#E24A4A",
       "emoji": "💊",
       "id": "xmvnzgmvcv2y0",
-      "exceptions": [],
+      "exceptions": [
+        "2026-11-02"
+      ],
       "overrides": {
         "2026-10-28": {
           "title": "Vit D + Omega-3",
@@ -5624,6 +5677,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🥛"
+        },
+        "2026-11-02": {
+          "title": "Creatine",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "20:00",
+          "endTime": "20:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🥛"
         }
       }
     },
@@ -5679,6 +5744,18 @@
           "allDay": false,
           "startTime": "04:30",
           "endTime": "11:30",
+          "categoryIds": [
+            "xms3gxu6g1tht"
+          ],
+          "color": "#E85C97",
+          "emoji": "🛌"
+        },
+        "2026-11-02": {
+          "title": "Sleep Time",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "03:00",
+          "endTime": "08:00",
           "categoryIds": [
             "xms3gxu6g1tht"
           ],
@@ -5761,7 +5838,8 @@
       "exceptions": [
         "2026-10-27",
         "2026-10-28",
-        "2026-10-29"
+        "2026-10-29",
+        "2026-11-02"
       ],
       "overrides": {}
     },
@@ -5797,7 +5875,9 @@
       "color": "#4FA45B",
       "emoji": "🍗",
       "id": "xmvo2zzdfoe9s",
-      "exceptions": [],
+      "exceptions": [
+        "2026-11-02"
+      ],
       "overrides": {
         "2026-10-27": {
           "title": "Stuffed Burrito",
@@ -5882,6 +5962,18 @@
           ],
           "color": "#4FA45B",
           "emoji": "🍽️"
+        },
+        "2026-11-03": {
+          "title": "4th Meal",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "02:00",
+          "endTime": "02:30",
+          "categoryIds": [
+            "xms3gxu6gebeu"
+          ],
+          "color": "#4FA45B",
+          "emoji": "🍽️"
         }
       }
     },
@@ -5921,7 +6013,9 @@
       "color": "#3A4250",
       "emoji": "💻",
       "id": "xmvo4f57ea8gm",
-      "exceptions": [],
+      "exceptions": [
+        "2026-11-02"
+      ],
       "overrides": {
         "2026-10-27": {
           "title": "Work",
@@ -6291,6 +6385,96 @@
       "id": "xmvsh8yqujig1",
       "exceptions": [],
       "overrides": {}
+    },
+    {
+      "title": "Avail Columbarium",
+      "location": "Heaven's Park",
+      "startDate": "2026-11-02",
+      "endDate": "2026-11-02",
+      "categoryIds": [
+        "xms3gxu6gnm4j"
+      ],
+      "allDay": false,
+      "startTime": "09:00",
+      "endTime": "13:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 2,
+        "weekOrdinal": 1,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 10,
+        "rangeStart": "2026-11-02",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#F2A93B",
+      "emoji": "⚱️",
+      "id": "xmvzk8iebymwu",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "title": "Back to Condo",
+      "location": "",
+      "startDate": "2026-11-02",
+      "endDate": "2026-11-02",
+      "categoryIds": [
+        "xms3gxu6g57al"
+      ],
+      "allDay": false,
+      "startTime": "13:00",
+      "endTime": "14:00",
+      "recurrence": {
+        "type": "none",
+        "interval": 1,
+        "weekdays": [
+          1
+        ],
+        "dailyMode": "every",
+        "monthlyMode": "dayOfMonth",
+        "dayOfMonth": 2,
+        "weekOrdinal": 1,
+        "weekday": 1,
+        "yearlyMode": "dayOfMonth",
+        "month": 10,
+        "rangeStart": "2026-11-02",
+        "endMode": "never",
+        "endDate": "",
+        "count": 10
+      },
+      "color": "#3F5FD6",
+      "emoji": "🚕",
+      "id": "xmvzk9oexcxpr",
+      "exceptions": [],
+      "overrides": {}
+    },
+    {
+      "id": "xmvzkc41tc078",
+      "title": "Bath PM",
+      "location": "Home",
+      "allDay": false,
+      "startTime": "00:30",
+      "endTime": "01:30",
+      "categoryIds": [
+        "xms3gxu6gv3u6"
+      ],
+      "color": "#3E8FE0",
+      "emoji": "🚿",
+      "startDate": "2026-11-03",
+      "endDate": "2026-11-03",
+      "recurrence": {
+        "type": "none"
+      },
+      "exceptions": [],
+      "overrides": {}
     }
   ],
   "categories": [
@@ -6367,46 +6551,6 @@
     "filePath": "buwan.json"
   },
   "aiCache": {
-    "2026-08-30": {
-      "trivia": {
-        "fact": "During the 1980–81 English football season, Ipswich Town F.C. competed in the Football League First Division. In one of the most successful seasons in the club's history, they finished as runners-up in the league championship, were semi-finalists in the FA Cup and won the UEFA Cup. In all, Ipswich played a total of 66 competitive games during the season, winning 37, drawing 13 and losing 16.",
-        "v": 3,
-        "topic": "1980–81 Ipswich Town F.C. season",
-        "img": null,
-        "source": "Wikipedia",
-        "link": "https://en.wikipedia.org/wiki/1980%E2%80%9381_Ipswich_Town_F.C._season"
-      }
-    },
-    "2026-08-31": {
-      "trivia": {
-        "fact": "Music Box is the third studio album by American singer-songwriter Mariah Carey. It was released on August 31, 1993, by Columbia Records. In an attempt to appeal to a wider audience, Carey sought a radio-friendly approach for Music Box.",
-        "v": 3,
-        "topic": "Music Box (album)",
-        "img": "https://upload.wikimedia.org/wikipedia/en/7/75/Music_Box_Mariah_Carey.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
-        "source": "Wikipedia",
-        "link": "https://en.wikipedia.org/wiki/Music_Box_(album)"
-      }
-    },
-    "2026-09-01": {
-      "trivia": {
-        "fact": "Anfield is a football stadium in the area of Anfield, Liverpool, England, which has been the home of Liverpool Football Club since their formation in 1892. The stadium has a seating capacity of 61,276, making it the fifth-largest football stadium in England. It was originally the home of Everton from 1884 to 1891 before they moved to Goodison Park after a dispute with the club president.",
-        "v": 3,
-        "topic": "Anfield",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg/960px-Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-        "source": "Wikipedia",
-        "link": "https://en.wikipedia.org/wiki/Anfield"
-      }
-    },
-    "2026-09-02": {
-      "trivia": {
-        "fact": "Laguna Miscanti is a brackish lake in the Altiplano of the Antofagasta Region in northern Chile. It has an area of about 13 square kilometres (5 sq mi) and the shape of an arrowhead. The lake has no permanent surface inflows or outflows apart from several springs, and is primarily fed and drained by groundwater. Laguna Miscanti is located among the volcanoes of the Central Andes. The smaller Laguna Miñiques lies immediately south, separated from Miscanti by a lava flow.",
-        "v": 3,
-        "topic": "Laguna Miscanti",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Laguna_Miscanti_%28Antofagasta%2C_Chile%29_03.jpg/960px-Laguna_Miscanti_%28Antofagasta%2C_Chile%29_03.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-        "source": "Wikipedia",
-        "link": "https://en.wikipedia.org/wiki/Laguna_Miscanti"
-      }
-    },
     "2026-09-07": {
       "trivia": {
         "fact": "George Edward Albert Krugers was a filmmaker active in the Dutch East Indies during the early 20th century. Born in Banda Neira, he migrated to Java in the 1920s and spent time in Surabaya before moving to Bandung. There, he worked with L. Heuveldorp on the colony's first feature film, Loetoeng Kasaroeng, before making his directorial debut in 1927 with Eulis Atjih. The following year, he established the Krugers Film Company; under this banner, he joined the Hajj in 1928 to produce Het Groote Mekka-Feest, considered the first documentary film about the pilgrimage.",
@@ -6721,13 +6865,41 @@
         "source": "Wikipedia",
         "link": "https://en.wikipedia.org/wiki/Reactance_(psychology)"
       }
+    },
+    "2026-11-03": {
+      "trivia": {
+        "v": 3,
+        "fact": "Plate tectonics is the scientific theory that Earth's lithosphere comprises a number of large tectonic plates, which have been slowly moving since 3–4 billion years ago. The model builds on the concept of continental drift, an idea developed during the first decades of the 20th century. Plate tectonics came to be accepted by geoscientists after seafloor spreading was validated in the mid- to late 1960s. The processes that result in plates and shape Earth's crust are called tectonics.",
+        "topic": "plate tectonics",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Tectonic_plates_%282022%29.svg/330px-Tectonic_plates_%282022%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "source": "National Geographic",
+        "link": "https://www.nationalgeographic.com/search?q=plate%20tectonics"
+      },
+      "hist": {
+        "v": 3,
+        "year": 1868,
+        "text": "John Willis Menard (R-LA) becomes the first African American elected to the United States Congress. Because of an electoral challenge, he is never seated.",
+        "extract": "John Willis Menard was a federal government employee, poet, newspaper publisher and politician born in Kaskaskia, Illinois to parents who were Louisiana Creoles from New Orleans. After moving to New Orleans, on November 3, 1868, Menard was the first African-American person elected to the United States House of Representatives. His opponent contested his election, and opposition to his election prevented him from being seated in Congress.",
+        "topic": "John_Willis_Menard",
+        "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/John_Willis_Menard.png/330px-John_Willis_Menard.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail"
+      },
+      "psyche": {
+        "term": "anchoring bias",
+        "topic": "anchoring bias",
+        "v": 3,
+        "snippet": "The anchoring effect is a psychological phenomenon in which an individual's judgments or decisions are influenced by a reference point or \"anchor\" which can be completely irrelevant.",
+        "img": null,
+        "source": "Wikipedia",
+        "link": "https://en.wikipedia.org/wiki/Anchoring_effect"
+      }
     }
   },
   "feedSeen": {
     "psycheTerms": [
       "self-compassion",
       "learned helplessness",
-      "psychological reactance"
+      "psychological reactance",
+      "anchoring bias"
     ],
     "psyche": [],
     "mentalTerms": [
@@ -6741,11 +6913,13 @@
       "Space_Race",
       "Pittsburgh_synagogue_shooting",
       "2023_Rugby_World_Cup_final",
-      "Lion_Air_Flight_610"
+      "Lion_Air_Flight_610",
+      "John_Willis_Menard"
     ],
     "triviaTerms": [
       "the steam engine",
-      "penicillin"
+      "penicillin",
+      "plate tectonics"
     ]
   }
 }
