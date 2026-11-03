@@ -1,6 +1,6 @@
 {
-  "version": "1.0.109",
-  "lastSaved": "2026-11-03T05:02:15.190Z",
+  "version": "1.0.110",
+  "lastSaved": "2026-11-03T06:20:14.978Z",
   "events": [
     {
       "title": "Upper",
@@ -5756,6 +5756,18 @@
           "allDay": false,
           "startTime": "03:00",
           "endTime": "08:00",
+          "categoryIds": [
+            "xms3gxu6g1tht"
+          ],
+          "color": "#E85C97",
+          "emoji": "🛌"
+        },
+        "2026-11-03": {
+          "title": "Sleep Time",
+          "location": "Home",
+          "allDay": false,
+          "startTime": "03:00",
+          "endTime": "12:00",
           "categoryIds": [
             "xms3gxu6g1tht"
           ],
